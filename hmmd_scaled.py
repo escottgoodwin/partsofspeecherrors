@@ -1,10 +1,4 @@
-# https://deeplearningcourses.com/c/unsupervised-machine-learning-hidden-markov-models-in-python
-# https://udemy.com/unsupervised-machine-learning-hidden-markov-models-in-python
-# http://lazyprogrammer.me
-# Discrete Hidden Markov Model (HMM) with scaling
 import numpy as np
-import matplotlib.pyplot as plt
-
 
 def random_normalized(d1, d2):
     x = np.random.random((d1, d2))
