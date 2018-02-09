@@ -1,11 +1,7 @@
-
-
 import numpy as np
 import theano
 import theano.tensor as T
-import matplotlib.pyplot as plt
 from sklearn.utils import shuffle
-from sklearn.metrics import f1_score
 from predict_errors1 import predicterrors
 from get_data import get_data_error
 from datetime import datetime
@@ -70,8 +66,6 @@ class LogisticRegression: ## create Logistic Regression class for training
                 costs.append(c) ## track costs per batch
                 if j % 200 == 0: ## every 200 batch iters print results
                     print("i:", i, "j:", j, "n_batches:", n_batches, "cost:", c, "error:", np.mean(p != Ybatch))
-        #plt.plot(costs)
-        #plt.show()
 
     def predictions(self, X, Y): ## accuracy score
         _, p = self.cost_predict_op(X,Y) ## generates tag predictions by taking argmax
