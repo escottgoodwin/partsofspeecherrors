@@ -115,7 +115,7 @@ def main():
     heading = "LOGISTIC REGRESSION"
 
     ## create report of misclassifications of POS by the model
-    predicterrors(predLR,Xtest,Ytest,fit_params,testwordlist,testtaglist,idx2tag,word2idx,headingpython pos_markov.py,train_time,console_output=False,web_rpt=True)
+    predicterrors(predLR,Xtest,Ytest,fit_params,testwordlist,testtaglist,idx2tag,word2idx,heading,train_time,console_output=False,web_rpt=True)
 
 if __name__ == '__main__':
     main()
