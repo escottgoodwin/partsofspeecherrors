@@ -2,7 +2,7 @@ import numpy as np
 import theano
 import theano.tensor as T
 from sklearn.utils import shuffle
-from predict_errors1 import predicterrors
+from predict_errors2 import predicterrors
 from get_data import get_data_error
 from datetime import datetime
 
@@ -95,7 +95,7 @@ def main():
 
     # train and score
     model = LogisticRegression()
-    model.fit(Xtrain, Ytrain, V=V,epochs=10)
+    model.fit(Xtrain, Ytrain, V=V,epochs=5)
 
     print("mu: ", model.mu," learing rate: ", model.lr," epochs: ", model.epochs)
 
@@ -109,7 +109,7 @@ def main():
     heading = "LOGISTIC REGRESSION"
 
     ## create report of misclassifications of POS by the model
-    predicterrors(predLR,Xtest,Ytest,fit_params,testwordlist,testtaglist,idx2tag,word2idx,heading,train_time,console_output=False,web_rpt=True)
+    predicterrors(predLR,Xtest,Ytest,fit_params,testwordlist,testtaglist,idx2tag,word2idx,heading,train_time,browser=True)
 
 if __name__ == '__main__':
     main()

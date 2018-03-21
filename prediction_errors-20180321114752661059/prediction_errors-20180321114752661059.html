@@ -1,0 +1,1338 @@
+<!DOCTYPE html>
+    <html lang="en">
+    <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>
+    LOGISTIC REGRESSION - MU: 0.99 LEARNING RATE: 0.1 EPOCHS: 5ERRORS  - 20180321114752661059</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <style type="text/css">
+    .bs-example{
+    margin: 20px;
+    padding-top:50px;
+    }
+    .nav {
+    background-color: #FFFFFF;
+    }
+    img {
+    max-width: 100%;
+    max-height: 100%;
+    }
+
+    </style>
+    </head>
+    <body data-spy="scroll" data-target=".nav" data-offset="50">
+
+    <div class="bs-example">
+    <p>LOGISTIC REGRESSION - MU: 0.99 LEARNING RATE: 0.1 EPOCHS: 5 ERROR REPORT - 20180321114752661059<br>TRAIN TIME: 0:01:21.920772<br>PERCENT WRONG PREDICTIONS: 0.11830635118306351<br>PERCENT OF KNOWN WORDS PREDICTED CORRECTLY: 0.9342257515598412<br>PERCENT KNOWN WORDS PREDICTED INCORRECTLY: 0.06577424844015882<br>PERCENT OF UNKNOWN WORDS PREDICTED CORRECTLY: 0.18049666868564507<br>PERCENT UNKNOWN WORDS PREDICTED INCORRECTLY: 0.8195033313143549<br>PERCENT OF ERRORS - KNOWN WORDS: 0.5172167707404104<br>PERCENT OF ERRORS - UNKNOWN WORDS: 0.48278322925958966</p><ul class="nav nav-tabs navbar-fixed-top">
+        <li class="active"><a data-toggle="tab" href="#all_errors">ALL ERRORS</a></li>
+        <li><a data-toggle="tab" href="#known_errors">KNOWN ERRORS</a></li>
+        <li><a data-toggle="tab" href="#unknown_errors">UNKNOWN ERRORS</a></li>
+        <li><a data-toggle="tab" href="#all_types">ERROR PERCENT BY POS TYPE</a></li>
+
+    </ul>
+
+
+    <div class="tab-content">
+        <div id="all_errors" class="tab-pane fade in active">
+         <a data-toggle="tab" href="#chart_all_errors">Bar Graph</a><br>
+    <p>ALL WORD ERRORS<br><table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th>(CORRECT/PREDICTION)</th>
+      <th>OCCURENCES</th>
+      <th>% OF ERRORS</th>
+      <th>% OF ALL PREDICTIONS</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>(NNP, NN)</td>
+      <td>1109</td>
+      <td>0.197859</td>
+      <td>0.023408</td>
+    </tr>
+    <tr>
+      <td>(JJ, NN)</td>
+      <td>590</td>
+      <td>0.105263</td>
+      <td>0.012453</td>
+    </tr>
+    <tr>
+      <td>(NNS, NN)</td>
+      <td>545</td>
+      <td>0.097235</td>
+      <td>0.011503</td>
+    </tr>
+    <tr>
+      <td>(VB, NN)</td>
+      <td>424</td>
+      <td>0.075647</td>
+      <td>0.008949</td>
+    </tr>
+    <tr>
+      <td>(CD, NN)</td>
+      <td>411</td>
+      <td>0.073327</td>
+      <td>0.008675</td>
+    </tr>
+    <tr>
+      <td>(VBN, NN)</td>
+      <td>272</td>
+      <td>0.048528</td>
+      <td>0.005741</td>
+    </tr>
+    <tr>
+      <td>(VBG, NN)</td>
+      <td>242</td>
+      <td>0.043176</td>
+      <td>0.005108</td>
+    </tr>
+    <tr>
+      <td>(VBD, VBN)</td>
+      <td>162</td>
+      <td>0.028903</td>
+      <td>0.003419</td>
+    </tr>
+    <tr>
+      <td>(RB, NN)</td>
+      <td>159</td>
+      <td>0.028368</td>
+      <td>0.003356</td>
+    </tr>
+    <tr>
+      <td>(VBD, NN)</td>
+      <td>159</td>
+      <td>0.028368</td>
+      <td>0.003356</td>
+    </tr>
+    <tr>
+      <td>(VBN, VBD)</td>
+      <td>141</td>
+      <td>0.025156</td>
+      <td>0.002976</td>
+    </tr>
+    <tr>
+      <td>(VBP, VB)</td>
+      <td>123</td>
+      <td>0.021945</td>
+      <td>0.002596</td>
+    </tr>
+    <tr>
+      <td>(VBZ, NN)</td>
+      <td>110</td>
+      <td>0.019625</td>
+      <td>0.002322</td>
+    </tr>
+    <tr>
+      <td>(NN, VB)</td>
+      <td>102</td>
+      <td>0.018198</td>
+      <td>0.002153</td>
+    </tr>
+    <tr>
+      <td>(WDT, IN)</td>
+      <td>95</td>
+      <td>0.016949</td>
+      <td>0.002005</td>
+    </tr>
+    <tr>
+      <td>(VBP, NN)</td>
+      <td>87</td>
+      <td>0.015522</td>
+      <td>0.001836</td>
+    </tr>
+    <tr>
+      <td>(NN, JJ)</td>
+      <td>87</td>
+      <td>0.015522</td>
+      <td>0.001836</td>
+    </tr>
+    <tr>
+      <td>(VB, VBP)</td>
+      <td>80</td>
+      <td>0.014273</td>
+      <td>0.001689</td>
+    </tr>
+    <tr>
+      <td>(NNPS, NN)</td>
+      <td>75</td>
+      <td>0.013381</td>
+      <td>0.001583</td>
+    </tr>
+    <tr>
+      <td>(RB, IN)</td>
+      <td>71</td>
+      <td>0.012667</td>
+      <td>0.001499</td>
+    </tr>
+    <tr>
+      <td>(JJ, NNP)</td>
+      <td>65</td>
+      <td>0.011597</td>
+      <td>0.001372</td>
+    </tr>
+    <tr>
+      <td>(VBZ, NNS)</td>
+      <td>48</td>
+      <td>0.008564</td>
+      <td>0.001013</td>
+    </tr>
+    <tr>
+      <td>(DT, IN)</td>
+      <td>40</td>
+      <td>0.007136</td>
+      <td>0.000844</td>
+    </tr>
+    <tr>
+      <td>(RBR, JJR)</td>
+      <td>38</td>
+      <td>0.006780</td>
+      <td>0.000802</td>
+    </tr>
+    <tr>
+      <td>(VBZ, POS)</td>
+      <td>28</td>
+      <td>0.004996</td>
+      <td>0.000591</td>
+    </tr>
+    <tr>
+      <td>(JJR, NN)</td>
+      <td>26</td>
+      <td>0.004639</td>
+      <td>0.000549</td>
+    </tr>
+    <tr>
+      <td>(RB, JJ)</td>
+      <td>24</td>
+      <td>0.004282</td>
+      <td>0.000507</td>
+    </tr>
+    <tr>
+      <td>(JJ, RB)</td>
+      <td>21</td>
+      <td>0.003747</td>
+      <td>0.000443</td>
+    </tr>
+    <tr>
+      <td>(VB, JJ)</td>
+      <td>20</td>
+      <td>0.003568</td>
+      <td>0.000422</td>
+    </tr>
+    <tr>
+      <td>(NNPS, NNP)</td>
+      <td>19</td>
+      <td>0.003390</td>
+      <td>0.000401</td>
+    </tr>
+    <tr>
+      <td>(NN, VBG)</td>
+      <td>15</td>
+      <td>0.002676</td>
+      <td>0.000317</td>
+    </tr>
+    <tr>
+      <td>(NN, NNP)</td>
+      <td>14</td>
+      <td>0.002498</td>
+      <td>0.000296</td>
+    </tr>
+    <tr>
+      <td>(NNP, JJ)</td>
+      <td>14</td>
+      <td>0.002498</td>
+      <td>0.000296</td>
+    </tr>
+    <tr>
+      <td>(CC, NN)</td>
+      <td>13</td>
+      <td>0.002319</td>
+      <td>0.000274</td>
+    </tr>
+    <tr>
+      <td>(IN, NN)</td>
+      <td>11</td>
+      <td>0.001963</td>
+      <td>0.000232</td>
+    </tr>
+    <tr>
+      <td>(JJS, NN)</td>
+      <td>11</td>
+      <td>0.001963</td>
+      <td>0.000232</td>
+    </tr>
+    <tr>
+      <td>(DT, NN)</td>
+      <td>9</td>
+      <td>0.001606</td>
+      <td>0.000190</td>
+    </tr>
+    <tr>
+      <td>(RB, DT)</td>
+      <td>9</td>
+      <td>0.001606</td>
+      <td>0.000190</td>
+    </tr>
+    <tr>
+      <td>(VBN, VB)</td>
+      <td>9</td>
+      <td>0.001606</td>
+      <td>0.000190</td>
+    </tr>
+    <tr>
+      <td>(NNS, VBZ)</td>
+      <td>9</td>
+      <td>0.001606</td>
+      <td>0.000190</td>
+    </tr>
+    <tr>
+      <td>(WP, NN)</td>
+      <td>8</td>
+      <td>0.001427</td>
+      <td>0.000169</td>
+    </tr>
+    <tr>
+      <td>(RP, IN)</td>
+      <td>8</td>
+      <td>0.001427</td>
+      <td>0.000169</td>
+    </tr>
+    <tr>
+      <td>(PRP, NN)</td>
+      <td>7</td>
+      <td>0.001249</td>
+      <td>0.000148</td>
+    </tr>
+    <tr>
+      <td>(PDT, NN)</td>
+      <td>6</td>
+      <td>0.001070</td>
+      <td>0.000127</td>
+    </tr>
+    <tr>
+      <td>(MD, NN)</td>
+      <td>6</td>
+      <td>0.001070</td>
+      <td>0.000127</td>
+    </tr>
+    <tr>
+      <td>('', POS)</td>
+      <td>5</td>
+      <td>0.000892</td>
+      <td>0.000106</td>
+    </tr>
+    <tr>
+      <td>(NNP, NNPS)</td>
+      <td>5</td>
+      <td>0.000892</td>
+      <td>0.000106</td>
+    </tr>
+    <tr>
+      <td>(RB, VB)</td>
+      <td>5</td>
+      <td>0.000892</td>
+      <td>0.000106</td>
+    </tr>
+    <tr>
+      <td>(NNS, NNP)</td>
+      <td>5</td>
+      <td>0.000892</td>
+      <td>0.000106</td>
+    </tr>
+    <tr>
+      <td>(VB, VBN)</td>
+      <td>5</td>
+      <td>0.000892</td>
+      <td>0.000106</td>
+    </tr>
+    <tr>
+      <td>(PDT, DT)</td>
+      <td>4</td>
+      <td>0.000714</td>
+      <td>0.000084</td>
+    </tr>
+    <tr>
+      <td>(JJR, RBR)</td>
+      <td>4</td>
+      <td>0.000714</td>
+      <td>0.000084</td>
+    </tr>
+    <tr>
+      <td>(VB, IN)</td>
+      <td>4</td>
+      <td>0.000714</td>
+      <td>0.000084</td>
+    </tr>
+    <tr>
+      <td>(RP, RB)</td>
+      <td>4</td>
+      <td>0.000714</td>
+      <td>0.000084</td>
+    </tr>
+    <tr>
+      <td>(WRB, NN)</td>
+      <td>4</td>
+      <td>0.000714</td>
+      <td>0.000084</td>
+    </tr>
+    <tr>
+      <td>($, NN)</td>
+      <td>3</td>
+      <td>0.000535</td>
+      <td>0.000063</td>
+    </tr>
+    <tr>
+      <td>(NNP, NNS)</td>
+      <td>3</td>
+      <td>0.000535</td>
+      <td>0.000063</td>
+    </tr>
+    <tr>
+      <td>(FW, NN)</td>
+      <td>3</td>
+      <td>0.000535</td>
+      <td>0.000063</td>
+    </tr>
+    <tr>
+      <td>(RBR, NN)</td>
+      <td>3</td>
+      <td>0.000535</td>
+      <td>0.000063</td>
+    </tr>
+    <tr>
+      <td>(NN, IN)</td>
+      <td>3</td>
+      <td>0.000535</td>
+      <td>0.000063</td>
+    </tr>
+    <tr>
+      <td>(UH, NN)</td>
+      <td>2</td>
+      <td>0.000357</td>
+      <td>0.000042</td>
+    </tr>
+    <tr>
+      <td>(IN, RB)</td>
+      <td>2</td>
+      <td>0.000357</td>
+      <td>0.000042</td>
+    </tr>
+    <tr>
+      <td>(JJS, NNP)</td>
+      <td>2</td>
+      <td>0.000357</td>
+      <td>0.000042</td>
+    </tr>
+    <tr>
+      <td>(NN, VBN)</td>
+      <td>2</td>
+      <td>0.000357</td>
+      <td>0.000042</td>
+    </tr>
+    <tr>
+      <td>(NN, VBP)</td>
+      <td>2</td>
+      <td>0.000357</td>
+      <td>0.000042</td>
+    </tr>
+    <tr>
+      <td>(NNS, NNPS)</td>
+      <td>2</td>
+      <td>0.000357</td>
+      <td>0.000042</td>
+    </tr>
+    <tr>
+      <td>(RB, EX)</td>
+      <td>2</td>
+      <td>0.000357</td>
+      <td>0.000042</td>
+    </tr>
+    <tr>
+      <td>(RBS, NN)</td>
+      <td>1</td>
+      <td>0.000178</td>
+      <td>0.000021</td>
+    </tr>
+    <tr>
+      <td>(PRP$, NN)</td>
+      <td>1</td>
+      <td>0.000178</td>
+      <td>0.000021</td>
+    </tr>
+    <tr>
+      <td>(NN, MD)</td>
+      <td>1</td>
+      <td>0.000178</td>
+      <td>0.000021</td>
+    </tr>
+    <tr>
+      <td>(RB, NNP)</td>
+      <td>1</td>
+      <td>0.000178</td>
+      <td>0.000021</td>
+    </tr>
+    <tr>
+      <td>(RBR, JJ)</td>
+      <td>1</td>
+      <td>0.000178</td>
+      <td>0.000021</td>
+    </tr>
+    <tr>
+      <td>(IN, DT)</td>
+      <td>1</td>
+      <td>0.000178</td>
+      <td>0.000021</td>
+    </tr>
+    <tr>
+      <td>(WDT, NN)</td>
+      <td>1</td>
+      <td>0.000178</td>
+      <td>0.000021</td>
+    </tr>
+    <tr>
+      <td>(VB, VBD)</td>
+      <td>1</td>
+      <td>0.000178</td>
+      <td>0.000021</td>
+    </tr>
+    <tr>
+      <td>(PRP, CD)</td>
+      <td>1</td>
+      <td>0.000178</td>
+      <td>0.000021</td>
+    </tr>
+  </tbody>
+</table></p><p>LOGISTIC REGRESSION - ALL WORD ERRORS - MISCLASS TYPE (CORRECT/PREDICTION): ('NNP', 'NN')<br>OCCURENCES: 1109 PERCENT OF ERRORS: 0.19785905441570026 PERCENT OF ALL PREDICTIONS 0.02340798<br>WORDS IN TYPE: </p><p>Zimbabwe&emsp;Facilities&emsp;Honiss&emsp;Guide&emsp;Audit&emsp;Reduced&emsp;Cyber&emsp;Border&emsp;Carbide&emsp;Singh&emsp;Hyde&emsp;Cardiac&emsp;Golar&emsp;Vanderbilt&emsp;Corning&emsp;CIT&emsp;Redfield&emsp;Wilson&emsp;Amado&emsp;Moertel&emsp;CRAF-Cassini&emsp;Hurtado&emsp;Carlson&emsp;Waxman&emsp;Yanes&emsp;Dada&emsp;Brigade&emsp;Symbolist&emsp;MetWest&emsp;Conlon&emsp;Blot&emsp;Sigoloff&emsp;Chaos&emsp;Revisited&emsp;Confederation&emsp;Kyoto&emsp;Sloan&emsp;Globe&emsp;Rene&emsp;SBA&emsp;B.F.&emsp;Nova&emsp;Haas&emsp;LIBERTY&emsp;Manpower&emsp;G-7&emsp;RISC&emsp;Province&emsp;SHEARSON&emsp;Willard&emsp;M.B.A.&emsp;Clark&emsp;Internet&emsp;Dannemiller&emsp;Hawkins&emsp;A&P&emsp;Commoner&emsp;SCUD&emsp;Delphi&emsp;Boehringer&emsp;Barret&emsp;Bhabani&emsp;Tickell&emsp;Opositora&emsp;Shultz&emsp;Peninsula&emsp;Carlyle&emsp;Byron&emsp;Automotive&emsp;Ayala&emsp;PX&emsp;Omnibank&emsp;Shearon&emsp;U.N.&emsp;Ellmann&emsp;Moises&emsp;Leisure&emsp;Alpha&emsp;Manson&emsp;Floyd&emsp;Revenue&emsp;N.D&emsp;JAGRY&emsp;McDermott&emsp;Arnott&emsp;Fraumeni&emsp;Zipper&emsp;Jewelery&emsp;HUGO&emsp;Gramm&emsp;Liberty&emsp;Ryzhkov&emsp;Certs&emsp;Lance&emsp;Houghton&emsp;Lopid&emsp;Ga&emsp;Yuli&emsp;R.H.&emsp;Permanente&emsp;Key&emsp;Butte&emsp;Harlow&emsp;Pee&emsp;Abrams&emsp;NESB&emsp;Hathcock&emsp;Elizabeth&emsp;Federated&emsp;Edelman&emsp;Innovation&emsp;Jelenic&emsp;Delhi&emsp;Duvalier&emsp;Irian&emsp;Campo&emsp;Butter-Nut&emsp;Bonita&emsp;Goodrich&emsp;Scotia&emsp;Constance&emsp;Nichols&emsp;MacMillan&emsp;Dilzem&emsp;Ventes&emsp;Madden&emsp;BLOEDEL&emsp;SKF&emsp;Chestman&emsp;McCain&emsp;Banxquote&emsp;Norma&emsp;Vivien&emsp;Vicky&emsp;Wildlife&emsp;DeConcini&emsp;Fitzwilliams&emsp;Reuter&emsp;Aswara&emsp;C-S&emsp;MACMILLAN&emsp;McCollum&emsp;Indianapolis&emsp;Zone&emsp;Activities&emsp;Hybritech&emsp;Jath&emsp;Analysis&emsp;Pina&emsp;Mevacor&emsp;CACI&emsp;5th&emsp;Dravo&emsp;DFC&emsp;Shared&emsp;Genetics&emsp;Loeb&emsp;Gaskin&emsp;Wald&emsp;Weyerhaeuser&emsp;Matra&emsp;Newt&emsp;Ali&emsp;Capt.&emsp;Meador&emsp;Networks&emsp;president&emsp;Tele-Communications&emsp;Tupperware&emsp;Spadafora&emsp;MicroGeneSys&emsp;Pet&emsp;Astronomy&emsp;Prab&emsp;Cooperation&emsp;OWNER&emsp;Sherman&emsp;HBO&emsp;TVA&emsp;Capra&emsp;BroadBeach&emsp;A.C.&emsp;Attridge&emsp;Chorrillos&emsp;Zamya&emsp;Leninskoye&emsp;Sundarji&emsp;Jaya&emsp;Kristiansen&emsp;Ackerman&emsp;Firearms&emsp;B\/T&emsp;Winston&emsp;Indira&emsp;Barnicle&emsp;Langton&emsp;Blumenthal&emsp;Smale&emsp;Provident&emsp;Revolution&emsp;Diagnostic&emsp;Canoga&emsp;Geary&emsp;Stoll&emsp;Afghanistan\/Southwest&emsp;Cranston&emsp;LIVESTOCK&emsp;Jocelyn&emsp;Roseanne&emsp;Rev.&emsp;Mehta&emsp;Skoal&emsp;Amstrad&emsp;Cicero&emsp;Smetek&emsp;Pell&emsp;UPJOHN&emsp;Computerworld&emsp;Shipping&emsp;Helms&emsp;Departmentstore&emsp;Samsung-Corning&emsp;Ryder&emsp;Lok&emsp;Doug&emsp;Prentice&emsp;Smoking&emsp;Braitman&emsp;Media&emsp;Gene&emsp;Ittleson&emsp;Arrow&emsp;Gupta&emsp;Highlander&emsp;Physics&emsp;Skokie&emsp;Carr&emsp;Maria&emsp;Colucci&emsp;Swasey&emsp;Deaths&emsp;Ajax&emsp;McDonough&emsp;Coan&emsp;Spaced&emsp;Cities\/ABC&emsp;Averae&emsp;Goloven&emsp;Prozac&emsp;Keating&emsp;Electoral&emsp;Alaska&emsp;Warner-Lambert&emsp;Applebaum&emsp;SDI&emsp;Bangladesh&emsp;Waldbaum&emsp;Grisebach&emsp;Cinemax&emsp;Universal-Rundle&emsp;Norberto&emsp;Rolaids&emsp;Kadonada&emsp;Crispin&emsp;Toros&emsp;Hachette&emsp;Lausanne&emsp;Rifle&emsp;Ardito&emsp;Tobacco&emsp;Leahy&emsp;Sukhoi&emsp;Rachel&emsp;Giroldi&emsp;Starr&emsp;RBS&emsp;Saved&emsp;Bloedel&emsp;Plains&emsp;Rockwell&emsp;Hearing&emsp;Robots&emsp;Elkhorn&emsp;O'Rourke&emsp;Nickelodeon&emsp;DWG&emsp;Brozman&emsp;Colon&emsp;Maj.&emsp;Scudder&emsp;McKinney&emsp;KGB&emsp;Dirks&emsp;Merksamer&emsp;Leuzzi&emsp;Carmel&emsp;Mission&emsp;Daniels&emsp;Berger&emsp;Curtin&emsp;Briggs&emsp;Indonesia&emsp;Stansfield&emsp;Bond&emsp;DEA&emsp;Calderwood&emsp;L.P.&emsp;Carlucci&emsp;Quadrant&emsp;Bocas&emsp;Smithsonian&emsp;Clinic&emsp;KCRA&emsp;Kandahar&emsp;Christine&emsp;Trace&emsp;Bella&emsp;Devesa&emsp;Archer-Daniels-Midland&emsp;Tanner&emsp;Wallop&emsp;Cara&emsp;Rodrigo&emsp;Daisy&emsp;Everett&emsp;Steptoe&emsp;Oncor&emsp;HIV-1&emsp;Olof&emsp;Mandle&emsp;Hindu&emsp;Jalalabad&emsp;Cunin&emsp;Zimbabwean&emsp;UAL'S&emsp;Antwerp&emsp;Carson&emsp;Antonio&emsp;Bofors&emsp;Natural&emsp;Neck&emsp;Halls&emsp;Omar&emsp;Enviropact&emsp;Stahl&emsp;Intelogic&emsp;TCI&emsp;Windsor&emsp;Crested&emsp;Institution&emsp;Zia&emsp;Merryman&emsp;Tina&emsp;Wittgreen&emsp;Stefan&emsp;Dubois&emsp;Stjernsward&emsp;Elliot&emsp;Biking&emsp;Mulvoy&emsp;Akron&emsp;Howie&emsp;Percival&emsp;Siegel&emsp;Sobey&emsp;ISI&emsp;SPAN&emsp;Gandhi&emsp;Rajiv&emsp;Endowment&emsp;Barletta&emsp;Arden&emsp;Trinity&emsp;Kafaroff&emsp;Sooraji&emsp;Gaithersburg&emsp;RobertsCorp&emsp;Rival&emsp;Masaaki&emsp;Chimanbhai&emsp;Nogales&emsp;Ambler&emsp;Melvyn&emsp;Hasenauer&emsp;Murata&emsp;Homeowner&emsp;Interior&emsp;Dinsa&emsp;Bearings&emsp;Clifton&emsp;Friendly&emsp;Abe&emsp;Motorized&emsp;Asher&emsp;Sole&emsp;Cablevision&emsp;Ind&emsp;External&emsp;Tockman&emsp;Regional&emsp;Jesse&emsp;Tartikoff&emsp;Mr&emsp;Laux&emsp;Sonja&emsp;Birinyi&emsp;Clean&emsp;Henderson&emsp;Shi'ite&emsp;Weisel&emsp;Bangkok&emsp;Ziebarth&emsp;DeVon&emsp;Trail&emsp;Commissioner&emsp;Surgeon&emsp;Boskin&emsp;Wallace&emsp;Hygiene&emsp;Gaffney&emsp;Balcor&emsp;Jewelers&emsp;Minn&emsp;Thurmond&emsp;Venezuela&emsp;Fat&emsp;CoreStates&emsp;Coffee&emsp;Linear&emsp;Integrated&emsp;Malone&emsp;Lasker&emsp;Keshtmand&emsp;VaxSyn&emsp;Sandoz&emsp;Bike&emsp;Reinforced&emsp;Wyndham&emsp;Monica&emsp;Lorenzo&emsp;Dade&emsp;Sierra&emsp;Womack&emsp;Wee&emsp;Sabha&emsp;Bragg&emsp;Oakes&emsp;Biondi&emsp;Parsow&emsp;Ludcke&emsp;Vishwanath&emsp;Yaohan&emsp;Lovejoy&emsp;Aldomet&emsp;Channel&emsp;Dederick&emsp;Kueneke&emsp;Hekhmatyar&emsp;Coors&emsp;Beatrice&emsp;Karate&emsp;Ward&emsp;Publications&emsp;Rothe&emsp;Kid&emsp;Shields&emsp;Bee&emsp;Tarzana&emsp;minister&emsp;Population&emsp;Armuelles&emsp;Malpass&emsp;Somoza&emsp;Sale&emsp;470th&emsp;McCoy&emsp;Meyers&emsp;Mead&emsp;Diaz&emsp;Ratners&emsp;GUN&emsp;Norcross&emsp;Guardia&emsp;Clorets&emsp;Gotaas-Larsen&emsp;Consumer&emsp;Manville&emsp;Nicholas&emsp;Doc&emsp;Shidler&emsp;Louvre&emsp;Carlton&emsp;SMALL&emsp;PVC&emsp;Coatedboard&emsp;Dorgan&emsp;Eskenazi&emsp;Motley&emsp;Off-Road&emsp;Wars&emsp;Honolulu&emsp;Ingersoll&emsp;Environment&emsp;Villa&emsp;AIDS&emsp;Trecker&emsp;Nacional&emsp;Culture&emsp;Osborn&emsp;Boyd&emsp;U.S.-U.S.S.R.&emsp;McHenry&emsp;Miranda&emsp;Obey&emsp;Weekes&emsp;Horn&emsp;Movie&emsp;LEHMAN&emsp;McFall&emsp;Burry&emsp;APMS&emsp;PRISON-SHOP&emsp;Ely&emsp;Darien&emsp;Roberto&emsp;Milpitas&emsp;55-year-old&emsp;Broadway&emsp;FH-77B&emsp;UBS-Phillips&emsp;Daze&emsp;Anastasio&emsp;single-B-3&emsp;Klass&emsp;Col.&emsp;ABC-TV&emsp;Arpanet&emsp;Torrijos&emsp;Boudreau&emsp;Alf&emsp;Belgium&emsp;Beantown&emsp;Castro&emsp;Pepper&emsp;MIPs&emsp;Dominant&emsp;Carole&emsp;Bakes&emsp;Military&emsp;Leaseway&emsp;Mannheim&emsp;Oregon&emsp;LaMore&emsp;Wilpers&emsp;Rockefeller&emsp;Kagan&emsp;Edzard&emsp;Sultan&emsp;Frankenstein&emsp;Duty&emsp;Silent&emsp;Datapoint&emsp;HUGO'S&emsp;Staley&emsp;Box&emsp;Indocin&emsp;Hollander&emsp;Strom&emsp;Ehrlich&emsp;Riegle&emsp;Scientific&emsp;Chiriqui&emsp;Brooks&emsp;Hamilton&emsp;Lindsey&emsp;Bloomfield&emsp;Minority&emsp;Keynes&emsp;Valparaiso&emsp;Intermec&emsp;PNC&emsp;Macy&emsp;Gulick&emsp;Mehl&emsp;Nature&emsp;Daikin&emsp;Bickwit&emsp;Ramirez&emsp;Morristown&emsp;Seaboard&emsp;Brandon&emsp;Rohm&emsp;EPO&emsp;Arlington&emsp;Industry&emsp;McGill&emsp;Rosenbach&emsp;Gingrich&emsp;Cox&emsp;TALK&emsp;Freeman&emsp;Leonard&emsp;Lubriderm&emsp;Vorontsov&emsp;Lt.&emsp;Nations&emsp;A&W&emsp;Regal&emsp;Kendall&emsp;Week&emsp;Jan&emsp;Blandon&emsp;Herrera&emsp;NCI&emsp;Lima&emsp;Palme&emsp;Pratap&emsp;CFTC&emsp;CNBC&emsp;Planet&emsp;Intertan&emsp;Gromov&emsp;Pulp&emsp;Lees&emsp;Luis&emsp;Bicycling&emsp;Shaughnessy&emsp;Machinery&emsp;Unilab&emsp;Waldorf&emsp;Handy&emsp;Game&emsp;Morelli&emsp;Stoddard&emsp;Yoneyama&emsp;Conservative&emsp;VAX\/VMS&emsp;Mayo&emsp;Fiala&emsp;Tomkin&emsp;Laszlo&emsp;Krishnaswami&emsp;Gulbuddin&emsp;Wertheimer&emsp;JUMPING&emsp;Rahway&emsp;Environmentalism&emsp;Mich&emsp;Bunny&emsp;McKay&emsp;Wiedemann&emsp;Horta&emsp;Vermont&emsp;Muzak&emsp;Alpharetta&emsp;Managing&emsp;HUTTON&emsp;M.D&emsp;Mudd&emsp;Nikolai&emsp;Damonne&emsp;</p><p>LOGISTIC REGRESSION - ALL WORD ERRORS - MISCLASS TYPE (CORRECT/PREDICTION): ('JJ', 'NN')<br>OCCURENCES: 590 PERCENT OF ERRORS: 0.10526315789473684 PERCENT OF ALL PREDICTIONS 0.01245330<br>WORDS IN TYPE: </p><p>investment-bank&emsp;dependent&emsp;underground&emsp;big-selling&emsp;remorseful&emsp;clean-air&emsp;abortive&emsp;Excise-tax&emsp;noncumulative&emsp;axiomatic&emsp;motorized&emsp;30-minute&emsp;auction-fee&emsp;Late&emsp;elementary&emsp;lenient&emsp;skillful&emsp;anti-communist&emsp;dealer-led&emsp;unpaid&emsp;intimate&emsp;multilateral&emsp;on-again&emsp;elegant&emsp;witching&emsp;aft&emsp;suitable&emsp;rocky&emsp;mysterious&emsp;prescriptive&emsp;inflated&emsp;socalled&emsp;tortuous&emsp;high-performance&emsp;scandal-ridden&emsp;well-paid&emsp;national-priority&emsp;Animated&emsp;line-drawing&emsp;discernible&emsp;six-year-old&emsp;anti-Noriega&emsp;hardworking&emsp;disparate&emsp;ONE-DAY&emsp;divisive&emsp;musical&emsp;prominent&emsp;uninfected&emsp;scary&emsp;IMF-approved&emsp;bloody-minded&emsp;takeover-stock&emsp;RISC-based&emsp;wider-than-expected&emsp;imperial&emsp;first-nine-month&emsp;white-collar&emsp;year-before&emsp;aborted&emsp;employment-tax&emsp;computer-driven&emsp;5-fluorouracil&emsp;high-speed&emsp;experimental&emsp;petty&emsp;Paris-based&emsp;72-a-share&emsp;ingenious&emsp;brave&emsp;grave&emsp;high-altitude&emsp;instrumental&emsp;jumbo&emsp;pockmarked&emsp;generalpurpose&emsp;prosecutorial&emsp;space-based&emsp;Tentative&emsp;Keynesian&emsp;anti-bike&emsp;62-a-share&emsp;unmarked&emsp;leveraged-buy-out&emsp;anti-smoking&emsp;lawmaking&emsp;counter-intelligence&emsp;immense&emsp;tax-collecting&emsp;state-of-the-art&emsp;employerpaid&emsp;ominous&emsp;60.25-point&emsp;well-intentioned&emsp;terrestrial&emsp;public-land&emsp;terrain-marring&emsp;inseparable&emsp;wayward&emsp;crippling&emsp;civilian&emsp;Soviet-controlled&emsp;incoherent&emsp;unguided&emsp;workable&emsp;grateful&emsp;much-publicized&emsp;apocalyptic&emsp;notebook-sized&emsp;seedy&emsp;heavy-handed&emsp;Enormous&emsp;compelling&emsp;unsettled&emsp;parliamentary&emsp;fat-tired&emsp;azure&emsp;contractual&emsp;carcinogenic&emsp;rugged&emsp;case-by-case&emsp;affordable&emsp;specialty-material&emsp;19-month&emsp;substantive&emsp;Strong&emsp;choppy&emsp;tree-farming&emsp;futures-trading&emsp;anti-nuclear&emsp;quarter-to-quarter&emsp;prisoner-made&emsp;foggy&emsp;inexorable&emsp;World-wide&emsp;exceptional&emsp;Further&emsp;cardiovascular&emsp;French-modeled&emsp;120-a-share&emsp;operational&emsp;commendable&emsp;off-base&emsp;45-year-old&emsp;resentful&emsp;vague&emsp;estate-tax&emsp;disruptive&emsp;non-Indian&emsp;present-day&emsp;unhappy&emsp;worst-performing&emsp;conditional&emsp;tidy&emsp;coffee-roasting&emsp;highest-rated&emsp;11-a-share&emsp;anti-homosexual&emsp;takeover-related&emsp;liquid&emsp;foremost&emsp;erroneous&emsp;hybrid&emsp;bloody&emsp;business-as-usual&emsp;50-point&emsp;Legitimate&emsp;broker-sold&emsp;Computer-guided&emsp;animated&emsp;byzantine&emsp;alternative-fueled&emsp;Texas-based&emsp;thirdquarter&emsp;heady&emsp;diagnostic&emsp;addictive&emsp;age-specific&emsp;64-35&emsp;fruitless&emsp;infelicitous&emsp;hard-bitten&emsp;well-off&emsp;reschedulable&emsp;25-million-share&emsp;all-out&emsp;26-week&emsp;cleaner-burning&emsp;Confectionery&emsp;blue-ribbon&emsp;well-born&emsp;occasional&emsp;dual&emsp;10-month&emsp;judicial&emsp;Taiwanese&emsp;medical-leave&emsp;ingrained&emsp;rental&emsp;anti-aircraft&emsp;Local&emsp;unsuspecting&emsp;incredible&emsp;cross-border&emsp;clean&emsp;voracious&emsp;parental&emsp;now-shaky&emsp;reclusive&emsp;strategic-arms&emsp;de-facto&emsp;developing-country&emsp;previous-year&emsp;naked&emsp;cholesterol-lowering&emsp;facial&emsp;gun-running&emsp;youthful&emsp;disinflationary&emsp;power-transmission&emsp;genetic&emsp;primitive&emsp;100-stock&emsp;chinless&emsp;60%-held&emsp;radical&emsp;knowledgeable&emsp;far-reaching&emsp;one-sentence&emsp;underprivileged&emsp;banana-exporting&emsp;indistinguishable&emsp;uninhabitable&emsp;Ordinary&emsp;news-oriented&emsp;shadowy&emsp;Senate-passed&emsp;bipartisan&emsp;misguided&emsp;stripped-down&emsp;court-appointed&emsp;business-to-business&emsp;multi-gear&emsp;whipsaw&emsp;fitness-promoting&emsp;scaled-down&emsp;humanitarian&emsp;88.12-point&emsp;ardent&emsp;antisocial&emsp;mortgage-backed&emsp;quantitative&emsp;16th&emsp;11-2&emsp;statutory&emsp;shocking&emsp;eighth&emsp;13-point&emsp;unrelated&emsp;ambiguous&emsp;155-mm&emsp;off-road&emsp;washable&emsp;long-range&emsp;opposite&emsp;one-hour&emsp;gargantuan&emsp;brief&emsp;Soviet-trained&emsp;inconclusive&emsp;After-the-fact&emsp;inter-American&emsp;vain&emsp;Unknown&emsp;N.Y.-based&emsp;extreme&emsp;multiple-use&emsp;nonfinancial&emsp;resourceful&emsp;overdue&emsp;Ohio-based&emsp;Seattle-based&emsp;public-health&emsp;businesslike&emsp;high-visibility&emsp;sizzling&emsp;corrupt&emsp;triple&emsp;electronic-measuring&emsp;non-trade&emsp;high-level&emsp;medical-instrument&emsp;fabulous&emsp;tailor-made&emsp;alternate&emsp;undeniable&emsp;finanicial&emsp;California-based&emsp;sorry&emsp;irrevocable&emsp;subsidized&emsp;implicit&emsp;acrimonious&emsp;lifelong&emsp;ceramic&emsp;leftist&emsp;mediocre&emsp;off-again&emsp;Francisco-area&emsp;48-year&emsp;18th&emsp;non-interest&emsp;smooth&emsp;two-month&emsp;disgusting&emsp;episodic&emsp;brutal&emsp;consistent&emsp;private-sector&emsp;unfulfilled&emsp;Anti-nuclear&emsp;antagonistic&emsp;truthful&emsp;outspoken&emsp;comparative&emsp;upper&emsp;shaky&emsp;unread&emsp;49%-owned&emsp;separatist&emsp;inaccessible&emsp;superior&emsp;non-prescription&emsp;hand-sized&emsp;inadequate&emsp;record-breaking&emsp;murky&emsp;impenetrable&emsp;unidentified&emsp;investigative&emsp;drunk&emsp;trading-oriented&emsp;pre-sale&emsp;flush&emsp;day-long&emsp;Fiscal-year&emsp;multibillion-dollar&emsp;boring&emsp;Colombian&emsp;inverse&emsp;ideological&emsp;Pakistani&emsp;improbable&emsp;dire&emsp;non-accrual&emsp;Prime-1&emsp;lesser-developed-country&emsp;pre-refunded&emsp;staunch&emsp;first-ever&emsp;capitalist-exploiters-greedy-American-consumers-global&emsp;91-day&emsp;populist&emsp;auto-repair&emsp;intangible&emsp;minuscule&emsp;we're-all-in-this-together&emsp;native&emsp;vibrant&emsp;successive&emsp;Nine-month&emsp;Pre-refunded&emsp;veritable&emsp;Indian-summer&emsp;14th&emsp;routine&emsp;fiduciary&emsp;quasi-governmental&emsp;single-B-1&emsp;knock-out&emsp;120,000-employee&emsp;moralistic&emsp;fourth-level&emsp;aspiring&emsp;currency-exchange&emsp;intoxicated&emsp;intriguing&emsp;ever-faster&emsp;distant&emsp;jittery&emsp;market-opening&emsp;inflammatory&emsp;incumbent&emsp;Crude&emsp;family-oriented&emsp;customary&emsp;40-year&emsp;Positive&emsp;resilient&emsp;IMF-guided&emsp;unconfirmed&emsp;19th&emsp;meaningful&emsp;Intense&emsp;most-active&emsp;Previous&emsp;Non-interest&emsp;Nervous&emsp;illegitimate&emsp;thoughtless&emsp;first-class&emsp;hilly&emsp;all-terrain&emsp;bumpy&emsp;unilateral&emsp;personal-care&emsp;agricultural&emsp;treacherous&emsp;clinical&emsp;top-notch&emsp;spiffy&emsp;viral&emsp;Six-month&emsp;Afghan&emsp;superb&emsp;sleazy&emsp;adept&emsp;aftertax&emsp;13-week&emsp;non-objective&emsp;realistic&emsp;cost-effective&emsp;missile-guidance&emsp;hysterical&emsp;ill&emsp;182-day&emsp;voluntary&emsp;hair-trigger&emsp;Ba-3&emsp;nonpublic&emsp;A-1&emsp;invidious&emsp;ample&emsp;external&emsp;68-week&emsp;culpable&emsp;government-insured&emsp;unclassified&emsp;predictable&emsp;hurricane-wracked&emsp;factual&emsp;trail-blazing&emsp;lightweight&emsp;laboratory-services&emsp;preferred-stock&emsp;monied&emsp;Argentine&emsp;corresponding&emsp;French-made&emsp;Cuban&emsp;spaceborn&emsp;defenseless&emsp;leaded&emsp;anti-ballistic-missile&emsp;rigorous&emsp;passionate&emsp;fact-bound&emsp;35-44&emsp;383-30&emsp;Recent&emsp;value-oriented&emsp;mere&emsp;specialized&emsp;eventual&emsp;paltry&emsp;Complete&emsp;fatal&emsp;paramilitary&emsp;ineffective&emsp;employer-paid&emsp;scaled-back&emsp;moderate-income&emsp;12-year&emsp;malignant&emsp;U.S.-built&emsp;thin-tired&emsp;perverse&emsp;Additional&emsp;front-running&emsp;machine-tool&emsp;cease-and-desist&emsp;nonlethal&emsp;bond-equivalent&emsp;</p><p>LOGISTIC REGRESSION - ALL WORD ERRORS - MISCLASS TYPE (CORRECT/PREDICTION): ('NNS', 'NN')<br>OCCURENCES: 545 PERCENT OF ERRORS: 0.09723461195361284 PERCENT OF ALL PREDICTIONS 0.01150347<br>WORDS IN TYPE: </p><p>misadventures&emsp;predictions&emsp;excuses&emsp;Decisions&emsp;buttons&emsp;meetings&emsp;desks&emsp;renderings&emsp;gloves&emsp;defects&emsp;rings&emsp;belts&emsp;handbills&emsp;minorities&emsp;Euronotes&emsp;indictments&emsp;biopsies&emsp;depositors&emsp;exceptions&emsp;Bikers&emsp;statues&emsp;GRAINS&emsp;privileges&emsp;paths&emsp;judges&emsp;Ratings&emsp;shifts&emsp;ministries&emsp;tapes&emsp;petitions&emsp;caves&emsp;examples&emsp;increments&emsp;breaches&emsp;ribs&emsp;forests&emsp;volunteers&emsp;protocols&emsp;maxims&emsp;pistols&emsp;pleas&emsp;jewels&emsp;recoveries&emsp;legions&emsp;guns&emsp;occasions&emsp;strengths&emsp;wounds&emsp;advancers&emsp;gates&emsp;malls&emsp;microprocessors&emsp;Proponents&emsp;soybeans&emsp;ADRs&emsp;sanitationists&emsp;contacts&emsp;prisoners&emsp;MiG-29s&emsp;backers&emsp;commissioners&emsp;sergeants&emsp;lubricants&emsp;disbursements&emsp;precincts&emsp;breakers&emsp;mounts&emsp;Forest-products&emsp;sons&emsp;BENEFITS&emsp;mammoths&emsp;consents&emsp;universities&emsp;hackers&emsp;Millions&emsp;shops&emsp;persons&emsp;prognosticators&emsp;tendencies&emsp;columnists&emsp;landscapes&emsp;highs&emsp;officers&emsp;suppliers&emsp;condoms&emsp;storms&emsp;Shops&emsp;Panamanians&emsp;Directors&emsp;Liberals&emsp;luminaries&emsp;fanatics&emsp;international-operations&emsp;Payments&emsp;gringos&emsp;Returns&emsp;Blacks&emsp;stewards&emsp;Extensions&emsp;emergencies&emsp;sexes&emsp;passwords&emsp;cartoons&emsp;BUYERS&emsp;tactics&emsp;Drugs&emsp;facsimiles&emsp;conspirators&emsp;temps&emsp;veterans&emsp;essentials&emsp;Cattle&emsp;aides&emsp;Bids&emsp;recommendations&emsp;sabers&emsp;liberalizations&emsp;volumes&emsp;probabilities&emsp;republics&emsp;robots&emsp;dwellers&emsp;diplomats&emsp;landfills&emsp;updates&emsp;traffickers&emsp;methods&emsp;buyouts&emsp;ranchers&emsp;stretches&emsp;Journalists&emsp;shipsets&emsp;affairs&emsp;Factories&emsp;weightings&emsp;trails&emsp;guides&emsp;professions&emsp;adolescents&emsp;F16s&emsp;proteins&emsp;balance-of-payments&emsp;recordings&emsp;caches&emsp;Poachers&emsp;rangers&emsp;backpackers&emsp;commanders&emsp;contributors&emsp;pirates&emsp;rats&emsp;tides&emsp;specialty-chemicals&emsp;installments&emsp;lands&emsp;proponents&emsp;visages&emsp;drivers&emsp;bushels&emsp;champions&emsp;disclosures&emsp;blends&emsp;files&emsp;worms&emsp;supermarkets&emsp;disciples&emsp;pesticides&emsp;crematoriums&emsp;fuels&emsp;criminals&emsp;blue-chips&emsp;clean-fuels&emsp;mixtures&emsp;helicopters&emsp;vignettes&emsp;hunters&emsp;innovations&emsp;repayments&emsp;Funds&emsp;introductions&emsp;HOPES&emsp;superiors&emsp;Commentators&emsp;jitters&emsp;franchises&emsp;revisions&emsp;Consumers&emsp;transfers&emsp;videocassettes&emsp;Ways&emsp;pharmaceuticals&emsp;jetliners&emsp;environmentalists&emsp;deficits&emsp;extremists&emsp;Animals&emsp;law-making&emsp;habits&emsp;sails&emsp;remittances&emsp;health-products&emsp;successes&emsp;protests&emsp;themes&emsp;Machinists&emsp;ages&emsp;collectors&emsp;Homosexuals&emsp;fighter-bombers&emsp;enthusiasts&emsp;appropriators&emsp;societies&emsp;auto-emissions&emsp;laborers&emsp;government-relations&emsp;plantations&emsp;puppies&emsp;aspens&emsp;legs&emsp;drinks&emsp;hacks&emsp;JAUNTS&emsp;statutes&emsp;expirations&emsp;minefields&emsp;mints&emsp;groceries&emsp;purchasers&emsp;bicycles&emsp;tribes&emsp;bikers&emsp;Arbitragers&emsp;conferees&emsp;Exports&emsp;IOUs&emsp;Representatives&emsp;wings&emsp;mysteries&emsp;patents&emsp;tumors&emsp;liberals&emsp;Yields&emsp;jumps&emsp;zigzags&emsp;meals&emsp;fades&emsp;indulgences&emsp;Decliners&emsp;kickbacks&emsp;Expenses&emsp;Spokesmen&emsp;synergies&emsp;drugstores&emsp;worries&emsp;drawings&emsp;males&emsp;efficiencies&emsp;BRIEFS&emsp;Activists&emsp;hosts&emsp;environments&emsp;displays&emsp;factions&emsp;hikers&emsp;Groups&emsp;causes&emsp;crimes&emsp;bikes&emsp;stalls&emsp;edges&emsp;homosexuals&emsp;Reaganauts&emsp;prohibitions&emsp;chairs&emsp;vinyl-products&emsp;analyses&emsp;fixtures&emsp;authorizations&emsp;equestrians&emsp;conservationists&emsp;circuits&emsp;casinos&emsp;characters&emsp;parlors&emsp;prosecutors&emsp;Fears&emsp;legislatures&emsp;paintings&emsp;SHOPS&emsp;public-relations&emsp;Opponents&emsp;Prosecutors&emsp;locales&emsp;notions&emsp;uniforms&emsp;speeds&emsp;graduates&emsp;CPAs&emsp;payrolls&emsp;phases&emsp;drug-sales&emsp;extensions&emsp;consumer-products&emsp;populations&emsp;RAVAGES&emsp;scribes&emsp;soft-drinks&emsp;tabloids&emsp;cadets&emsp;traps&emsp;openings&emsp;protectors&emsp;goats&emsp;SOYBEANS&emsp;NEWSPAPERS&emsp;ingredients&emsp;Remics&emsp;exhibitors&emsp;possibilities&emsp;lemmings&emsp;Environmentalists&emsp;batches&emsp;distinctions&emsp;pennies&emsp;misrepresentations&emsp;sticks&emsp;forums&emsp;pants&emsp;cycles&emsp;bats&emsp;mistakes&emsp;servants&emsp;leftists&emsp;casualties&emsp;logs&emsp;bulkheads&emsp;bouts&emsp;Measures&emsp;Asians&emsp;Charges&emsp;lapses&emsp;rollovers&emsp;T-bills&emsp;Elections&emsp;hogs&emsp;attributes&emsp;cyclists&emsp;technologies&emsp;masks&emsp;wiretaps&emsp;gasolines&emsp;herds&emsp;shelves&emsp;labs&emsp;mid-1980s&emsp;guilders&emsp;delegates&emsp;stalwarts&emsp;bans&emsp;conscripts&emsp;Conservatives&emsp;accords&emsp;Underwriters&emsp;niches&emsp;microeconomics&emsp;variables&emsp;elephants&emsp;connections&emsp;sights&emsp;assemblies&emsp;dangers&emsp;economies&emsp;trials&emsp;papers&emsp;hunter-gatherers&emsp;motorcycles&emsp;mistresses&emsp;antibodies&emsp;Courts&emsp;critics&emsp;mornings&emsp;debtholders&emsp;instructors&emsp;coup-makers&emsp;corporate-earnings&emsp;</p><p>LOGISTIC REGRESSION - ALL WORD ERRORS - MISCLASS TYPE (CORRECT/PREDICTION): ('VB', 'NN')<br>OCCURENCES: 424 PERCENT OF ERRORS: 0.07564674397859054 PERCENT OF ALL PREDICTIONS 0.00894949<br>WORDS IN TYPE: </p><p>destroy&emsp;exploit&emsp;counterprogram&emsp;adjust&emsp;deduct&emsp;congratulate&emsp;accomplish&emsp;pedal&emsp;leap&emsp;steer&emsp;work&emsp;commit&emsp;face&emsp;demand&emsp;shore&emsp;preserve&emsp;focus&emsp;ban&emsp;pre-empt&emsp;choose&emsp;field&emsp;lure&emsp;reserve&emsp;lift&emsp;attack&emsp;monopolize&emsp;result&emsp;usurp&emsp;appoint&emsp;market&emsp;indict&emsp;topple&emsp;undermine&emsp;challenge&emsp;account&emsp;blame&emsp;assist&emsp;inject&emsp;exercise&emsp;adorn&emsp;press&emsp;monitor&emsp;resurrect&emsp;tighten&emsp;gut&emsp;expunge&emsp;force&emsp;knock&emsp;formulate&emsp;order&emsp;profit&emsp;soften&emsp;risk&emsp;hand&emsp;deteriorate&emsp;declare&emsp;guarantee&emsp;resolve&emsp;benefit&emsp;recommend&emsp;oversee&emsp;redeem&emsp;Be&emsp;control&emsp;emerge&emsp;display&emsp;conduct&emsp;jump&emsp;limit&emsp;cast&emsp;abandon&emsp;bounce&emsp;craft&emsp;agree&emsp;deal&emsp;arrive&emsp;outstrip&emsp;test&emsp;counteract&emsp;enforce&emsp;blunt&emsp;supply&emsp;safety&emsp;assemble&emsp;tumble&emsp;support&emsp;wane&emsp;oppose&emsp;move&emsp;collect&emsp;analyze&emsp;proceed&emsp;promote&emsp;rush&emsp;trial&emsp;fire&emsp;bid&emsp;reinforce&emsp;blur&emsp;postpone&emsp;emote&emsp;Let&emsp;invoke&emsp;purchase&emsp;chill&emsp;overthrow&emsp;crest&emsp;charge&emsp;gain&emsp;update&emsp;dip&emsp;resort&emsp;address&emsp;aim&emsp;stock&emsp;organize&emsp;structure&emsp;retreat&emsp;invade&emsp;tax&emsp;motivate&emsp;range&emsp;devise&emsp;drum&emsp;urge&emsp;Get&emsp;struggle&emsp;fuel&emsp;violate&emsp;phase&emsp;scuttle&emsp;round&emsp;dare&emsp;complicate&emsp;bless&emsp;unite&emsp;fear&emsp;clean&emsp;strip&emsp;act&emsp;outfly&emsp;revise&emsp;compare&emsp;relieve&emsp;assimilate&emsp;execute&emsp;base&emsp;defeat&emsp;scold&emsp;5&emsp;offer&emsp;dump&emsp;request&emsp;rise&emsp;change&emsp;report&emsp;incorporate&emsp;fund&emsp;earmark&emsp;increase&emsp;prefer&emsp;resist&emsp;buffet&emsp;justify&emsp;understand&emsp;abate&emsp;modernize&emsp;streamline&emsp;mention&emsp;debate&emsp;wrest&emsp;sour&emsp;repair&emsp;withdraw&emsp;reconstruct&emsp;share&emsp;lock&emsp;curry&emsp;step&emsp;use&emsp;extort&emsp;decline&emsp;mine&emsp;reassure&emsp;stand&emsp;frame&emsp;dictate&emsp;fret&emsp;anticipate&emsp;muse&emsp;intervene&emsp;rule&emsp;rely&emsp;galvanize&emsp;speak&emsp;arrange&emsp;steal&emsp;advance&emsp;implement&emsp;lobby&emsp;date&emsp;undertake&emsp;school&emsp;interest&emsp;spill&emsp;enhance&emsp;sign&emsp;feed&emsp;cost&emsp;bite&emsp;seize&emsp;overturn&emsp;spot&emsp;Look&emsp;return&emsp;bribe&emsp;threaten&emsp;elect&emsp;consult&emsp;issue&emsp;aid&emsp;fall&emsp;guide&emsp;sustain&emsp;escape&emsp;facilitate&emsp;loosen&emsp;undercut&emsp;regenerate&emsp;head&emsp;claim&emsp;blow&emsp;squeeze&emsp;approach&emsp;segregate&emsp;rally&emsp;advise&emsp;pace&emsp;stash&emsp;explode&emsp;proclaim&emsp;balk&emsp;modify&emsp;arrest&emsp;defect&emsp;post&emsp;accommodate&emsp;finish&emsp;assassinate&emsp;power&emsp;juggle&emsp;ride&emsp;repeat&emsp;injure&emsp;parcel&emsp;swallow&emsp;fix&emsp;rationalize&emsp;shift&emsp;miss&emsp;exist&emsp;auction&emsp;slump&emsp;plummet&emsp;zoom&emsp;pump&emsp;reject&emsp;whack&emsp;split&emsp;pose&emsp;complain&emsp;criminalize&emsp;reap&emsp;answer&emsp;remind&emsp;drop&emsp;deprive&emsp;forget&emsp;insure&emsp;collapse&emsp;surrender&emsp;honor&emsp;investigate&emsp;end&emsp;reverse&emsp;trade&emsp;spare&emsp;jeopardize&emsp;veto&emsp;ignore&emsp;exit&emsp;check&emsp;</p><p>LOGISTIC REGRESSION - ALL WORD ERRORS - MISCLASS TYPE (CORRECT/PREDICTION): ('CD', 'NN')<br>OCCURENCES: 411 PERCENT OF ERRORS: 0.07332738626226583 PERCENT OF ALL PREDICTIONS 0.00867510<br>WORDS IN TYPE: </p><p>2.21&emsp;1970&emsp;904,000&emsp;9.39&emsp;9.75&emsp;7.53&emsp;16.375&emsp;806.8&emsp;370&emsp;20.5&emsp;14.8&emsp;410.3&emsp;47,000&emsp;30.1&emsp;415&emsp;99.95&emsp;235.2&emsp;14.11&emsp;1.42&emsp;48,100&emsp;393.4&emsp;51.1&emsp;15.80&emsp;32.6&emsp;0.19&emsp;142.25&emsp;101,000&emsp;127&emsp;436.3&emsp;58.50&emsp;23\/32&emsp;49.8&emsp;144.4&emsp;550&emsp;120.6&emsp;623&emsp;44.9&emsp;1964&emsp;340&emsp;3.39&emsp;60.25&emsp;7.01&emsp;76.7&emsp;1.40&emsp;316&emsp;90,000&emsp;80,000&emsp;2.27&emsp;75.25&emsp;217&emsp;5.27&emsp;14,000&emsp;76.5&emsp;7.567&emsp;362&emsp;10.77&emsp;341.16&emsp;244&emsp;375.16&emsp;1.27&emsp;1936&emsp;86,500&emsp;3.90&emsp;13.9&emsp;469.8&emsp;73.50&emsp;11:13&emsp;60.7&emsp;654.5&emsp;2.51&emsp;1.69&emsp;107,100&emsp;28\/32&emsp;342,122&emsp;100.4&emsp;121&emsp;8.292&emsp;619.8&emsp;7\/100ths&emsp;3\/32&emsp;124,875&emsp;39.9&emsp;163&emsp;9.482&emsp;142.75&emsp;453.57&emsp;269.3&emsp;1.63&emsp;1,050&emsp;885,800&emsp;141.85&emsp;7.93&emsp;501,200&emsp;155&emsp;9.2&emsp;5.36&emsp;10\/32&emsp;36.3&emsp;7\/32&emsp;375,000&emsp;140.95&emsp;1974-81&emsp;711&emsp;1.8685&emsp;198&emsp;241.6&emsp;729&emsp;1967&emsp;29,000&emsp;124.5&emsp;188.89&emsp;215&emsp;331,400&emsp;537&emsp;2.57&emsp;144.9&emsp;317.7&emsp;2.82&emsp;2007&emsp;52,012&emsp;2.32&emsp;280,000&emsp;156.7&emsp;1.95&emsp;31\/32&emsp;ONE&emsp;409&emsp;1.8435&emsp;712&emsp;8.04&emsp;105,000&emsp;449.89&emsp;Eight&emsp;65,000&emsp;1.8667&emsp;625.4&emsp;123.9&emsp;83.3125&emsp;1.55&emsp;1997&emsp;8.01&emsp;309,500&emsp;129.97&emsp;5\/32&emsp;45,000&emsp;572&emsp;23,000&emsp;6.25&emsp;21.1&emsp;7.9&emsp;0.0018&emsp;371.20&emsp;1,600&emsp;880,500&emsp;1254.27&emsp;7.92&emsp;852&emsp;1\/32&emsp;49.96&emsp;29.9&emsp;5498&emsp;1.20&emsp;93.8&emsp;715&emsp;12.60&emsp;141.80&emsp;28.7&emsp;8.85&emsp;161.5&emsp;542&emsp;365&emsp;3377.43&emsp;1966&emsp;58.3&emsp;Five&emsp;322.7&emsp;650&emsp;6.95&emsp;176.4&emsp;4,345&emsp;18.65&emsp;8.09&emsp;14.24&emsp;224,070,000&emsp;2.375&emsp;87.25&emsp;9.06&emsp;8.125&emsp;7.986&emsp;21.2&emsp;13.6&emsp;829.9&emsp;135&emsp;658&emsp;180,000&emsp;2.97&emsp;24.3&emsp;437.7&emsp;6.10&emsp;166.8&emsp;26,350&emsp;78.625&emsp;235&emsp;2.4375&emsp;14.1&emsp;114.4&emsp;390&emsp;336&emsp;98.5&emsp;9.&emsp;16.2&emsp;89.6&emsp;29.5&emsp;49.4&emsp;83.7&emsp;1.045&emsp;89-52&emsp;199&emsp;129.72&emsp;618.1&emsp;277&emsp;3.625&emsp;5.80&emsp;7.54&emsp;8.1255&emsp;14.2&emsp;2.04&emsp;0.14&emsp;36.6&emsp;502.1&emsp;20.75&emsp;63.1&emsp;880.9&emsp;182.9&emsp;6.50&emsp;8.483&emsp;366.55&emsp;76.6&emsp;1,040&emsp;700,000&emsp;177.3&emsp;601.3&emsp;1.37&emsp;2638.73&emsp;940.6&emsp;2.44&emsp;8.10&emsp;142.55&emsp;1962-63&emsp;575,000&emsp;24.4&emsp;1,174&emsp;2.875&emsp;7.31&emsp;97.85&emsp;1962&emsp;280&emsp;246.6&emsp;62.25&emsp;775&emsp;600,000&emsp;950&emsp;2.48&emsp;324.9&emsp;260&emsp;54.1&emsp;626.3&emsp;175,000&emsp;84.1&emsp;931&emsp;109.50&emsp;9.1&emsp;112,000&emsp;541&emsp;448.49&emsp;37.7&emsp;2.3125&emsp;360&emsp;7.97&emsp;2.36&emsp;19\/32&emsp;793&emsp;6,000&emsp;378&emsp;141&emsp;28,000&emsp;133.8&emsp;38.50&emsp;49.5&emsp;6.7&emsp;46,892&emsp;9.8&emsp;1982-84&emsp;5.56&emsp;profit-driven&emsp;49.125&emsp;38.4&emsp;16,800,000&emsp;10.16&emsp;0.88&emsp;Seven&emsp;47.1&emsp;7.227&emsp;124,732&emsp;789&emsp;0.95&emsp;465&emsp;92&emsp;18.4&emsp;2.33&emsp;1955&emsp;8.24&emsp;89-136&emsp;55,000&emsp;105.4&emsp;459.93&emsp;59.4&emsp;70,000&emsp;83.8&emsp;10.03&emsp;252&emsp;8.42&emsp;405&emsp;49.6&emsp;983&emsp;454,100&emsp;7.3&emsp;1.5753&emsp;130.1&emsp;Twelve&emsp;193.3&emsp;1.94&emsp;16.50&emsp;20.7&emsp;191.9&emsp;112&emsp;142.3&emsp;0.15&emsp;8.685&emsp;24,000&emsp;187.8&emsp;367.40&emsp;1.57&emsp;59.9&emsp;214.54&emsp;1.47&emsp;664&emsp;79.4&emsp;0.10&emsp;1961&emsp;64.1&emsp;83.6&emsp;7.6&emsp;24.875&emsp;23.8&emsp;8.33&emsp;9.43&emsp;69.5&emsp;</p><p>LOGISTIC REGRESSION - ALL WORD ERRORS - MISCLASS TYPE (CORRECT/PREDICTION): ('VBN', 'NN')<br>OCCURENCES: 272 PERCENT OF ERRORS: 0.04852809991079393 PERCENT OF ALL PREDICTIONS 0.00574118<br>WORDS IN TYPE: </p><p>cherished&emsp;championed&emsp;interviewed&emsp;locked&emsp;directed&emsp;surfaced&emsp;clobbered&emsp;Spurred&emsp;fractured&emsp;indicted&emsp;discounted&emsp;chalked&emsp;overdosed&emsp;modified&emsp;reformulated&emsp;muddied&emsp;disbanded&emsp;Compared&emsp;numbered&emsp;Experienced&emsp;spooked&emsp;allocated&emsp;relaxed&emsp;prearranged&emsp;elevated&emsp;alarmed&emsp;motorized&emsp;pumped&emsp;coupled&emsp;bewildered&emsp;united&emsp;poured&emsp;positioned&emsp;substituted&emsp;supervised&emsp;withheld&emsp;contacted&emsp;proved&emsp;taxed&emsp;foreshadowed&emsp;categorized&emsp;protested&emsp;subdued&emsp;demonstrated&emsp;arrested&emsp;redesigned&emsp;falsified&emsp;supported&emsp;flooded&emsp;cheated&emsp;snagged&emsp;rebuffed&emsp;drawn&emsp;interrelated&emsp;waived&emsp;succeeded&emsp;dedicated&emsp;prohibited&emsp;propelled&emsp;foreseen&emsp;detained&emsp;postmarked&emsp;flared&emsp;maneuvered&emsp;automated&emsp;justified&emsp;influenced&emsp;classified&emsp;syndicated&emsp;resisted&emsp;concentrated&emsp;harried&emsp;sworn&emsp;forgiven&emsp;injected&emsp;connected&emsp;disappointed&emsp;intervened&emsp;adopted&emsp;resumed&emsp;revamped&emsp;seized&emsp;exercised&emsp;scattered&emsp;defeated&emsp;altered&emsp;reviewed&emsp;disturbed&emsp;abated&emsp;laced&emsp;breached&emsp;replenished&emsp;dressed&emsp;viewed&emsp;undermined&emsp;confronted&emsp;drowned&emsp;leaked&emsp;assisted&emsp;amended&emsp;discouraged&emsp;banned&emsp;labeled&emsp;Spooked&emsp;operated&emsp;pressured&emsp;befriended&emsp;negotiated&emsp;handcuffed&emsp;symbolized&emsp;recognized&emsp;tarnished&emsp;accustomed&emsp;entwined&emsp;engraved&emsp;oversimplified&emsp;blamed&emsp;hidden&emsp;contemplated&emsp;Flanked&emsp;overrun&emsp;deemed&emsp;rung&emsp;faded&emsp;confined&emsp;hatched&emsp;mounted&emsp;marked&emsp;cultivated&emsp;dismayed&emsp;overreacted&emsp;outraged&emsp;penalized&emsp;appropriated&emsp;inserted&emsp;approached&emsp;presumed&emsp;re-supplied&emsp;disputed&emsp;shortchanged&emsp;stabilized&emsp;blackened&emsp;cornered&emsp;rewarded&emsp;dogged&emsp;overtaken&emsp;cracked&emsp;termed&emsp;disciplined&emsp;regarded&emsp;trained&emsp;monitored&emsp;hobbled&emsp;buried&emsp;mastered&emsp;supplied&emsp;abused&emsp;severed&emsp;enforced&emsp;rushed&emsp;corrected&emsp;shortened&emsp;switched&emsp;funneled&emsp;openended&emsp;Stung&emsp;revived&emsp;replaced&emsp;assassinated&emsp;escrowed&emsp;spun&emsp;born&emsp;Asked&emsp;tied&emsp;tempered&emsp;strengthened&emsp;leased&emsp;geared&emsp;respected&emsp;recounted&emsp;understated&emsp;infected&emsp;discredited&emsp;titled&emsp;Measured&emsp;guarded&emsp;fined&emsp;interrupted&emsp;assumed&emsp;summoned&emsp;bumped&emsp;pressed&emsp;confused&emsp;ignored&emsp;imposed&emsp;distracted&emsp;tired&emsp;bottomed&emsp;sparked&emsp;Valued&emsp;dealt&emsp;handled&emsp;captured&emsp;sponsored&emsp;indoctrinated&emsp;eliminated&emsp;risen&emsp;criticized&emsp;aged&emsp;lagged&emsp;</p><p>LOGISTIC REGRESSION - ALL WORD ERRORS - MISCLASS TYPE (CORRECT/PREDICTION): ('VBG', 'NN')<br>OCCURENCES: 242 PERCENT OF ERRORS: 0.043175735950044605 PERCENT OF ALL PREDICTIONS 0.00510796<br>WORDS IN TYPE: </p><p>Linking&emsp;propping&emsp;speeding&emsp;advertising&emsp;occurring&emsp;hiking&emsp;racing&emsp;extending&emsp;visiting&emsp;judging&emsp;battling&emsp;spreading&emsp;lasting&emsp;flirting&emsp;messing&emsp;waging&emsp;softening&emsp;calculating&emsp;delousing&emsp;protecting&emsp;bribing&emsp;dumping&emsp;thriving&emsp;parking&emsp;burgeoning&emsp;unwavering&emsp;Taking&emsp;jarring&emsp;affiliating&emsp;thinking&emsp;speaking&emsp;dying&emsp;prompting&emsp;sinking&emsp;fulfilling&emsp;restoring&emsp;compromising&emsp;maturing&emsp;drawing&emsp;prodding&emsp;granting&emsp;conspiring&emsp;overlooking&emsp;conducting&emsp;Overreacting&emsp;touring&emsp;experimenting&emsp;blazing&emsp;monitoring&emsp;sliding&emsp;abandoning&emsp;proposing&emsp;experiencing&emsp;Improving&emsp;handling&emsp;chasing&emsp;hedging&emsp;laughing&emsp;diagnosing&emsp;Writing&emsp;staring&emsp;arguing&emsp;luring&emsp;requesting&emsp;learning&emsp;securing&emsp;portraying&emsp;staying&emsp;embracing&emsp;stopping&emsp;tracking&emsp;soliciting&emsp;depositing&emsp;diminishing&emsp;educating&emsp;deferring&emsp;plunging&emsp;prepaying&emsp;recruiting&emsp;bewildering&emsp;resuming&emsp;referring&emsp;consolidating&emsp;settling&emsp;minimizing&emsp;filing&emsp;renewing&emsp;deleting&emsp;insisting&emsp;choking&emsp;destabilizing&emsp;waning&emsp;pinching&emsp;solving&emsp;determining&emsp;surpassing&emsp;combining&emsp;fretting&emsp;SIMPLIFYING&emsp;signing&emsp;owning&emsp;substituting&emsp;receding&emsp;erasing&emsp;rebuilding&emsp;enacting&emsp;doubling&emsp;herding&emsp;alleging&emsp;meeting&emsp;pedaling&emsp;preserving&emsp;Leaping&emsp;lagging&emsp;accepting&emsp;prevailing&emsp;Including&emsp;Estimating&emsp;differentiating&emsp;offering&emsp;sleeping&emsp;blending&emsp;buckling&emsp;understating&emsp;asserting&emsp;bending&emsp;funding&emsp;Amending&emsp;ordering&emsp;deteriorating&emsp;clutching&emsp;financing&emsp;subsidizing&emsp;stumbling&emsp;comparing&emsp;responding&emsp;withering&emsp;placing&emsp;Upping&emsp;blackmailing&emsp;reiterating&emsp;employing&emsp;underreacting&emsp;careening&emsp;collapsing&emsp;crushing&emsp;Kissing&emsp;trading&emsp;wondering&emsp;angering&emsp;preventing&emsp;questioning&emsp;assisting&emsp;confirming&emsp;scratching&emsp;tending&emsp;breathing&emsp;attacking&emsp;toiling&emsp;planning&emsp;reinforcing&emsp;retreating&emsp;gleaming&emsp;rushing&emsp;Ending&emsp;enhancing&emsp;collecting&emsp;swelling&emsp;touting&emsp;forming&emsp;reincorporating&emsp;beating&emsp;weakening&emsp;Saving&emsp;exporting&emsp;Satisfying&emsp;resigning&emsp;benefiting&emsp;choosing&emsp;marketing&emsp;Starting&emsp;echoing&emsp;Advancing&emsp;studying&emsp;improving&emsp;amending&emsp;forecasting&emsp;removing&emsp;pressuring&emsp;gaining&emsp;raping&emsp;veering&emsp;slipping&emsp;syndicating&emsp;decentralizing&emsp;whipping&emsp;practicing&emsp;addressing&emsp;Beginning&emsp;preferring&emsp;building&emsp;grabbing&emsp;approving&emsp;innoculating&emsp;combating&emsp;blowing&emsp;concerning&emsp;revamping&emsp;reindicting&emsp;agreeing&emsp;kicking&emsp;replacing&emsp;dating&emsp;overreacting&emsp;unfolding&emsp;shying&emsp;</p><p>LOGISTIC REGRESSION - ALL WORD ERRORS - MISCLASS TYPE (CORRECT/PREDICTION): ('VBD', 'VBN')<br>OCCURENCES: 162 PERCENT OF ERRORS: 0.028902765388046387 PERCENT OF ALL PREDICTIONS 0.00341938<br>WORDS IN TYPE: </p><p>projected&emsp;increased&emsp;blocked&emsp;hired&emsp;involved&emsp;required&emsp;expected&emsp;discovered&emsp;pleased&emsp;brought&emsp;pushed&emsp;estimated&emsp;placed&emsp;led&emsp;heard&emsp;aimed&emsp;interpreted&emsp;changed&emsp;presented&emsp;allowed&emsp;defined&emsp;submitted&emsp;looked&emsp;considered&emsp;divided&emsp;saved&emsp;revised&emsp;believed&emsp;caused&emsp;called&emsp;reached&emsp;served&emsp;fired&emsp;offered&emsp;planned&emsp;denied&emsp;developed&emsp;needed&emsp;paid&emsp;fed&emsp;notified&emsp;discussed&emsp;borrowed&emsp;accepted&emsp;provided&emsp;appointed&emsp;backed&emsp;issued&emsp;filed&emsp;priced&emsp;left&emsp;entered&emsp;weakened&emsp;set&emsp;made&emsp;arranged&emsp;traded&emsp;held&emsp;reduced&emsp;supposed&emsp;faced&emsp;played&emsp;named&emsp;sold&emsp;disclosed&emsp;dominated&emsp;elected&emsp;subordinated&emsp;created&emsp;returned&emsp;intended&emsp;used&emsp;described&emsp;caught&emsp;distributed&emsp;owned&emsp;produced&emsp;expanded&emsp;</p><p>LOGISTIC REGRESSION - ALL WORD ERRORS - MISCLASS TYPE (CORRECT/PREDICTION): ('RB', 'NN')<br>OCCURENCES: 159 PERCENT OF ERRORS: 0.028367528991971452 PERCENT OF ALL PREDICTIONS 0.00335606<br>WORDS IN TYPE: </p><p>Customarily&emsp;literally&emsp;intellectually&emsp;specifically&emsp;hence&emsp;frankly&emsp;statutorily&emsp;deeply&emsp;regardless&emsp;falsely&emsp;savagely&emsp;Conceivably&emsp;sadly&emsp;actively&emsp;vigorously&emsp;Previously&emsp;hesitantly&emsp;smoothly&emsp;smack&emsp;negatively&emsp;Fortunately&emsp;reasonably&emsp;inherently&emsp;wholly&emsp;jealously&emsp;unexpectedly&emsp;rarely&emsp;comprehensively&emsp;aside&emsp;curtly&emsp;Basically&emsp;Aside&emsp;federally&emsp;Shortly&emsp;hysterically&emsp;right&emsp;openly&emsp;historically&emsp;seemingly&emsp;undoubtedly&emsp;Predictably&emsp;Presumably&emsp;Certainly&emsp;fetchingly&emsp;awfully&emsp;collectively&emsp;ostentatiously&emsp;inasmuch&emsp;severely&emsp;Similarly&emsp;Later&emsp;loosely&emsp;nonetheless&emsp;successfully&emsp;Furthermore&emsp;independently&emsp;quietly&emsp;nervously&emsp;tonight&emsp;Deeply&emsp;fro&emsp;everywhere&emsp;provocatively&emsp;Arguably&emsp;personally&emsp;inevitably&emsp;Soon&emsp;exclusively&emsp;inversely&emsp;neatly&emsp;ethnically&emsp;anyway&emsp;grossly&emsp;occasionally&emsp;thoroughly&emsp;enthusiastically&emsp;hastily&emsp;suddenly&emsp;repeatedly&emsp;inextricably&emsp;practically&emsp;lawfully&emsp;sweepingly&emsp;apologetically&emsp;anymore&emsp;similarly&emsp;constantly&emsp;simultaneously&emsp;heretofore&emsp;fractionally&emsp;apart&emsp;tacitly&emsp;subsequently&emsp;aboard&emsp;forth&emsp;systematically&emsp;bitterly&emsp;plaintively&emsp;evenly&emsp;ostensibly&emsp;surely&emsp;Incrementally&emsp;understandably&emsp;overly&emsp;allegedly&emsp;voluntarily&emsp;dramatically&emsp;illegally&emsp;recklessly&emsp;technically&emsp;firmly&emsp;lightly&emsp;verbatim&emsp;zestfully&emsp;unnecessarily&emsp;traditionally&emsp;Overall&emsp;regularly&emsp;responsibly&emsp;Gradually&emsp;sexually&emsp;exceptionally&emsp;alike&emsp;anywhere&emsp;possibly&emsp;wryly&emsp;unlawfully&emsp;rigorously&emsp;vaguely&emsp;somehow&emsp;morally&emsp;nominally&emsp;nevertheless&emsp;electronically&emsp;ordinarily&emsp;Often&emsp;safely&emsp;Essentially&emsp;</p><p>LOGISTIC REGRESSION - ALL WORD ERRORS - MISCLASS TYPE (CORRECT/PREDICTION): ('VBD', 'NN')<br>OCCURENCES: 159 PERCENT OF ERRORS: 0.028367528991971452 PERCENT OF ALL PREDICTIONS 0.00335606<br>WORDS IN TYPE: </p><p>subsided&emsp;traumatized&emsp;breathed&emsp;regained&emsp;surfaced&emsp;rebounded&emsp;indicted&emsp;ousted&emsp;phoned&emsp;inherited&emsp;cleared&emsp;objected&emsp;repurchased&emsp;proclaimed&emsp;commented&emsp;hated&emsp;telephoned&emsp;lay&emsp;poured&emsp;testified&emsp;withheld&emsp;disintegrated&emsp;proved&emsp;demonstrated&emsp;summarized&emsp;pleaded&emsp;broke&emsp;supported&emsp;plummeted&emsp;dragged&emsp;screamed&emsp;halogenated&emsp;landed&emsp;brushed&emsp;flew&emsp;rode&emsp;blew&emsp;reminded&emsp;invaded&emsp;circulated&emsp;competed&emsp;averaged&emsp;drove&emsp;shook&emsp;bore&emsp;searched&emsp;scotched&emsp;snapped&emsp;reversed&emsp;revealed&emsp;Had&emsp;scrapped&emsp;intervened&emsp;adopted&emsp;jolted&emsp;shrugged&emsp;auctioned&emsp;stressed&emsp;volunteered&emsp;downgraded&emsp;crashed&emsp;insisted&emsp;clinched&emsp;peaked&emsp;promulgated&emsp;reiterated&emsp;amended&emsp;prevailed&emsp;walked&emsp;bucked&emsp;responded&emsp;operated&emsp;sank&emsp;pressured&emsp;persuaded&emsp;co-founded&emsp;averred&emsp;Was&emsp;dipped&emsp;stated&emsp;kicked&emsp;missed&emsp;blamed&emsp;dared&emsp;attempted&emsp;bogged&emsp;scrambled&emsp;forbade&emsp;depended&emsp;fared&emsp;disregarded&emsp;wondered&emsp;manufactured&emsp;tended&emsp;SKIDDED&emsp;slowed&emsp;stirred&emsp;swelled&emsp;conveyed&emsp;splashed&emsp;rushed&emsp;satisfied&emsp;fled&emsp;switched&emsp;replaced&emsp;foiled&emsp;paled&emsp;deposited&emsp;yielded&emsp;surrendered&emsp;nurtured&emsp;underestimated&emsp;enjoyed&emsp;lobbied&emsp;Did&emsp;skidded&emsp;boasted&emsp;behaved&emsp;uncovered&emsp;fined&emsp;dashed&emsp;hooked&emsp;imposed&emsp;hailed&emsp;dived&emsp;feared&emsp;thundered&emsp;observed&emsp;exploded&emsp;recalled&emsp;relayed&emsp;criticized&emsp;overwhelmed&emsp;</p><p>LOGISTIC REGRESSION - ALL WORD ERRORS - MISCLASS TYPE (CORRECT/PREDICTION): ('VBN', 'VBD')<br>OCCURENCES: 141 PERCENT OF ERRORS: 0.025156110615521855 PERCENT OF ALL PREDICTIONS 0.00297613<br>WORDS IN TYPE: </p><p>announced&emsp;hit&emsp;acquired&emsp;concluded&emsp;sat&emsp;triggered&emsp;found&emsp;told&emsp;claimed&emsp;asked&emsp;prompted&emsp;attributed&emsp;arrived&emsp;ended&emsp;topped&emsp;stopped&emsp;realized&emsp;suspended&emsp;expressed&emsp;signed&emsp;capped&emsp;raised&emsp;sent&emsp;meant&emsp;met&emsp;agreed&emsp;reacted&emsp;rejected&emsp;spent&emsp;managed&emsp;had&emsp;reported&emsp;received&emsp;boosted&emsp;voted&emsp;ruled&emsp;included&emsp;continued&emsp;confirmed&emsp;sought&emsp;added&emsp;won&emsp;slashed&emsp;dismissed&emsp;declined&emsp;helped&emsp;learned&emsp;failed&emsp;dropped&emsp;followed&emsp;advanced&emsp;closed&emsp;refused&emsp;approved&emsp;lost&emsp;lowered&emsp;indicated&emsp;widened&emsp;promised&emsp;ordered&emsp;struck&emsp;carried&emsp;predicted&emsp;died&emsp;watched&emsp;turned&emsp;decided&emsp;bought&emsp;</p><p>LOGISTIC REGRESSION - ALL WORD ERRORS - MISCLASS TYPE (CORRECT/PREDICTION): ('VBP', 'VB')<br>OCCURENCES: 123 PERCENT OF ERRORS: 0.021944692239072257 PERCENT OF ALL PREDICTIONS 0.00259620<br>WORDS IN TYPE: </p><p>do&emsp;exceed&emsp;buy&emsp;offset&emsp;hold&emsp;become&emsp;worry&emsp;continue&emsp;leave&emsp;require&emsp;know&emsp;generate&emsp;join&emsp;operate&emsp;see&emsp;look&emsp;allow&emsp;put&emsp;bring&emsp;come&emsp;serve&emsp;talk&emsp;predict&emsp;prevent&emsp;add&emsp;find&emsp;yield&emsp;delay&emsp;invest&emsp;make&emsp;hear&emsp;feel&emsp;decide&emsp;refuse&emsp;create&emsp;watch&emsp;read&emsp;show&emsp;help&emsp;sit&emsp;push&emsp;call&emsp;try&emsp;remain&emsp;appear&emsp;receive&emsp;be&emsp;get&emsp;mean&emsp;carry&emsp;provide&emsp;indicate&emsp;bear&emsp;produce&emsp;let&emsp;run&emsp;fill&emsp;cause&emsp;apply&emsp;file&emsp;intend&emsp;give&emsp;represent&emsp;</p><p>LOGISTIC REGRESSION - ALL WORD ERRORS - MISCLASS TYPE (CORRECT/PREDICTION): ('VBZ', 'NN')<br>OCCURENCES: 110 PERCENT OF ERRORS: 0.019625334522747548 PERCENT OF ALL PREDICTIONS 0.00232180<br>WORDS IN TYPE: </p><p>flies&emsp;achieves&emsp;reacts&emsp;enters&emsp;permits&emsp;equals&emsp;pales&emsp;spends&emsp;directs&emsp;Takes&emsp;cares&emsp;commits&emsp;opposes&emsp;resides&emsp;dies&emsp;owes&emsp;consists&emsp;portends&emsp;violates&emsp;muses&emsp;addresses&emsp;crashes&emsp;stretches&emsp;lets&emsp;grinds&emsp;discloses&emsp;spreads&emsp;meets&emsp;unites&emsp;lasts&emsp;recommends&emsp;exacerbates&emsp;recognizes&emsp;omits&emsp;bears&emsp;decides&emsp;seeks&emsp;locks&emsp;teaches&emsp;consigns&emsp;asserts&emsp;complains&emsp;rails&emsp;screams&emsp;argues&emsp;rages&emsp;attributes&emsp;injects&emsp;considers&emsp;depletes&emsp;leases&emsp;distributes&emsp;preserves&emsp;finds&emsp;publishes&emsp;worries&emsp;illustrates&emsp;extends&emsp;expires&emsp;incorporates&emsp;drops&emsp;sends&emsp;depends&emsp;retains&emsp;belongs&emsp;drags&emsp;hosts&emsp;announces&emsp;supports&emsp;spells&emsp;collects&emsp;perceives&emsp;underscores&emsp;threatens&emsp;mentions&emsp;lacks&emsp;aids&emsp;explains&emsp;describes&emsp;feels&emsp;approves&emsp;comprises&emsp;DELAYS&emsp;brings&emsp;exceeds&emsp;lumps&emsp;sleeps&emsp;</p><p>LOGISTIC REGRESSION - ALL WORD ERRORS - MISCLASS TYPE (CORRECT/PREDICTION): ('NN', 'VB')<br>OCCURENCES: 102 PERCENT OF ERRORS: 0.018198037466547724 PERCENT OF ALL PREDICTIONS 0.00215294<br>WORDS IN TYPE: </p><p>export&emsp;fly&emsp;buy&emsp;turn&emsp;lead&emsp;worry&emsp;drive&emsp;raise&emsp;resume&emsp;put&emsp;play&emsp;finance&emsp;comment&emsp;win&emsp;find&emsp;yield&emsp;pay&emsp;close&emsp;feel&emsp;watch&emsp;show&emsp;help&emsp;cancel&emsp;cut&emsp;call&emsp;sell&emsp;boost&emsp;mean&emsp;transfer&emsp;halt&emsp;start&emsp;fight&emsp;run&emsp;block&emsp;cause&emsp;affect&emsp;stop&emsp;delay&emsp;give&emsp;</p><p>LOGISTIC REGRESSION - ALL WORD ERRORS - MISCLASS TYPE (CORRECT/PREDICTION): ('WDT', 'IN')<br>OCCURENCES: 95 PERCENT OF ERRORS: 0.01694915254237288 PERCENT OF ALL PREDICTIONS 0.00200519<br>WORDS IN TYPE: </p><p>that&emsp;</p><p>LOGISTIC REGRESSION - ALL WORD ERRORS - MISCLASS TYPE (CORRECT/PREDICTION): ('VBP', 'NN')<br>OCCURENCES: 87 PERCENT OF ERRORS: 0.01552185548617306 PERCENT OF ALL PREDICTIONS 0.00183633<br>WORDS IN TYPE: </p><p>discover&emsp;base&emsp;staff&emsp;bank&emsp;undercut&emsp;test&emsp;cite&emsp;offer&emsp;head&emsp;estimate&emsp;claim&emsp;rise&emsp;guess&emsp;report&emsp;hope&emsp;please&emsp;concern&emsp;oppose&emsp;increase&emsp;bow&emsp;characterize&emsp;fear&emsp;segment&emsp;inhabit&emsp;share&emsp;account&emsp;attempt&emsp;damage&emsp;confer&emsp;group&emsp;point&emsp;use&emsp;hate&emsp;Do&emsp;resurrect&emsp;shift&emsp;exist&emsp;tender&emsp;state&emsp;charge&emsp;gain&emsp;Are&emsp;note&emsp;anticipate&emsp;scour&emsp;rule&emsp;contend&emsp;contract&emsp;plan&emsp;drink&emsp;interest&emsp;Make&emsp;soar&emsp;jump&emsp;disagree&emsp;program&emsp;question&emsp;SCRAP&emsp;comprise&emsp;love&emsp;control&emsp;sense&emsp;smoke&emsp;concede&emsp;limit&emsp;process&emsp;slip&emsp;agree&emsp;remember&emsp;elect&emsp;</p><p>LOGISTIC REGRESSION - ALL WORD ERRORS - MISCLASS TYPE (CORRECT/PREDICTION): ('NN', 'JJ')<br>OCCURENCES: 87 PERCENT OF ERRORS: 0.01552185548617306 PERCENT OF ALL PREDICTIONS 0.00183633<br>WORDS IN TYPE: </p><p>low-end&emsp;cheap&emsp;per-share&emsp;few&emsp;individual&emsp;fat&emsp;steep&emsp;short&emsp;heavy&emsp;secret&emsp;human&emsp;particular&emsp;low&emsp;military&emsp;chief&emsp;total&emsp;net&emsp;public&emsp;Net&emsp;high&emsp;top&emsp;principal&emsp;start-up&emsp;much&emsp;commonplace&emsp;many&emsp;familiar&emsp;executive&emsp;whole&emsp;general&emsp;other&emsp;horrible&emsp;average&emsp;past&emsp;</p><p>LOGISTIC REGRESSION - ALL WORD ERRORS - MISCLASS TYPE (CORRECT/PREDICTION): ('VB', 'VBP')<br>OCCURENCES: 80 PERCENT OF ERRORS: 0.014272970561998216 PERCENT OF ALL PREDICTIONS 0.00168858<br>WORDS IN TYPE: </p><p>say&emsp;include&emsp;seem&emsp;insist&emsp;need&emsp;expect&emsp;argue&emsp;believe&emsp;think&emsp;realize&emsp;want&emsp;have&emsp;</p><p>LOGISTIC REGRESSION - ALL WORD ERRORS - MISCLASS TYPE (CORRECT/PREDICTION): ('NNPS', 'NN')<br>OCCURENCES: 75 PERCENT OF ERRORS: 0.013380909901873328 PERCENT OF ALL PREDICTIONS 0.00158305<br>WORDS IN TYPE: </p><p>Stingers&emsp;Facilities&emsp;BLUES&emsp;Soviets&emsp;Chipmunks&emsp;Jewelers&emsp;Bicyclists&emsp;Departments&emsp;Wars&emsp;Females&emsp;Israelis&emsp;Contras&emsp;Productions&emsp;Patriots&emsp;Sikhs&emsp;Sierras&emsp;Worms&emsp;Afghans&emsp;MEATS&emsp;Skies&emsp;Enterprises&emsp;Advisers&emsp;Pacemakers&emsp;Killers&emsp;Males&emsp;Greens&emsp;Forces&emsp;PROPERTIES&emsp;Cubans&emsp;Hispanics&emsp;Guards&emsp;Indians&emsp;</p><p>LOGISTIC REGRESSION - ALL WORD ERRORS - MISCLASS TYPE (CORRECT/PREDICTION): ('RB', 'IN')<br>OCCURENCES: 71 PERCENT OF ERRORS: 0.012667261373773416 PERCENT OF ALL PREDICTIONS 0.00149862<br>WORDS IN TYPE: </p><p>with&emsp;up&emsp;out&emsp;before&emsp;about&emsp;as&emsp;around&emsp;though&emsp;</p><p>LOGISTIC REGRESSION - ALL WORD ERRORS - MISCLASS TYPE (CORRECT/PREDICTION): ('JJ', 'NNP')<br>OCCURENCES: 65 PERCENT OF ERRORS: 0.01159678858162355 PERCENT OF ALL PREDICTIONS 0.00137197<br>WORDS IN TYPE: </p><p>British&emsp;Industrial&emsp;Spanish-language&emsp;South&emsp;Fed&emsp;Soviet&emsp;Due&emsp;Iranian&emsp;Public&emsp;International&emsp;Economic&emsp;First&emsp;Average&emsp;Foreign&emsp;West&emsp;CD&emsp;American&emsp;Short-term&emsp;Retired&emsp;</p><p>LOGISTIC REGRESSION - ALL WORD ERRORS - MISCLASS TYPE (CORRECT/PREDICTION): ('VBZ', 'NNS')<br>OCCURENCES: 48 PERCENT OF ERRORS: 0.00856378233719893 PERCENT OF ALL PREDICTIONS 0.00101315<br>WORDS IN TYPE: </p><p>heads&emsp;fields&emsp;acts&emsp;trusts&emsp;thanks&emsp;firms&emsp;supplies&emsp;cuts&emsp;projects&emsp;signs&emsp;exchanges&emsp;estimates&emsp;claims&emsp;votes&emsp;forces&emsp;sales&emsp;charges&emsp;fears&emsp;promises&emsp;reports&emsp;notes&emsp;shares&emsp;stands&emsp;increases&emsp;plans&emsp;grants&emsp;points&emsp;</p><p>LOGISTIC REGRESSION - ALL WORD ERRORS - MISCLASS TYPE (CORRECT/PREDICTION): ('DT', 'IN')<br>OCCURENCES: 40 PERCENT OF ERRORS: 0.007136485280999108 PERCENT OF ALL PREDICTIONS 0.00084429<br>WORDS IN TYPE: </p><p>that&emsp;</p><p>LOGISTIC REGRESSION - ALL WORD ERRORS - MISCLASS TYPE (CORRECT/PREDICTION): ('RBR', 'JJR')<br>OCCURENCES: 38 PERCENT OF ERRORS: 0.006779661016949152 PERCENT OF ALL PREDICTIONS 0.00080208<br>WORDS IN TYPE: </p><p>less&emsp;fewer&emsp;wider&emsp;more&emsp;</p><p>LOGISTIC REGRESSION - ALL WORD ERRORS - MISCLASS TYPE (CORRECT/PREDICTION): ('VBZ', 'POS')<br>OCCURENCES: 28 PERCENT OF ERRORS: 0.0049955396966993755 PERCENT OF ALL PREDICTIONS 0.00059100<br>WORDS IN TYPE: </p><p>'s&emsp;</p><p>LOGISTIC REGRESSION - ALL WORD ERRORS - MISCLASS TYPE (CORRECT/PREDICTION): ('JJR', 'NN')<br>OCCURENCES: 26 PERCENT OF ERRORS: 0.0046387154326494205 PERCENT OF ALL PREDICTIONS 0.00054879<br>WORDS IN TYPE: </p><p>simpler&emsp;richer&emsp;Higher&emsp;thinner&emsp;easier&emsp;rosier&emsp;riskier&emsp;newer&emsp;bigger&emsp;calmer&emsp;closer&emsp;slower&emsp;Broader&emsp;faster&emsp;kinder&emsp;worse&emsp;BIGGER&emsp;</p><p>LOGISTIC REGRESSION - ALL WORD ERRORS - MISCLASS TYPE (CORRECT/PREDICTION): ('RB', 'JJ')<br>OCCURENCES: 24 PERCENT OF ERRORS: 0.004281891168599465 PERCENT OF ALL PREDICTIONS 0.00050657<br>WORDS IN TYPE: </p><p>much&emsp;early&emsp;long&emsp;hard&emsp;late&emsp;Early&emsp;many&emsp;last&emsp;prior&emsp;little&emsp;</p><p>LOGISTIC REGRESSION - ALL WORD ERRORS - MISCLASS TYPE (CORRECT/PREDICTION): ('JJ', 'RB')<br>OCCURENCES: 21 PERCENT OF ERRORS: 0.0037466547725245316 PERCENT OF ALL PREDICTIONS 0.00044325<br>WORDS IN TYPE: </p><p>then&emsp;now&emsp;currently&emsp;still&emsp;even&emsp;back&emsp;later&emsp;down&emsp;simply&emsp;well&emsp;only&emsp;</p><p>LOGISTIC REGRESSION - ALL WORD ERRORS - MISCLASS TYPE (CORRECT/PREDICTION): ('VB', 'JJ')<br>OCCURENCES: 20 PERCENT OF ERRORS: 0.003568242640499554 PERCENT OF ALL PREDICTIONS 0.00042215<br>WORDS IN TYPE: </p><p>separate&emsp;double&emsp;narrow&emsp;further&emsp;own&emsp;complete&emsp;open&emsp;exempt&emsp;slow&emsp;last&emsp;many&emsp;select&emsp;short&emsp;correct&emsp;</p><p>LOGISTIC REGRESSION - ALL WORD ERRORS - MISCLASS TYPE (CORRECT/PREDICTION): ('NNPS', 'NNP')<br>OCCURENCES: 19 PERCENT OF ERRORS: 0.003389830508474576 PERCENT OF ALL PREDICTIONS 0.00040104<br>WORDS IN TYPE: </p><p>Foods&emsp;Resources&emsp;States&emsp;Products&emsp;Lines&emsp;Hotels&emsp;Communications&emsp;Islands&emsp;Industries&emsp;Securities&emsp;Brothers&emsp;</p><p>LOGISTIC REGRESSION - ALL WORD ERRORS - MISCLASS TYPE (CORRECT/PREDICTION): ('NN', 'VBG')<br>OCCURENCES: 15 PERCENT OF ERRORS: 0.0026761819803746653 PERCENT OF ALL PREDICTIONS 0.00031661<br>WORDS IN TYPE: </p><p>lobbying&emsp;breaking&emsp;holding&emsp;selling&emsp;fighting&emsp;operating&emsp;setting&emsp;beginning&emsp;talking&emsp;slowing&emsp;buying&emsp;</p><p>LOGISTIC REGRESSION - ALL WORD ERRORS - MISCLASS TYPE (CORRECT/PREDICTION): ('NN', 'NNP')<br>OCCURENCES: 14 PERCENT OF ERRORS: 0.0024977698483496878 PERCENT OF ALL PREDICTIONS 0.00029550<br>WORDS IN TYPE: </p><p>Business&emsp;Stock&emsp;City&emsp;Trust&emsp;Investment&emsp;Merc&emsp;Intelligence&emsp;STOCK&emsp;Symbol&emsp;Treasury&emsp;Market&emsp;Jaguar&emsp;Citicorp&emsp;</p><p>LOGISTIC REGRESSION - ALL WORD ERRORS - MISCLASS TYPE (CORRECT/PREDICTION): ('NNP', 'JJ')<br>OCCURENCES: 14 PERCENT OF ERRORS: 0.0024977698483496878 PERCENT OF ALL PREDICTIONS 0.00029550<br>WORDS IN TYPE: </p><p>Long-term&emsp;so-called&emsp;Small&emsp;Asian&emsp;Panamanian&emsp;30-year&emsp;European&emsp;Early&emsp;Few&emsp;Swedish&emsp;</p><p>LOGISTIC REGRESSION - ALL WORD ERRORS - MISCLASS TYPE (CORRECT/PREDICTION): ('CC', 'NN')<br>OCCURENCES: 13 PERCENT OF ERRORS: 0.0023193577163247102 PERCENT OF ALL PREDICTIONS 0.00027439<br>WORDS IN TYPE: </p><p>AND&emsp;Neither&emsp;Or&emsp;Nor&emsp;v.&emsp;nor&emsp;</p><p>LOGISTIC REGRESSION - ALL WORD ERRORS - MISCLASS TYPE (CORRECT/PREDICTION): ('IN', 'NN')<br>OCCURENCES: 11 PERCENT OF ERRORS: 0.001962533452274755 PERCENT OF ALL PREDICTIONS 0.00023218<br>WORDS IN TYPE: </p><p>Along&emsp;OF&emsp;Above&emsp;beside&emsp;Unlike&emsp;Against&emsp;vs.&emsp;Out&emsp;Beyond&emsp;THAN&emsp;</p><p>LOGISTIC REGRESSION - ALL WORD ERRORS - MISCLASS TYPE (CORRECT/PREDICTION): ('JJS', 'NN')<br>OCCURENCES: 11 PERCENT OF ERRORS: 0.001962533452274755 PERCENT OF ALL PREDICTIONS 0.00023218<br>WORDS IN TYPE: </p><p>busiest&emsp;slightest&emsp;strongest&emsp;heaviest&emsp;closest&emsp;poorest&emsp;longest&emsp;broadest&emsp;shortest&emsp;lowest&emsp;earliest&emsp;</p><p>LOGISTIC REGRESSION - ALL WORD ERRORS - MISCLASS TYPE (CORRECT/PREDICTION): ('DT', 'NN')<br>OCCURENCES: 9 PERCENT OF ERRORS: 0.0016057091882247993 PERCENT OF ALL PREDICTIONS 0.00018997<br>WORDS IN TYPE: </p><p>neither&emsp;Any&emsp;AN&emsp;Every&emsp;</p><p>LOGISTIC REGRESSION - ALL WORD ERRORS - MISCLASS TYPE (CORRECT/PREDICTION): ('RB', 'DT')<br>OCCURENCES: 9 PERCENT OF ERRORS: 0.0016057091882247993 PERCENT OF ALL PREDICTIONS 0.00018997<br>WORDS IN TYPE: </p><p>any&emsp;no&emsp;</p><p>LOGISTIC REGRESSION - ALL WORD ERRORS - MISCLASS TYPE (CORRECT/PREDICTION): ('VBN', 'VB')<br>OCCURENCES: 9 PERCENT OF ERRORS: 0.0016057091882247993 PERCENT OF ALL PREDICTIONS 0.00018997<br>WORDS IN TYPE: </p><p>put&emsp;come&emsp;offset&emsp;run&emsp;cut&emsp;become&emsp;</p><p>LOGISTIC REGRESSION - ALL WORD ERRORS - MISCLASS TYPE (CORRECT/PREDICTION): ('NNS', 'VBZ')<br>OCCURENCES: 9 PERCENT OF ERRORS: 0.0016057091882247993 PERCENT OF ALL PREDICTIONS 0.00018997<br>WORDS IN TYPE: </p><p>says&emsp;leaves&emsp;offers&emsp;means&emsp;shows&emsp;</p><p>LOGISTIC REGRESSION - ALL WORD ERRORS - MISCLASS TYPE (CORRECT/PREDICTION): ('WP', 'NN')<br>OCCURENCES: 8 PERCENT OF ERRORS: 0.0014272970561998216 PERCENT OF ALL PREDICTIONS 0.00016886<br>WORDS IN TYPE: </p><p>whom&emsp;Who&emsp;</p><p>LOGISTIC REGRESSION - ALL WORD ERRORS - MISCLASS TYPE (CORRECT/PREDICTION): ('RP', 'IN')<br>OCCURENCES: 8 PERCENT OF ERRORS: 0.0014272970561998216 PERCENT OF ALL PREDICTIONS 0.00016886<br>WORDS IN TYPE: </p><p>out&emsp;</p><p>LOGISTIC REGRESSION - ALL WORD ERRORS - MISCLASS TYPE (CORRECT/PREDICTION): ('PRP', 'NN')<br>OCCURENCES: 7 PERCENT OF ERRORS: 0.0012488849241748439 PERCENT OF ALL PREDICTIONS 0.00014775<br>WORDS IN TYPE: </p><p>ourselves&emsp;US&emsp;</p><p>LOGISTIC REGRESSION - ALL WORD ERRORS - MISCLASS TYPE (CORRECT/PREDICTION): ('PDT', 'NN')<br>OCCURENCES: 6 PERCENT OF ERRORS: 0.0010704727921498661 PERCENT OF ALL PREDICTIONS 0.00012664<br>WORDS IN TYPE: </p><p>half&emsp;</p><p>LOGISTIC REGRESSION - ALL WORD ERRORS - MISCLASS TYPE (CORRECT/PREDICTION): ('MD', 'NN')<br>OCCURENCES: 6 PERCENT OF ERRORS: 0.0010704727921498661 PERCENT OF ALL PREDICTIONS 0.00012664<br>WORDS IN TYPE: </p><p>Can&emsp;Will&emsp;</p><p>LOGISTIC REGRESSION - ALL WORD ERRORS - MISCLASS TYPE (CORRECT/PREDICTION): ("''", 'POS')<br>OCCURENCES: 5 PERCENT OF ERRORS: 0.0008920606601248885 PERCENT OF ALL PREDICTIONS 0.00010554<br>WORDS IN TYPE: </p><p>'&emsp;</p><p>LOGISTIC REGRESSION - ALL WORD ERRORS - MISCLASS TYPE (CORRECT/PREDICTION): ('NNP', 'NNPS')<br>OCCURENCES: 5 PERCENT OF ERRORS: 0.0008920606601248885 PERCENT OF ALL PREDICTIONS 0.00010554<br>WORDS IN TYPE: </p><p>Associates&emsp;Republicans&emsp;Democrats&emsp;Partners&emsp;</p><p>LOGISTIC REGRESSION - ALL WORD ERRORS - MISCLASS TYPE (CORRECT/PREDICTION): ('RB', 'VB')<br>OCCURENCES: 5 PERCENT OF ERRORS: 0.0008920606601248885 PERCENT OF ALL PREDICTIONS 0.00010554<br>WORDS IN TYPE: </p><p>close&emsp;</p><p>LOGISTIC REGRESSION - ALL WORD ERRORS - MISCLASS TYPE (CORRECT/PREDICTION): ('NNS', 'NNP')<br>OCCURENCES: 5 PERCENT OF ERRORS: 0.0008920606601248885 PERCENT OF ALL PREDICTIONS 0.00010554<br>WORDS IN TYPE: </p><p>Banks&emsp;Rights&emsp;Institutions&emsp;Commodities&emsp;</p><p>LOGISTIC REGRESSION - ALL WORD ERRORS - MISCLASS TYPE (CORRECT/PREDICTION): ('VB', 'VBN')<br>OCCURENCES: 5 PERCENT OF ERRORS: 0.0008920606601248885 PERCENT OF ALL PREDICTIONS 0.00010554<br>WORDS IN TYPE: </p><p>hurt&emsp;set&emsp;increased&emsp;shut&emsp;</p><p>LOGISTIC REGRESSION - ALL WORD ERRORS - MISCLASS TYPE (CORRECT/PREDICTION): ('PDT', 'DT')<br>OCCURENCES: 4 PERCENT OF ERRORS: 0.0007136485280999108 PERCENT OF ALL PREDICTIONS 0.00008443<br>WORDS IN TYPE: </p><p>all&emsp;</p><p>LOGISTIC REGRESSION - ALL WORD ERRORS - MISCLASS TYPE (CORRECT/PREDICTION): ('JJR', 'RBR')<br>OCCURENCES: 4 PERCENT OF ERRORS: 0.0007136485280999108 PERCENT OF ALL PREDICTIONS 0.00008443<br>WORDS IN TYPE: </p><p>earlier&emsp;More&emsp;</p><p>LOGISTIC REGRESSION - ALL WORD ERRORS - MISCLASS TYPE (CORRECT/PREDICTION): ('VB', 'IN')<br>OCCURENCES: 4 PERCENT OF ERRORS: 0.0007136485280999108 PERCENT OF ALL PREDICTIONS 0.00008443<br>WORDS IN TYPE: </p><p>like&emsp;except&emsp;up&emsp;</p><p>LOGISTIC REGRESSION - ALL WORD ERRORS - MISCLASS TYPE (CORRECT/PREDICTION): ('RP', 'RB')<br>OCCURENCES: 4 PERCENT OF ERRORS: 0.0007136485280999108 PERCENT OF ALL PREDICTIONS 0.00008443<br>WORDS IN TYPE: </p><p>down&emsp;</p><p>LOGISTIC REGRESSION - ALL WORD ERRORS - MISCLASS TYPE (CORRECT/PREDICTION): ('WRB', 'NN')<br>OCCURENCES: 4 PERCENT OF ERRORS: 0.0007136485280999108 PERCENT OF ALL PREDICTIONS 0.00008443<br>WORDS IN TYPE: </p><p>Why&emsp;WHEN&emsp;Whenever&emsp;</p><p>LOGISTIC REGRESSION - ALL WORD ERRORS - MISCLASS TYPE (CORRECT/PREDICTION): ('$', 'NN')<br>OCCURENCES: 3 PERCENT OF ERRORS: 0.0005352363960749331 PERCENT OF ALL PREDICTIONS 0.00006332<br>WORDS IN TYPE: </p><p>US$&emsp;</p><p>LOGISTIC REGRESSION - ALL WORD ERRORS - MISCLASS TYPE (CORRECT/PREDICTION): ('NNP', 'NNS')<br>OCCURENCES: 3 PERCENT OF ERRORS: 0.0005352363960749331 PERCENT OF ALL PREDICTIONS 0.00006332<br>WORDS IN TYPE: </p><p>Investors&emsp;</p><p>LOGISTIC REGRESSION - ALL WORD ERRORS - MISCLASS TYPE (CORRECT/PREDICTION): ('FW', 'NN')<br>OCCURENCES: 3 PERCENT OF ERRORS: 0.0005352363960749331 PERCENT OF ALL PREDICTIONS 0.00006332<br>WORDS IN TYPE: </p><p>la&emsp;hoc&emsp;Il&emsp;</p><p>LOGISTIC REGRESSION - ALL WORD ERRORS - MISCLASS TYPE (CORRECT/PREDICTION): ('RBR', 'NN')<br>OCCURENCES: 3 PERCENT OF ERRORS: 0.0005352363960749331 PERCENT OF ALL PREDICTIONS 0.00006332<br>WORDS IN TYPE: </p><p>Earlier&emsp;faster&emsp;</p><p>LOGISTIC REGRESSION - ALL WORD ERRORS - MISCLASS TYPE (CORRECT/PREDICTION): ('NN', 'IN')<br>OCCURENCES: 3 PERCENT OF ERRORS: 0.0005352363960749331 PERCENT OF ALL PREDICTIONS 0.00006332<br>WORDS IN TYPE: </p><p>that&emsp;while&emsp;</p><p>LOGISTIC REGRESSION - ALL WORD ERRORS - MISCLASS TYPE (CORRECT/PREDICTION): ('UH', 'NN')<br>OCCURENCES: 2 PERCENT OF ERRORS: 0.0003568242640499554 PERCENT OF ALL PREDICTIONS 0.00004221<br>WORDS IN TYPE: </p><p>Good-bye&emsp;Well&emsp;</p><p>LOGISTIC REGRESSION - ALL WORD ERRORS - MISCLASS TYPE (CORRECT/PREDICTION): ('IN', 'RB')<br>OCCURENCES: 2 PERCENT OF ERRORS: 0.0003568242640499554 PERCENT OF ALL PREDICTIONS 0.00004221<br>WORDS IN TYPE: </p><p>so&emsp;</p><p>LOGISTIC REGRESSION - ALL WORD ERRORS - MISCLASS TYPE (CORRECT/PREDICTION): ('JJS', 'NNP')<br>OCCURENCES: 2 PERCENT OF ERRORS: 0.0003568242640499554 PERCENT OF ALL PREDICTIONS 0.00004221<br>WORDS IN TYPE: </p><p>greatest&emsp;</p><p>LOGISTIC REGRESSION - ALL WORD ERRORS - MISCLASS TYPE (CORRECT/PREDICTION): ('NN', 'VBN')<br>OCCURENCES: 2 PERCENT OF ERRORS: 0.0003568242640499554 PERCENT OF ALL PREDICTIONS 0.00004221<br>WORDS IN TYPE: </p><p>set&emsp;</p><p>LOGISTIC REGRESSION - ALL WORD ERRORS - MISCLASS TYPE (CORRECT/PREDICTION): ('NN', 'VBP')<br>OCCURENCES: 2 PERCENT OF ERRORS: 0.0003568242640499554 PERCENT OF ALL PREDICTIONS 0.00004221<br>WORDS IN TYPE: </p><p>need&emsp;</p><p>LOGISTIC REGRESSION - ALL WORD ERRORS - MISCLASS TYPE (CORRECT/PREDICTION): ('NNS', 'NNPS')<br>OCCURENCES: 2 PERCENT OF ERRORS: 0.0003568242640499554 PERCENT OF ALL PREDICTIONS 0.00004221<br>WORDS IN TYPE: </p><p>Markets&emsp;</p><p>LOGISTIC REGRESSION - ALL WORD ERRORS - MISCLASS TYPE (CORRECT/PREDICTION): ('RB', 'EX')<br>OCCURENCES: 2 PERCENT OF ERRORS: 0.0003568242640499554 PERCENT OF ALL PREDICTIONS 0.00004221<br>WORDS IN TYPE: </p><p>there&emsp;</p><p>LOGISTIC REGRESSION - ALL WORD ERRORS - MISCLASS TYPE (CORRECT/PREDICTION): ('RBS', 'NN')<br>OCCURENCES: 1 PERCENT OF ERRORS: 0.0001784121320249777 PERCENT OF ALL PREDICTIONS 0.00002111<br>WORDS IN TYPE: </p><p>Hardest&emsp;</p><p>LOGISTIC REGRESSION - ALL WORD ERRORS - MISCLASS TYPE (CORRECT/PREDICTION): ('PRP$', 'NN')<br>OCCURENCES: 1 PERCENT OF ERRORS: 0.0001784121320249777 PERCENT OF ALL PREDICTIONS 0.00002111<br>WORDS IN TYPE: </p><p>Your&emsp;</p><p>LOGISTIC REGRESSION - ALL WORD ERRORS - MISCLASS TYPE (CORRECT/PREDICTION): ('NN', 'MD')<br>OCCURENCES: 1 PERCENT OF ERRORS: 0.0001784121320249777 PERCENT OF ALL PREDICTIONS 0.00002111<br>WORDS IN TYPE: </p><p>will&emsp;</p><p>LOGISTIC REGRESSION - ALL WORD ERRORS - MISCLASS TYPE (CORRECT/PREDICTION): ('RB', 'NNP')<br>OCCURENCES: 1 PERCENT OF ERRORS: 0.0001784121320249777 PERCENT OF ALL PREDICTIONS 0.00002111<br>WORDS IN TYPE: </p><p>First&emsp;</p><p>LOGISTIC REGRESSION - ALL WORD ERRORS - MISCLASS TYPE (CORRECT/PREDICTION): ('RBR', 'JJ')<br>OCCURENCES: 1 PERCENT OF ERRORS: 0.0001784121320249777 PERCENT OF ALL PREDICTIONS 0.00002111<br>WORDS IN TYPE: </p><p>further&emsp;</p><p>LOGISTIC REGRESSION - ALL WORD ERRORS - MISCLASS TYPE (CORRECT/PREDICTION): ('IN', 'DT')<br>OCCURENCES: 1 PERCENT OF ERRORS: 0.0001784121320249777 PERCENT OF ALL PREDICTIONS 0.00002111<br>WORDS IN TYPE: </p><p>the&emsp;</p><p>LOGISTIC REGRESSION - ALL WORD ERRORS - MISCLASS TYPE (CORRECT/PREDICTION): ('WDT', 'NN')<br>OCCURENCES: 1 PERCENT OF ERRORS: 0.0001784121320249777 PERCENT OF ALL PREDICTIONS 0.00002111<br>WORDS IN TYPE: </p><p>whichever&emsp;</p><p>LOGISTIC REGRESSION - ALL WORD ERRORS - MISCLASS TYPE (CORRECT/PREDICTION): ('VB', 'VBD')<br>OCCURENCES: 1 PERCENT OF ERRORS: 0.0001784121320249777 PERCENT OF ALL PREDICTIONS 0.00002111<br>WORDS IN TYPE: </p><p>hit&emsp;</p><p>LOGISTIC REGRESSION - ALL WORD ERRORS - MISCLASS TYPE (CORRECT/PREDICTION): ('PRP', 'CD')<br>OCCURENCES: 1 PERCENT OF ERRORS: 0.0001784121320249777 PERCENT OF ALL PREDICTIONS 0.00002111<br>WORDS IN TYPE: </p><p>one&emsp;</p> </div>
+        <div id="known_errors" class="tab-pane fade">
+        <a data-toggle="tab" href="#chart_known_errors">Bar Graph</a><br>
+    <p>KNOWN WORD ERRORS<br><table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th>(CORRECT/PREDICTION)</th>
+      <th>OCCURENCES</th>
+      <th>% OF ERRORS</th>
+      <th>% OF ALL PREDICTIONS</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>(VB, NN)</td>
+      <td>349</td>
+      <td>0.120386</td>
+      <td>0.007366</td>
+    </tr>
+    <tr>
+      <td>(NNS, NN)</td>
+      <td>187</td>
+      <td>0.064505</td>
+      <td>0.003947</td>
+    </tr>
+    <tr>
+      <td>(VBD, VBN)</td>
+      <td>162</td>
+      <td>0.055881</td>
+      <td>0.003419</td>
+    </tr>
+    <tr>
+      <td>(JJ, NN)</td>
+      <td>160</td>
+      <td>0.055191</td>
+      <td>0.003377</td>
+    </tr>
+    <tr>
+      <td>(VBN, NN)</td>
+      <td>157</td>
+      <td>0.054157</td>
+      <td>0.003314</td>
+    </tr>
+    <tr>
+      <td>(VBN, VBD)</td>
+      <td>141</td>
+      <td>0.048637</td>
+      <td>0.002976</td>
+    </tr>
+    <tr>
+      <td>(VBG, NN)</td>
+      <td>136</td>
+      <td>0.046913</td>
+      <td>0.002871</td>
+    </tr>
+    <tr>
+      <td>(VBP, VB)</td>
+      <td>123</td>
+      <td>0.042428</td>
+      <td>0.002596</td>
+    </tr>
+    <tr>
+      <td>(VBD, NN)</td>
+      <td>113</td>
+      <td>0.038979</td>
+      <td>0.002385</td>
+    </tr>
+    <tr>
+      <td>(CD, NN)</td>
+      <td>105</td>
+      <td>0.036219</td>
+      <td>0.002216</td>
+    </tr>
+    <tr>
+      <td>(NN, VB)</td>
+      <td>102</td>
+      <td>0.035185</td>
+      <td>0.002153</td>
+    </tr>
+    <tr>
+      <td>(RB, NN)</td>
+      <td>98</td>
+      <td>0.033805</td>
+      <td>0.002069</td>
+    </tr>
+    <tr>
+      <td>(WDT, IN)</td>
+      <td>95</td>
+      <td>0.032770</td>
+      <td>0.002005</td>
+    </tr>
+    <tr>
+      <td>(NN, JJ)</td>
+      <td>87</td>
+      <td>0.030010</td>
+      <td>0.001836</td>
+    </tr>
+    <tr>
+      <td>(VBP, NN)</td>
+      <td>83</td>
+      <td>0.028631</td>
+      <td>0.001752</td>
+    </tr>
+    <tr>
+      <td>(VB, VBP)</td>
+      <td>80</td>
+      <td>0.027596</td>
+      <td>0.001689</td>
+    </tr>
+    <tr>
+      <td>(RB, IN)</td>
+      <td>71</td>
+      <td>0.024491</td>
+      <td>0.001499</td>
+    </tr>
+    <tr>
+      <td>(VBZ, NN)</td>
+      <td>68</td>
+      <td>0.023456</td>
+      <td>0.001435</td>
+    </tr>
+    <tr>
+      <td>(JJ, NNP)</td>
+      <td>65</td>
+      <td>0.022422</td>
+      <td>0.001372</td>
+    </tr>
+    <tr>
+      <td>(VBZ, NNS)</td>
+      <td>48</td>
+      <td>0.016557</td>
+      <td>0.001013</td>
+    </tr>
+    <tr>
+      <td>(DT, IN)</td>
+      <td>40</td>
+      <td>0.013798</td>
+      <td>0.000844</td>
+    </tr>
+    <tr>
+      <td>(RBR, JJR)</td>
+      <td>38</td>
+      <td>0.013108</td>
+      <td>0.000802</td>
+    </tr>
+    <tr>
+      <td>(NNPS, NN)</td>
+      <td>33</td>
+      <td>0.011383</td>
+      <td>0.000697</td>
+    </tr>
+    <tr>
+      <td>(VBZ, POS)</td>
+      <td>28</td>
+      <td>0.009659</td>
+      <td>0.000591</td>
+    </tr>
+    <tr>
+      <td>(RB, JJ)</td>
+      <td>24</td>
+      <td>0.008279</td>
+      <td>0.000507</td>
+    </tr>
+    <tr>
+      <td>(JJR, NN)</td>
+      <td>21</td>
+      <td>0.007244</td>
+      <td>0.000443</td>
+    </tr>
+    <tr>
+      <td>(JJ, RB)</td>
+      <td>21</td>
+      <td>0.007244</td>
+      <td>0.000443</td>
+    </tr>
+    <tr>
+      <td>(VB, JJ)</td>
+      <td>20</td>
+      <td>0.006899</td>
+      <td>0.000422</td>
+    </tr>
+    <tr>
+      <td>(NNPS, NNP)</td>
+      <td>19</td>
+      <td>0.006554</td>
+      <td>0.000401</td>
+    </tr>
+    <tr>
+      <td>(NN, VBG)</td>
+      <td>15</td>
+      <td>0.005174</td>
+      <td>0.000317</td>
+    </tr>
+    <tr>
+      <td>(NN, NNP)</td>
+      <td>14</td>
+      <td>0.004829</td>
+      <td>0.000296</td>
+    </tr>
+    <tr>
+      <td>(NNP, JJ)</td>
+      <td>14</td>
+      <td>0.004829</td>
+      <td>0.000296</td>
+    </tr>
+    <tr>
+      <td>(CC, NN)</td>
+      <td>13</td>
+      <td>0.004484</td>
+      <td>0.000274</td>
+    </tr>
+    <tr>
+      <td>(NNP, NN)</td>
+      <td>10</td>
+      <td>0.003449</td>
+      <td>0.000211</td>
+    </tr>
+    <tr>
+      <td>(NNS, VBZ)</td>
+      <td>9</td>
+      <td>0.003105</td>
+      <td>0.000190</td>
+    </tr>
+    <tr>
+      <td>(VBN, VB)</td>
+      <td>9</td>
+      <td>0.003105</td>
+      <td>0.000190</td>
+    </tr>
+    <tr>
+      <td>(RB, DT)</td>
+      <td>9</td>
+      <td>0.003105</td>
+      <td>0.000190</td>
+    </tr>
+    <tr>
+      <td>(RP, IN)</td>
+      <td>8</td>
+      <td>0.002760</td>
+      <td>0.000169</td>
+    </tr>
+    <tr>
+      <td>(DT, NN)</td>
+      <td>8</td>
+      <td>0.002760</td>
+      <td>0.000169</td>
+    </tr>
+    <tr>
+      <td>(WP, NN)</td>
+      <td>8</td>
+      <td>0.002760</td>
+      <td>0.000169</td>
+    </tr>
+    <tr>
+      <td>(PRP, NN)</td>
+      <td>7</td>
+      <td>0.002415</td>
+      <td>0.000148</td>
+    </tr>
+    <tr>
+      <td>(JJS, NN)</td>
+      <td>6</td>
+      <td>0.002070</td>
+      <td>0.000127</td>
+    </tr>
+    <tr>
+      <td>(IN, NN)</td>
+      <td>6</td>
+      <td>0.002070</td>
+      <td>0.000127</td>
+    </tr>
+    <tr>
+      <td>(PDT, NN)</td>
+      <td>6</td>
+      <td>0.002070</td>
+      <td>0.000127</td>
+    </tr>
+    <tr>
+      <td>(RB, VB)</td>
+      <td>5</td>
+      <td>0.001725</td>
+      <td>0.000106</td>
+    </tr>
+    <tr>
+      <td>(VB, VBN)</td>
+      <td>5</td>
+      <td>0.001725</td>
+      <td>0.000106</td>
+    </tr>
+    <tr>
+      <td>(NNP, NNPS)</td>
+      <td>5</td>
+      <td>0.001725</td>
+      <td>0.000106</td>
+    </tr>
+    <tr>
+      <td>('', POS)</td>
+      <td>5</td>
+      <td>0.001725</td>
+      <td>0.000106</td>
+    </tr>
+    <tr>
+      <td>(NNS, NNP)</td>
+      <td>5</td>
+      <td>0.001725</td>
+      <td>0.000106</td>
+    </tr>
+    <tr>
+      <td>(MD, NN)</td>
+      <td>4</td>
+      <td>0.001380</td>
+      <td>0.000084</td>
+    </tr>
+    <tr>
+      <td>(JJR, RBR)</td>
+      <td>4</td>
+      <td>0.001380</td>
+      <td>0.000084</td>
+    </tr>
+    <tr>
+      <td>(VB, IN)</td>
+      <td>4</td>
+      <td>0.001380</td>
+      <td>0.000084</td>
+    </tr>
+    <tr>
+      <td>(PDT, DT)</td>
+      <td>4</td>
+      <td>0.001380</td>
+      <td>0.000084</td>
+    </tr>
+    <tr>
+      <td>(RP, RB)</td>
+      <td>4</td>
+      <td>0.001380</td>
+      <td>0.000084</td>
+    </tr>
+    <tr>
+      <td>($, NN)</td>
+      <td>3</td>
+      <td>0.001035</td>
+      <td>0.000063</td>
+    </tr>
+    <tr>
+      <td>(WRB, NN)</td>
+      <td>3</td>
+      <td>0.001035</td>
+      <td>0.000063</td>
+    </tr>
+    <tr>
+      <td>(NNP, NNS)</td>
+      <td>3</td>
+      <td>0.001035</td>
+      <td>0.000063</td>
+    </tr>
+    <tr>
+      <td>(NN, IN)</td>
+      <td>3</td>
+      <td>0.001035</td>
+      <td>0.000063</td>
+    </tr>
+    <tr>
+      <td>(RBR, NN)</td>
+      <td>3</td>
+      <td>0.001035</td>
+      <td>0.000063</td>
+    </tr>
+    <tr>
+      <td>(FW, NN)</td>
+      <td>2</td>
+      <td>0.000690</td>
+      <td>0.000042</td>
+    </tr>
+    <tr>
+      <td>(IN, RB)</td>
+      <td>2</td>
+      <td>0.000690</td>
+      <td>0.000042</td>
+    </tr>
+    <tr>
+      <td>(JJS, NNP)</td>
+      <td>2</td>
+      <td>0.000690</td>
+      <td>0.000042</td>
+    </tr>
+    <tr>
+      <td>(NN, VBN)</td>
+      <td>2</td>
+      <td>0.000690</td>
+      <td>0.000042</td>
+    </tr>
+    <tr>
+      <td>(NN, VBP)</td>
+      <td>2</td>
+      <td>0.000690</td>
+      <td>0.000042</td>
+    </tr>
+    <tr>
+      <td>(NNS, NNPS)</td>
+      <td>2</td>
+      <td>0.000690</td>
+      <td>0.000042</td>
+    </tr>
+    <tr>
+      <td>(RB, EX)</td>
+      <td>2</td>
+      <td>0.000690</td>
+      <td>0.000042</td>
+    </tr>
+    <tr>
+      <td>(PRP, CD)</td>
+      <td>1</td>
+      <td>0.000345</td>
+      <td>0.000021</td>
+    </tr>
+    <tr>
+      <td>(PRP$, NN)</td>
+      <td>1</td>
+      <td>0.000345</td>
+      <td>0.000021</td>
+    </tr>
+    <tr>
+      <td>(NN, MD)</td>
+      <td>1</td>
+      <td>0.000345</td>
+      <td>0.000021</td>
+    </tr>
+    <tr>
+      <td>(RB, NNP)</td>
+      <td>1</td>
+      <td>0.000345</td>
+      <td>0.000021</td>
+    </tr>
+    <tr>
+      <td>(RBR, JJ)</td>
+      <td>1</td>
+      <td>0.000345</td>
+      <td>0.000021</td>
+    </tr>
+    <tr>
+      <td>(IN, DT)</td>
+      <td>1</td>
+      <td>0.000345</td>
+      <td>0.000021</td>
+    </tr>
+    <tr>
+      <td>(WDT, NN)</td>
+      <td>1</td>
+      <td>0.000345</td>
+      <td>0.000021</td>
+    </tr>
+    <tr>
+      <td>(VB, VBD)</td>
+      <td>1</td>
+      <td>0.000345</td>
+      <td>0.000021</td>
+    </tr>
+    <tr>
+      <td>(UH, NN)</td>
+      <td>1</td>
+      <td>0.000345</td>
+      <td>0.000021</td>
+    </tr>
+  </tbody>
+</table></p><p>LOGISTIC REGRESSION - KNOWN WORD ERRORS - MISCLASS TYPE (CORRECT/PREDICTION): ('VB', 'NN')<br>OCCURENCES: 349 PERCENT OF ERRORS: 0.12038634011728182 PERCENT OF ALL PREDICTIONS 0.00736644<br>WORDS IN TYPE: </p><p>exploit&emsp;adjust&emsp;deduct&emsp;leap&emsp;face&emsp;steer&emsp;work&emsp;demand&emsp;shore&emsp;preserve&emsp;focus&emsp;ban&emsp;choose&emsp;field&emsp;lure&emsp;reserve&emsp;lift&emsp;attack&emsp;result&emsp;usurp&emsp;appoint&emsp;market&emsp;topple&emsp;undermine&emsp;challenge&emsp;account&emsp;blame&emsp;assist&emsp;inject&emsp;exercise&emsp;press&emsp;monitor&emsp;resurrect&emsp;tighten&emsp;gut&emsp;force&emsp;knock&emsp;formulate&emsp;order&emsp;profit&emsp;risk&emsp;hand&emsp;declare&emsp;guarantee&emsp;resolve&emsp;benefit&emsp;recommend&emsp;redeem&emsp;control&emsp;emerge&emsp;display&emsp;conduct&emsp;limit&emsp;cast&emsp;craft&emsp;agree&emsp;deal&emsp;arrive&emsp;test&emsp;enforce&emsp;blunt&emsp;supply&emsp;safety&emsp;assemble&emsp;tumble&emsp;support&emsp;wane&emsp;oppose&emsp;move&emsp;collect&emsp;proceed&emsp;promote&emsp;rush&emsp;trial&emsp;fire&emsp;bid&emsp;reinforce&emsp;postpone&emsp;Let&emsp;purchase&emsp;charge&emsp;gain&emsp;update&emsp;dip&emsp;resort&emsp;address&emsp;aim&emsp;stock&emsp;structure&emsp;retreat&emsp;tax&emsp;range&emsp;devise&emsp;urge&emsp;Get&emsp;struggle&emsp;fuel&emsp;violate&emsp;phase&emsp;scuttle&emsp;round&emsp;dare&emsp;complicate&emsp;fear&emsp;clean&emsp;strip&emsp;act&emsp;compare&emsp;execute&emsp;base&emsp;defeat&emsp;5&emsp;offer&emsp;dump&emsp;request&emsp;rise&emsp;change&emsp;report&emsp;incorporate&emsp;fund&emsp;increase&emsp;prefer&emsp;resist&emsp;buffet&emsp;justify&emsp;understand&emsp;modernize&emsp;mention&emsp;debate&emsp;sour&emsp;repair&emsp;withdraw&emsp;reconstruct&emsp;share&emsp;lock&emsp;step&emsp;use&emsp;decline&emsp;mine&emsp;stand&emsp;frame&emsp;fret&emsp;anticipate&emsp;muse&emsp;intervene&emsp;rule&emsp;rely&emsp;speak&emsp;arrange&emsp;steal&emsp;advance&emsp;lobby&emsp;undertake&emsp;date&emsp;interest&emsp;school&emsp;sign&emsp;enhance&emsp;feed&emsp;jump&emsp;cost&emsp;bite&emsp;overturn&emsp;spot&emsp;Look&emsp;return&emsp;bribe&emsp;threaten&emsp;elect&emsp;consult&emsp;issue&emsp;aid&emsp;fall&emsp;guide&emsp;sustain&emsp;escape&emsp;facilitate&emsp;loosen&emsp;undercut&emsp;head&emsp;claim&emsp;blow&emsp;squeeze&emsp;approach&emsp;segregate&emsp;rally&emsp;advise&emsp;pace&emsp;arrest&emsp;post&emsp;accommodate&emsp;finish&emsp;power&emsp;repeat&emsp;ride&emsp;swallow&emsp;slump&emsp;fix&emsp;rationalize&emsp;shift&emsp;miss&emsp;exist&emsp;auction&emsp;plummet&emsp;pump&emsp;reject&emsp;split&emsp;pose&emsp;complain&emsp;answer&emsp;drop&emsp;forget&emsp;collapse&emsp;surrender&emsp;honor&emsp;investigate&emsp;end&emsp;reverse&emsp;trade&emsp;spare&emsp;veto&emsp;ignore&emsp;exit&emsp;check&emsp;</p><p>LOGISTIC REGRESSION - KNOWN WORD ERRORS - MISCLASS TYPE (CORRECT/PREDICTION): ('NNS', 'NN')<br>OCCURENCES: 187 PERCENT OF ERRORS: 0.06450500172473267 PERCENT OF ALL PREDICTIONS 0.00394706<br>WORDS IN TYPE: </p><p>locales&emsp;veterans&emsp;graduates&emsp;phases&emsp;buttons&emsp;meetings&emsp;aides&emsp;gloves&emsp;defects&emsp;recommendations&emsp;rings&emsp;successes&emsp;minorities&emsp;volumes&emsp;exceptions&emsp;themes&emsp;collectors&emsp;openings&emsp;paths&emsp;enthusiasts&emsp;robots&emsp;Ratings&emsp;diplomats&emsp;tapes&emsp;updates&emsp;ingredients&emsp;traffickers&emsp;Remics&emsp;methods&emsp;examples&emsp;increments&emsp;laborers&emsp;ranchers&emsp;drinks&emsp;affairs&emsp;statutes&emsp;pennies&emsp;professions&emsp;purchasers&emsp;bicycles&emsp;misrepresentations&emsp;sticks&emsp;forums&emsp;pleas&emsp;pants&emsp;cycles&emsp;mistakes&emsp;leftists&emsp;casualties&emsp;occasions&emsp;Representatives&emsp;strengths&emsp;tactics&emsp;patents&emsp;advancers&emsp;gates&emsp;microprocessors&emsp;proponents&emsp;liberals&emsp;Yields&emsp;technologies&emsp;backers&emsp;commissioners&emsp;drivers&emsp;gasolines&emsp;herds&emsp;bushels&emsp;breakers&emsp;shelves&emsp;disclosures&emsp;kickbacks&emsp;labs&emsp;mid-1980s&emsp;Expenses&emsp;guilders&emsp;sons&emsp;delegates&emsp;bans&emsp;Spokesmen&emsp;pesticides&emsp;Conservatives&emsp;worries&emsp;fuels&emsp;Underwriters&emsp;consents&emsp;universities&emsp;criminals&emsp;elephants&emsp;shops&emsp;persons&emsp;efficiencies&emsp;BRIEFS&emsp;connections&emsp;sights&emsp;environments&emsp;factions&emsp;vignettes&emsp;economies&emsp;highs&emsp;papers&emsp;hunters&emsp;officers&emsp;Funds&emsp;causes&emsp;storms&emsp;critics&emsp;Directors&emsp;stalls&emsp;jitters&emsp;prohibitions&emsp;chairs&emsp;revisions&emsp;debtholders&emsp;fixtures&emsp;Ways&emsp;pharmaceuticals&emsp;circuits&emsp;casinos&emsp;emergencies&emsp;instructors&emsp;environmentalists&emsp;deficits&emsp;prosecutors&emsp;legislatures&emsp;paintings&emsp;Drugs&emsp;Opponents&emsp;</p><p>LOGISTIC REGRESSION - KNOWN WORD ERRORS - MISCLASS TYPE (CORRECT/PREDICTION): ('VBD', 'VBN')<br>OCCURENCES: 162 PERCENT OF ERRORS: 0.055881338392549156 PERCENT OF ALL PREDICTIONS 0.00341938<br>WORDS IN TYPE: </p><p>projected&emsp;increased&emsp;blocked&emsp;hired&emsp;involved&emsp;required&emsp;expected&emsp;discovered&emsp;pleased&emsp;brought&emsp;pushed&emsp;estimated&emsp;placed&emsp;led&emsp;heard&emsp;aimed&emsp;interpreted&emsp;changed&emsp;presented&emsp;allowed&emsp;defined&emsp;submitted&emsp;looked&emsp;considered&emsp;divided&emsp;saved&emsp;revised&emsp;believed&emsp;caused&emsp;called&emsp;reached&emsp;served&emsp;fired&emsp;offered&emsp;planned&emsp;denied&emsp;developed&emsp;needed&emsp;paid&emsp;fed&emsp;notified&emsp;discussed&emsp;borrowed&emsp;accepted&emsp;provided&emsp;appointed&emsp;backed&emsp;issued&emsp;filed&emsp;priced&emsp;left&emsp;entered&emsp;weakened&emsp;set&emsp;made&emsp;arranged&emsp;traded&emsp;held&emsp;reduced&emsp;supposed&emsp;faced&emsp;played&emsp;named&emsp;sold&emsp;disclosed&emsp;dominated&emsp;elected&emsp;subordinated&emsp;created&emsp;returned&emsp;intended&emsp;used&emsp;described&emsp;caught&emsp;distributed&emsp;owned&emsp;produced&emsp;expanded&emsp;</p><p>LOGISTIC REGRESSION - KNOWN WORD ERRORS - MISCLASS TYPE (CORRECT/PREDICTION): ('JJ', 'NN')<br>OCCURENCES: 160 PERCENT OF ERRORS: 0.055191445325974475 PERCENT OF ALL PREDICTIONS 0.00337717<br>WORDS IN TYPE: </p><p>affordable&emsp;distant&emsp;dependent&emsp;jittery&emsp;choppy&emsp;underground&emsp;inflammatory&emsp;Crude&emsp;anti-nuclear&emsp;customary&emsp;inexorable&emsp;World-wide&emsp;Further&emsp;cardiovascular&emsp;operational&emsp;45-year-old&emsp;present-day&emsp;Late&emsp;meaningful&emsp;rugged&emsp;triple&emsp;illegitimate&emsp;takeover-related&emsp;first-class&emsp;liquid&emsp;non-trade&emsp;erroneous&emsp;hybrid&emsp;elegant&emsp;witching&emsp;bumpy&emsp;tailor-made&emsp;alternate&emsp;personal-care&emsp;agricultural&emsp;treacherous&emsp;sorry&emsp;suitable&emsp;subsidized&emsp;implicit&emsp;lifelong&emsp;ceramic&emsp;heady&emsp;inflated&emsp;viral&emsp;leftist&emsp;socalled&emsp;fruitless&emsp;mediocre&emsp;smooth&emsp;occasional&emsp;consistent&emsp;private-sector&emsp;unfulfilled&emsp;dual&emsp;realistic&emsp;Anti-nuclear&emsp;divisive&emsp;rental&emsp;ill&emsp;Local&emsp;scary&emsp;outspoken&emsp;incredible&emsp;comparative&emsp;upper&emsp;shaky&emsp;clean&emsp;takeover-stock&emsp;parental&emsp;white-collar&emsp;year-before&emsp;superior&emsp;non-prescription&emsp;naked&emsp;youthful&emsp;computer-driven&emsp;ample&emsp;primitive&emsp;experimental&emsp;Paris-based&emsp;ingenious&emsp;brave&emsp;radical&emsp;grave&emsp;flush&emsp;multibillion-dollar&emsp;far-reaching&emsp;boring&emsp;Colombian&emsp;Pakistani&emsp;preferred-stock&emsp;Senate-passed&emsp;non-accrual&emsp;Argentine&emsp;court-appointed&emsp;passionate&emsp;ardent&emsp;specialized&emsp;16th&emsp;fatal&emsp;shocking&emsp;vibrant&emsp;Nine-month&emsp;veritable&emsp;14th&emsp;routine&emsp;fiduciary&emsp;unrelated&emsp;12-year&emsp;U.S.-built&emsp;long-range&emsp;opposite&emsp;one-hour&emsp;brief&emsp;perverse&emsp;Additional&emsp;intriguing&emsp;parliamentary&emsp;Unknown&emsp;extreme&emsp;case-by-case&emsp;</p><p>LOGISTIC REGRESSION - KNOWN WORD ERRORS - MISCLASS TYPE (CORRECT/PREDICTION): ('VBN', 'NN')<br>OCCURENCES: 157 PERCENT OF ERRORS: 0.05415660572611245 PERCENT OF ALL PREDICTIONS 0.00331384<br>WORDS IN TYPE: </p><p>interviewed&emsp;locked&emsp;directed&emsp;surfaced&emsp;fractured&emsp;indicted&emsp;discounted&emsp;Compared&emsp;spooked&emsp;allocated&emsp;pumped&emsp;coupled&emsp;united&emsp;poured&emsp;positioned&emsp;supervised&emsp;withheld&emsp;contacted&emsp;proved&emsp;taxed&emsp;categorized&emsp;protested&emsp;arrested&emsp;redesigned&emsp;supported&emsp;flooded&emsp;cheated&emsp;snagged&emsp;succeeded&emsp;dedicated&emsp;prohibited&emsp;propelled&emsp;foreseen&emsp;influenced&emsp;classified&emsp;syndicated&emsp;resisted&emsp;sworn&emsp;connected&emsp;disappointed&emsp;adopted&emsp;resumed&emsp;exercised&emsp;seized&emsp;scattered&emsp;defeated&emsp;altered&emsp;reviewed&emsp;abated&emsp;laced&emsp;replenished&emsp;viewed&emsp;undermined&emsp;confronted&emsp;amended&emsp;discouraged&emsp;banned&emsp;operated&emsp;pressured&emsp;negotiated&emsp;recognized&emsp;tarnished&emsp;accustomed&emsp;blamed&emsp;hidden&emsp;contemplated&emsp;faded&emsp;marked&emsp;appropriated&emsp;presumed&emsp;approached&emsp;stabilized&emsp;blackened&emsp;cornered&emsp;dogged&emsp;regarded&emsp;trained&emsp;hobbled&emsp;mastered&emsp;supplied&emsp;severed&emsp;rushed&emsp;switched&emsp;revived&emsp;replaced&emsp;spun&emsp;Asked&emsp;born&emsp;tied&emsp;strengthened&emsp;leased&emsp;recounted&emsp;infected&emsp;discredited&emsp;titled&emsp;fined&emsp;interrupted&emsp;assumed&emsp;pressed&emsp;ignored&emsp;imposed&emsp;distracted&emsp;tired&emsp;sparked&emsp;handled&emsp;captured&emsp;sponsored&emsp;eliminated&emsp;risen&emsp;criticized&emsp;aged&emsp;lagged&emsp;</p><p>LOGISTIC REGRESSION - KNOWN WORD ERRORS - MISCLASS TYPE (CORRECT/PREDICTION): ('VBN', 'VBD')<br>OCCURENCES: 141 PERCENT OF ERRORS: 0.048637461193515 PERCENT OF ALL PREDICTIONS 0.00297613<br>WORDS IN TYPE: </p><p>announced&emsp;hit&emsp;acquired&emsp;concluded&emsp;sat&emsp;triggered&emsp;found&emsp;told&emsp;claimed&emsp;asked&emsp;prompted&emsp;attributed&emsp;arrived&emsp;ended&emsp;topped&emsp;stopped&emsp;realized&emsp;suspended&emsp;expressed&emsp;signed&emsp;capped&emsp;raised&emsp;sent&emsp;meant&emsp;met&emsp;agreed&emsp;reacted&emsp;rejected&emsp;spent&emsp;managed&emsp;had&emsp;reported&emsp;received&emsp;boosted&emsp;voted&emsp;ruled&emsp;included&emsp;continued&emsp;confirmed&emsp;sought&emsp;added&emsp;won&emsp;slashed&emsp;dismissed&emsp;declined&emsp;helped&emsp;learned&emsp;failed&emsp;dropped&emsp;followed&emsp;advanced&emsp;closed&emsp;refused&emsp;approved&emsp;lost&emsp;lowered&emsp;indicated&emsp;widened&emsp;promised&emsp;ordered&emsp;struck&emsp;carried&emsp;predicted&emsp;died&emsp;watched&emsp;turned&emsp;decided&emsp;bought&emsp;</p><p>LOGISTIC REGRESSION - KNOWN WORD ERRORS - MISCLASS TYPE (CORRECT/PREDICTION): ('VBG', 'NN')<br>OCCURENCES: 136 PERCENT OF ERRORS: 0.046912728527078305 PERCENT OF ALL PREDICTIONS 0.00287059<br>WORDS IN TYPE: </p><p>speeding&emsp;advertising&emsp;racing&emsp;visiting&emsp;judging&emsp;battling&emsp;spreading&emsp;lasting&emsp;waging&emsp;thriving&emsp;parking&emsp;Taking&emsp;thinking&emsp;speaking&emsp;dying&emsp;prompting&emsp;sinking&emsp;restoring&emsp;maturing&emsp;drawing&emsp;prodding&emsp;conspiring&emsp;conducting&emsp;experimenting&emsp;blazing&emsp;monitoring&emsp;sliding&emsp;proposing&emsp;experiencing&emsp;Improving&emsp;handling&emsp;chasing&emsp;laughing&emsp;arguing&emsp;learning&emsp;staying&emsp;portraying&emsp;stopping&emsp;tracking&emsp;soliciting&emsp;deferring&emsp;plunging&emsp;recruiting&emsp;referring&emsp;consolidating&emsp;settling&emsp;filing&emsp;insisting&emsp;determining&emsp;combining&emsp;fretting&emsp;signing&emsp;owning&emsp;erasing&emsp;rebuilding&emsp;enacting&emsp;doubling&emsp;alleging&emsp;meeting&emsp;preserving&emsp;lagging&emsp;accepting&emsp;prevailing&emsp;Including&emsp;offering&emsp;sleeping&emsp;blending&emsp;funding&emsp;deteriorating&emsp;ordering&emsp;financing&emsp;subsidizing&emsp;stumbling&emsp;responding&emsp;placing&emsp;collapsing&emsp;crushing&emsp;trading&emsp;wondering&emsp;preventing&emsp;assisting&emsp;confirming&emsp;scratching&emsp;breathing&emsp;planning&emsp;reinforcing&emsp;retreating&emsp;rushing&emsp;collecting&emsp;touting&emsp;forming&emsp;weakening&emsp;exporting&emsp;resigning&emsp;benefiting&emsp;choosing&emsp;marketing&emsp;removing&emsp;studying&emsp;improving&emsp;forecasting&emsp;pressuring&emsp;gaining&emsp;slipping&emsp;syndicating&emsp;Beginning&emsp;preferring&emsp;building&emsp;approving&emsp;concerning&emsp;agreeing&emsp;kicking&emsp;replacing&emsp;dating&emsp;</p><p>LOGISTIC REGRESSION - KNOWN WORD ERRORS - MISCLASS TYPE (CORRECT/PREDICTION): ('VBP', 'VB')<br>OCCURENCES: 123 PERCENT OF ERRORS: 0.04242842359434288 PERCENT OF ALL PREDICTIONS 0.00259620<br>WORDS IN TYPE: </p><p>do&emsp;exceed&emsp;buy&emsp;offset&emsp;hold&emsp;become&emsp;worry&emsp;continue&emsp;leave&emsp;require&emsp;know&emsp;generate&emsp;join&emsp;operate&emsp;see&emsp;look&emsp;allow&emsp;put&emsp;bring&emsp;come&emsp;serve&emsp;talk&emsp;predict&emsp;prevent&emsp;add&emsp;find&emsp;yield&emsp;delay&emsp;invest&emsp;make&emsp;hear&emsp;feel&emsp;decide&emsp;refuse&emsp;create&emsp;watch&emsp;read&emsp;show&emsp;help&emsp;sit&emsp;push&emsp;call&emsp;try&emsp;remain&emsp;appear&emsp;receive&emsp;be&emsp;get&emsp;mean&emsp;carry&emsp;provide&emsp;indicate&emsp;bear&emsp;produce&emsp;let&emsp;run&emsp;fill&emsp;cause&emsp;apply&emsp;file&emsp;intend&emsp;give&emsp;represent&emsp;</p><p>LOGISTIC REGRESSION - KNOWN WORD ERRORS - MISCLASS TYPE (CORRECT/PREDICTION): ('VBD', 'NN')<br>OCCURENCES: 113 PERCENT OF ERRORS: 0.03897895826146947 PERCENT OF ALL PREDICTIONS 0.00238512<br>WORDS IN TYPE: </p><p>subsided&emsp;traumatized&emsp;regained&emsp;surfaced&emsp;rebounded&emsp;indicted&emsp;ousted&emsp;phoned&emsp;cleared&emsp;repurchased&emsp;proclaimed&emsp;commented&emsp;lay&emsp;poured&emsp;testified&emsp;withheld&emsp;proved&emsp;pleaded&emsp;broke&emsp;supported&emsp;plummeted&emsp;screamed&emsp;landed&emsp;flew&emsp;rode&emsp;reminded&emsp;circulated&emsp;averaged&emsp;drove&emsp;shook&emsp;searched&emsp;snapped&emsp;reversed&emsp;revealed&emsp;Had&emsp;scrapped&emsp;adopted&emsp;jolted&emsp;stressed&emsp;downgraded&emsp;crashed&emsp;insisted&emsp;peaked&emsp;reiterated&emsp;amended&emsp;prevailed&emsp;walked&emsp;responded&emsp;operated&emsp;sank&emsp;persuaded&emsp;pressured&emsp;Was&emsp;dipped&emsp;stated&emsp;kicked&emsp;missed&emsp;blamed&emsp;attempted&emsp;bogged&emsp;scrambled&emsp;forbade&emsp;depended&emsp;fared&emsp;wondered&emsp;tended&emsp;slowed&emsp;stirred&emsp;swelled&emsp;rushed&emsp;satisfied&emsp;fled&emsp;switched&emsp;replaced&emsp;paled&emsp;yielded&emsp;surrendered&emsp;enjoyed&emsp;lobbied&emsp;Did&emsp;uncovered&emsp;fined&emsp;imposed&emsp;hailed&emsp;feared&emsp;exploded&emsp;observed&emsp;recalled&emsp;criticized&emsp;overwhelmed&emsp;</p><p>LOGISTIC REGRESSION - KNOWN WORD ERRORS - MISCLASS TYPE (CORRECT/PREDICTION): ('CD', 'NN')<br>OCCURENCES: 105 PERCENT OF ERRORS: 0.03621938599517075 PERCENT OF ALL PREDICTIONS 0.00221627<br>WORDS IN TYPE: </p><p>1970&emsp;142.75&emsp;9.2&emsp;9.75&emsp;10\/32&emsp;2.375&emsp;7\/32&emsp;7.53&emsp;9.1&emsp;541&emsp;20.5&emsp;14.8&emsp;198&emsp;13.6&emsp;729&emsp;19\/32&emsp;6,000&emsp;1.42&emsp;215&emsp;28,000&emsp;235&emsp;6.7&emsp;114.4&emsp;390&emsp;336&emsp;9.8&emsp;15.80&emsp;32.6&emsp;2007&emsp;83.7&emsp;0.88&emsp;Seven&emsp;550&emsp;156.7&emsp;1.95&emsp;31\/32&emsp;0.95&emsp;14.2&emsp;465&emsp;92&emsp;2.04&emsp;ONE&emsp;409&emsp;18.4&emsp;36.6&emsp;8.04&emsp;2.33&emsp;7.01&emsp;76.7&emsp;1.8667&emsp;1.40&emsp;55,000&emsp;80,000&emsp;700,000&emsp;70,000&emsp;217&emsp;10.03&emsp;252&emsp;8.42&emsp;405&emsp;1997&emsp;8.01&emsp;1.37&emsp;14,000&emsp;2.44&emsp;76.5&emsp;572&emsp;6.25&emsp;244&emsp;193.3&emsp;1.27&emsp;1\/32&emsp;112&emsp;1.20&emsp;1962&emsp;2.51&emsp;1.69&emsp;1.47&emsp;28\/32&emsp;0.10&emsp;1961&emsp;600,000&emsp;950&emsp;7.6&emsp;121&emsp;1966&emsp;Five&emsp;</p><p>LOGISTIC REGRESSION - KNOWN WORD ERRORS - MISCLASS TYPE (CORRECT/PREDICTION): ('NN', 'VB')<br>OCCURENCES: 102 PERCENT OF ERRORS: 0.03518454639530873 PERCENT OF ALL PREDICTIONS 0.00215294<br>WORDS IN TYPE: </p><p>export&emsp;fly&emsp;buy&emsp;turn&emsp;lead&emsp;worry&emsp;drive&emsp;raise&emsp;resume&emsp;put&emsp;play&emsp;finance&emsp;comment&emsp;win&emsp;find&emsp;yield&emsp;pay&emsp;close&emsp;feel&emsp;watch&emsp;show&emsp;help&emsp;cancel&emsp;cut&emsp;call&emsp;sell&emsp;boost&emsp;mean&emsp;transfer&emsp;halt&emsp;start&emsp;fight&emsp;run&emsp;block&emsp;cause&emsp;affect&emsp;stop&emsp;delay&emsp;give&emsp;</p><p>LOGISTIC REGRESSION - KNOWN WORD ERRORS - MISCLASS TYPE (CORRECT/PREDICTION): ('RB', 'NN')<br>OCCURENCES: 98 PERCENT OF ERRORS: 0.03380476026215937 PERCENT OF ALL PREDICTIONS 0.00206851<br>WORDS IN TYPE: </p><p>overly&emsp;allegedly&emsp;dramatically&emsp;understandably&emsp;personally&emsp;inevitably&emsp;right&emsp;illegally&emsp;literally&emsp;Soon&emsp;exclusively&emsp;openly&emsp;historically&emsp;seemingly&emsp;specifically&emsp;firmly&emsp;hence&emsp;lightly&emsp;undoubtedly&emsp;anyway&emsp;grossly&emsp;deeply&emsp;occasionally&emsp;traditionally&emsp;enthusiastically&emsp;falsely&emsp;Certainly&emsp;Overall&emsp;safely&emsp;regularly&emsp;hastily&emsp;suddenly&emsp;alike&emsp;anywhere&emsp;possibly&emsp;repeatedly&emsp;collectively&emsp;sadly&emsp;actively&emsp;practically&emsp;Later&emsp;severely&emsp;anymore&emsp;Similarly&emsp;constantly&emsp;simultaneously&emsp;smack&emsp;smoothly&emsp;similarly&emsp;somehow&emsp;fractionally&emsp;negatively&emsp;apart&emsp;morally&emsp;successfully&emsp;nonetheless&emsp;Fortunately&emsp;Furthermore&emsp;reasonably&emsp;subsequently&emsp;quietly&emsp;aboard&emsp;wholly&emsp;unexpectedly&emsp;nevertheless&emsp;rarely&emsp;tonight&emsp;electronically&emsp;forth&emsp;everywhere&emsp;ordinarily&emsp;Often&emsp;bitterly&emsp;aside&emsp;evenly&emsp;surely&emsp;Aside&emsp;voluntarily&emsp;federally&emsp;</p><p>LOGISTIC REGRESSION - KNOWN WORD ERRORS - MISCLASS TYPE (CORRECT/PREDICTION): ('WDT', 'IN')<br>OCCURENCES: 95 PERCENT OF ERRORS: 0.03276992066229734 PERCENT OF ALL PREDICTIONS 0.00200519<br>WORDS IN TYPE: </p><p>that&emsp;</p><p>LOGISTIC REGRESSION - KNOWN WORD ERRORS - MISCLASS TYPE (CORRECT/PREDICTION): ('NN', 'JJ')<br>OCCURENCES: 87 PERCENT OF ERRORS: 0.03001034839599862 PERCENT OF ALL PREDICTIONS 0.00183633<br>WORDS IN TYPE: </p><p>low-end&emsp;cheap&emsp;per-share&emsp;few&emsp;individual&emsp;fat&emsp;steep&emsp;short&emsp;heavy&emsp;secret&emsp;human&emsp;particular&emsp;low&emsp;military&emsp;chief&emsp;total&emsp;net&emsp;public&emsp;Net&emsp;high&emsp;top&emsp;principal&emsp;start-up&emsp;much&emsp;commonplace&emsp;many&emsp;familiar&emsp;executive&emsp;whole&emsp;general&emsp;other&emsp;horrible&emsp;average&emsp;past&emsp;</p><p>LOGISTIC REGRESSION - KNOWN WORD ERRORS - MISCLASS TYPE (CORRECT/PREDICTION): ('VBP', 'NN')<br>OCCURENCES: 83 PERCENT OF ERRORS: 0.028630562262849258 PERCENT OF ALL PREDICTIONS 0.00175190<br>WORDS IN TYPE: </p><p>discover&emsp;base&emsp;staff&emsp;bank&emsp;undercut&emsp;test&emsp;cite&emsp;offer&emsp;head&emsp;estimate&emsp;claim&emsp;rise&emsp;guess&emsp;report&emsp;hope&emsp;please&emsp;concern&emsp;oppose&emsp;increase&emsp;bow&emsp;characterize&emsp;fear&emsp;segment&emsp;share&emsp;account&emsp;attempt&emsp;damage&emsp;confer&emsp;group&emsp;point&emsp;use&emsp;hate&emsp;Do&emsp;resurrect&emsp;shift&emsp;exist&emsp;tender&emsp;state&emsp;charge&emsp;gain&emsp;Are&emsp;note&emsp;anticipate&emsp;rule&emsp;contend&emsp;contract&emsp;plan&emsp;drink&emsp;interest&emsp;Make&emsp;soar&emsp;jump&emsp;disagree&emsp;program&emsp;question&emsp;love&emsp;control&emsp;sense&emsp;smoke&emsp;concede&emsp;limit&emsp;process&emsp;slip&emsp;agree&emsp;remember&emsp;elect&emsp;</p><p>LOGISTIC REGRESSION - KNOWN WORD ERRORS - MISCLASS TYPE (CORRECT/PREDICTION): ('VB', 'VBP')<br>OCCURENCES: 80 PERCENT OF ERRORS: 0.027595722662987238 PERCENT OF ALL PREDICTIONS 0.00168858<br>WORDS IN TYPE: </p><p>say&emsp;include&emsp;seem&emsp;insist&emsp;need&emsp;expect&emsp;argue&emsp;believe&emsp;think&emsp;realize&emsp;want&emsp;have&emsp;</p><p>LOGISTIC REGRESSION - KNOWN WORD ERRORS - MISCLASS TYPE (CORRECT/PREDICTION): ('RB', 'IN')<br>OCCURENCES: 71 PERCENT OF ERRORS: 0.024491203863401173 PERCENT OF ALL PREDICTIONS 0.00149862<br>WORDS IN TYPE: </p><p>with&emsp;up&emsp;out&emsp;before&emsp;about&emsp;as&emsp;around&emsp;though&emsp;</p><p>LOGISTIC REGRESSION - KNOWN WORD ERRORS - MISCLASS TYPE (CORRECT/PREDICTION): ('VBZ', 'NN')<br>OCCURENCES: 68 PERCENT OF ERRORS: 0.023456364263539153 PERCENT OF ALL PREDICTIONS 0.00143530<br>WORDS IN TYPE: </p><p>addresses&emsp;achieves&emsp;collects&emsp;underscores&emsp;threatens&emsp;spreads&emsp;lacks&emsp;enters&emsp;lasts&emsp;aids&emsp;recommends&emsp;explains&emsp;describes&emsp;leases&emsp;permits&emsp;distributes&emsp;feels&emsp;equals&emsp;recognizes&emsp;preserves&emsp;pales&emsp;finds&emsp;bears&emsp;publishes&emsp;argues&emsp;spends&emsp;decides&emsp;directs&emsp;worries&emsp;seeks&emsp;cares&emsp;illustrates&emsp;expires&emsp;opposes&emsp;drops&emsp;teaches&emsp;sends&emsp;depends&emsp;exceeds&emsp;retains&emsp;asserts&emsp;belongs&emsp;complains&emsp;rails&emsp;consists&emsp;owes&emsp;violates&emsp;supports&emsp;</p><p>LOGISTIC REGRESSION - KNOWN WORD ERRORS - MISCLASS TYPE (CORRECT/PREDICTION): ('JJ', 'NNP')<br>OCCURENCES: 65 PERCENT OF ERRORS: 0.02242152466367713 PERCENT OF ALL PREDICTIONS 0.00137197<br>WORDS IN TYPE: </p><p>British&emsp;Industrial&emsp;Spanish-language&emsp;South&emsp;Fed&emsp;Soviet&emsp;Due&emsp;Iranian&emsp;Public&emsp;International&emsp;Economic&emsp;First&emsp;Average&emsp;Foreign&emsp;West&emsp;CD&emsp;American&emsp;Short-term&emsp;Retired&emsp;</p><p>LOGISTIC REGRESSION - KNOWN WORD ERRORS - MISCLASS TYPE (CORRECT/PREDICTION): ('VBZ', 'NNS')<br>OCCURENCES: 48 PERCENT OF ERRORS: 0.016557433597792343 PERCENT OF ALL PREDICTIONS 0.00101315<br>WORDS IN TYPE: </p><p>heads&emsp;fields&emsp;acts&emsp;trusts&emsp;thanks&emsp;firms&emsp;supplies&emsp;cuts&emsp;projects&emsp;signs&emsp;exchanges&emsp;estimates&emsp;claims&emsp;votes&emsp;forces&emsp;sales&emsp;charges&emsp;fears&emsp;promises&emsp;reports&emsp;notes&emsp;shares&emsp;stands&emsp;increases&emsp;plans&emsp;grants&emsp;points&emsp;</p><p>LOGISTIC REGRESSION - KNOWN WORD ERRORS - MISCLASS TYPE (CORRECT/PREDICTION): ('DT', 'IN')<br>OCCURENCES: 40 PERCENT OF ERRORS: 0.013797861331493619 PERCENT OF ALL PREDICTIONS 0.00084429<br>WORDS IN TYPE: </p><p>that&emsp;</p><p>LOGISTIC REGRESSION - KNOWN WORD ERRORS - MISCLASS TYPE (CORRECT/PREDICTION): ('RBR', 'JJR')<br>OCCURENCES: 38 PERCENT OF ERRORS: 0.013107968264918937 PERCENT OF ALL PREDICTIONS 0.00080208<br>WORDS IN TYPE: </p><p>less&emsp;fewer&emsp;wider&emsp;more&emsp;</p><p>LOGISTIC REGRESSION - KNOWN WORD ERRORS - MISCLASS TYPE (CORRECT/PREDICTION): ('NNPS', 'NN')<br>OCCURENCES: 33 PERCENT OF ERRORS: 0.011383235598482234 PERCENT OF ALL PREDICTIONS 0.00069654<br>WORDS IN TYPE: </p><p>Forces&emsp;PROPERTIES&emsp;Contras&emsp;Hispanics&emsp;Soviets&emsp;Enterprises&emsp;Advisers&emsp;Departments&emsp;</p><p>LOGISTIC REGRESSION - KNOWN WORD ERRORS - MISCLASS TYPE (CORRECT/PREDICTION): ('VBZ', 'POS')<br>OCCURENCES: 28 PERCENT OF ERRORS: 0.009658502932045532 PERCENT OF ALL PREDICTIONS 0.00059100<br>WORDS IN TYPE: </p><p>'s&emsp;</p><p>LOGISTIC REGRESSION - KNOWN WORD ERRORS - MISCLASS TYPE (CORRECT/PREDICTION): ('RB', 'JJ')<br>OCCURENCES: 24 PERCENT OF ERRORS: 0.008278716798896172 PERCENT OF ALL PREDICTIONS 0.00050657<br>WORDS IN TYPE: </p><p>much&emsp;early&emsp;long&emsp;hard&emsp;late&emsp;Early&emsp;many&emsp;last&emsp;prior&emsp;little&emsp;</p><p>LOGISTIC REGRESSION - KNOWN WORD ERRORS - MISCLASS TYPE (CORRECT/PREDICTION): ('JJR', 'NN')<br>OCCURENCES: 21 PERCENT OF ERRORS: 0.0072438771990341495 PERCENT OF ALL PREDICTIONS 0.00044325<br>WORDS IN TYPE: </p><p>Higher&emsp;thinner&emsp;easier&emsp;rosier&emsp;riskier&emsp;newer&emsp;bigger&emsp;faster&emsp;closer&emsp;slower&emsp;Broader&emsp;kinder&emsp;worse&emsp;</p><p>LOGISTIC REGRESSION - KNOWN WORD ERRORS - MISCLASS TYPE (CORRECT/PREDICTION): ('JJ', 'RB')<br>OCCURENCES: 21 PERCENT OF ERRORS: 0.0072438771990341495 PERCENT OF ALL PREDICTIONS 0.00044325<br>WORDS IN TYPE: </p><p>then&emsp;now&emsp;currently&emsp;still&emsp;even&emsp;back&emsp;later&emsp;down&emsp;simply&emsp;well&emsp;only&emsp;</p><p>LOGISTIC REGRESSION - KNOWN WORD ERRORS - MISCLASS TYPE (CORRECT/PREDICTION): ('VB', 'JJ')<br>OCCURENCES: 20 PERCENT OF ERRORS: 0.006898930665746809 PERCENT OF ALL PREDICTIONS 0.00042215<br>WORDS IN TYPE: </p><p>separate&emsp;double&emsp;narrow&emsp;further&emsp;own&emsp;complete&emsp;open&emsp;exempt&emsp;slow&emsp;last&emsp;many&emsp;select&emsp;short&emsp;correct&emsp;</p><p>LOGISTIC REGRESSION - KNOWN WORD ERRORS - MISCLASS TYPE (CORRECT/PREDICTION): ('NNPS', 'NNP')<br>OCCURENCES: 19 PERCENT OF ERRORS: 0.006553984132459468 PERCENT OF ALL PREDICTIONS 0.00040104<br>WORDS IN TYPE: </p><p>Foods&emsp;Resources&emsp;States&emsp;Products&emsp;Lines&emsp;Hotels&emsp;Communications&emsp;Islands&emsp;Industries&emsp;Securities&emsp;Brothers&emsp;</p><p>LOGISTIC REGRESSION - KNOWN WORD ERRORS - MISCLASS TYPE (CORRECT/PREDICTION): ('NN', 'VBG')<br>OCCURENCES: 15 PERCENT OF ERRORS: 0.005174197999310107 PERCENT OF ALL PREDICTIONS 0.00031661<br>WORDS IN TYPE: </p><p>lobbying&emsp;breaking&emsp;holding&emsp;selling&emsp;fighting&emsp;operating&emsp;setting&emsp;beginning&emsp;talking&emsp;slowing&emsp;buying&emsp;</p><p>LOGISTIC REGRESSION - KNOWN WORD ERRORS - MISCLASS TYPE (CORRECT/PREDICTION): ('NN', 'NNP')<br>OCCURENCES: 14 PERCENT OF ERRORS: 0.004829251466022766 PERCENT OF ALL PREDICTIONS 0.00029550<br>WORDS IN TYPE: </p><p>Business&emsp;Stock&emsp;City&emsp;Trust&emsp;Investment&emsp;Merc&emsp;Intelligence&emsp;STOCK&emsp;Symbol&emsp;Treasury&emsp;Market&emsp;Jaguar&emsp;Citicorp&emsp;</p><p>LOGISTIC REGRESSION - KNOWN WORD ERRORS - MISCLASS TYPE (CORRECT/PREDICTION): ('NNP', 'JJ')<br>OCCURENCES: 14 PERCENT OF ERRORS: 0.004829251466022766 PERCENT OF ALL PREDICTIONS 0.00029550<br>WORDS IN TYPE: </p><p>Long-term&emsp;so-called&emsp;Small&emsp;Asian&emsp;Panamanian&emsp;30-year&emsp;European&emsp;Early&emsp;Few&emsp;Swedish&emsp;</p><p>LOGISTIC REGRESSION - KNOWN WORD ERRORS - MISCLASS TYPE (CORRECT/PREDICTION): ('CC', 'NN')<br>OCCURENCES: 13 PERCENT OF ERRORS: 0.004484304932735426 PERCENT OF ALL PREDICTIONS 0.00027439<br>WORDS IN TYPE: </p><p>AND&emsp;Neither&emsp;Or&emsp;Nor&emsp;v.&emsp;nor&emsp;</p><p>LOGISTIC REGRESSION - KNOWN WORD ERRORS - MISCLASS TYPE (CORRECT/PREDICTION): ('NNP', 'NN')<br>OCCURENCES: 10 PERCENT OF ERRORS: 0.0034494653328734047 PERCENT OF ALL PREDICTIONS 0.00021107<br>WORDS IN TYPE: </p><p>Consumer&emsp;Bond&emsp;Revenue&emsp;minister&emsp;Industry&emsp;Publications&emsp;Conservative&emsp;Rival&emsp;president&emsp;Natural&emsp;</p><p>LOGISTIC REGRESSION - KNOWN WORD ERRORS - MISCLASS TYPE (CORRECT/PREDICTION): ('NNS', 'VBZ')<br>OCCURENCES: 9 PERCENT OF ERRORS: 0.003104518799586064 PERCENT OF ALL PREDICTIONS 0.00018997<br>WORDS IN TYPE: </p><p>says&emsp;leaves&emsp;offers&emsp;means&emsp;shows&emsp;</p><p>LOGISTIC REGRESSION - KNOWN WORD ERRORS - MISCLASS TYPE (CORRECT/PREDICTION): ('VBN', 'VB')<br>OCCURENCES: 9 PERCENT OF ERRORS: 0.003104518799586064 PERCENT OF ALL PREDICTIONS 0.00018997<br>WORDS IN TYPE: </p><p>put&emsp;come&emsp;offset&emsp;run&emsp;cut&emsp;become&emsp;</p><p>LOGISTIC REGRESSION - KNOWN WORD ERRORS - MISCLASS TYPE (CORRECT/PREDICTION): ('RB', 'DT')<br>OCCURENCES: 9 PERCENT OF ERRORS: 0.003104518799586064 PERCENT OF ALL PREDICTIONS 0.00018997<br>WORDS IN TYPE: </p><p>any&emsp;no&emsp;</p><p>LOGISTIC REGRESSION - KNOWN WORD ERRORS - MISCLASS TYPE (CORRECT/PREDICTION): ('RP', 'IN')<br>OCCURENCES: 8 PERCENT OF ERRORS: 0.0027595722662987236 PERCENT OF ALL PREDICTIONS 0.00016886<br>WORDS IN TYPE: </p><p>out&emsp;</p><p>LOGISTIC REGRESSION - KNOWN WORD ERRORS - MISCLASS TYPE (CORRECT/PREDICTION): ('DT', 'NN')<br>OCCURENCES: 8 PERCENT OF ERRORS: 0.0027595722662987236 PERCENT OF ALL PREDICTIONS 0.00016886<br>WORDS IN TYPE: </p><p>neither&emsp;Any&emsp;Every&emsp;</p><p>LOGISTIC REGRESSION - KNOWN WORD ERRORS - MISCLASS TYPE (CORRECT/PREDICTION): ('WP', 'NN')<br>OCCURENCES: 8 PERCENT OF ERRORS: 0.0027595722662987236 PERCENT OF ALL PREDICTIONS 0.00016886<br>WORDS IN TYPE: </p><p>whom&emsp;Who&emsp;</p><p>LOGISTIC REGRESSION - KNOWN WORD ERRORS - MISCLASS TYPE (CORRECT/PREDICTION): ('PRP', 'NN')<br>OCCURENCES: 7 PERCENT OF ERRORS: 0.002414625733011383 PERCENT OF ALL PREDICTIONS 0.00014775<br>WORDS IN TYPE: </p><p>ourselves&emsp;US&emsp;</p><p>LOGISTIC REGRESSION - KNOWN WORD ERRORS - MISCLASS TYPE (CORRECT/PREDICTION): ('JJS', 'NN')<br>OCCURENCES: 6 PERCENT OF ERRORS: 0.002069679199724043 PERCENT OF ALL PREDICTIONS 0.00012664<br>WORDS IN TYPE: </p><p>busiest&emsp;slightest&emsp;strongest&emsp;heaviest&emsp;lowest&emsp;earliest&emsp;</p><p>LOGISTIC REGRESSION - KNOWN WORD ERRORS - MISCLASS TYPE (CORRECT/PREDICTION): ('IN', 'NN')<br>OCCURENCES: 6 PERCENT OF ERRORS: 0.002069679199724043 PERCENT OF ALL PREDICTIONS 0.00012664<br>WORDS IN TYPE: </p><p>Along&emsp;OF&emsp;Unlike&emsp;Against&emsp;vs.&emsp;Beyond&emsp;</p><p>LOGISTIC REGRESSION - KNOWN WORD ERRORS - MISCLASS TYPE (CORRECT/PREDICTION): ('PDT', 'NN')<br>OCCURENCES: 6 PERCENT OF ERRORS: 0.002069679199724043 PERCENT OF ALL PREDICTIONS 0.00012664<br>WORDS IN TYPE: </p><p>half&emsp;</p><p>LOGISTIC REGRESSION - KNOWN WORD ERRORS - MISCLASS TYPE (CORRECT/PREDICTION): ('RB', 'VB')<br>OCCURENCES: 5 PERCENT OF ERRORS: 0.0017247326664367024 PERCENT OF ALL PREDICTIONS 0.00010554<br>WORDS IN TYPE: </p><p>close&emsp;</p><p>LOGISTIC REGRESSION - KNOWN WORD ERRORS - MISCLASS TYPE (CORRECT/PREDICTION): ('VB', 'VBN')<br>OCCURENCES: 5 PERCENT OF ERRORS: 0.0017247326664367024 PERCENT OF ALL PREDICTIONS 0.00010554<br>WORDS IN TYPE: </p><p>hurt&emsp;set&emsp;increased&emsp;shut&emsp;</p><p>LOGISTIC REGRESSION - KNOWN WORD ERRORS - MISCLASS TYPE (CORRECT/PREDICTION): ('NNP', 'NNPS')<br>OCCURENCES: 5 PERCENT OF ERRORS: 0.0017247326664367024 PERCENT OF ALL PREDICTIONS 0.00010554<br>WORDS IN TYPE: </p><p>Associates&emsp;Republicans&emsp;Democrats&emsp;Partners&emsp;</p><p>LOGISTIC REGRESSION - KNOWN WORD ERRORS - MISCLASS TYPE (CORRECT/PREDICTION): ("''", 'POS')<br>OCCURENCES: 5 PERCENT OF ERRORS: 0.0017247326664367024 PERCENT OF ALL PREDICTIONS 0.00010554<br>WORDS IN TYPE: </p><p>'&emsp;</p><p>LOGISTIC REGRESSION - KNOWN WORD ERRORS - MISCLASS TYPE (CORRECT/PREDICTION): ('NNS', 'NNP')<br>OCCURENCES: 5 PERCENT OF ERRORS: 0.0017247326664367024 PERCENT OF ALL PREDICTIONS 0.00010554<br>WORDS IN TYPE: </p><p>Banks&emsp;Rights&emsp;Institutions&emsp;Commodities&emsp;</p><p>LOGISTIC REGRESSION - KNOWN WORD ERRORS - MISCLASS TYPE (CORRECT/PREDICTION): ('MD', 'NN')<br>OCCURENCES: 4 PERCENT OF ERRORS: 0.0013797861331493618 PERCENT OF ALL PREDICTIONS 0.00008443<br>WORDS IN TYPE: </p><p>Will&emsp;</p><p>LOGISTIC REGRESSION - KNOWN WORD ERRORS - MISCLASS TYPE (CORRECT/PREDICTION): ('JJR', 'RBR')<br>OCCURENCES: 4 PERCENT OF ERRORS: 0.0013797861331493618 PERCENT OF ALL PREDICTIONS 0.00008443<br>WORDS IN TYPE: </p><p>earlier&emsp;More&emsp;</p><p>LOGISTIC REGRESSION - KNOWN WORD ERRORS - MISCLASS TYPE (CORRECT/PREDICTION): ('VB', 'IN')<br>OCCURENCES: 4 PERCENT OF ERRORS: 0.0013797861331493618 PERCENT OF ALL PREDICTIONS 0.00008443<br>WORDS IN TYPE: </p><p>like&emsp;except&emsp;up&emsp;</p><p>LOGISTIC REGRESSION - KNOWN WORD ERRORS - MISCLASS TYPE (CORRECT/PREDICTION): ('PDT', 'DT')<br>OCCURENCES: 4 PERCENT OF ERRORS: 0.0013797861331493618 PERCENT OF ALL PREDICTIONS 0.00008443<br>WORDS IN TYPE: </p><p>all&emsp;</p><p>LOGISTIC REGRESSION - KNOWN WORD ERRORS - MISCLASS TYPE (CORRECT/PREDICTION): ('RP', 'RB')<br>OCCURENCES: 4 PERCENT OF ERRORS: 0.0013797861331493618 PERCENT OF ALL PREDICTIONS 0.00008443<br>WORDS IN TYPE: </p><p>down&emsp;</p><p>LOGISTIC REGRESSION - KNOWN WORD ERRORS - MISCLASS TYPE (CORRECT/PREDICTION): ('$', 'NN')<br>OCCURENCES: 3 PERCENT OF ERRORS: 0.0010348395998620215 PERCENT OF ALL PREDICTIONS 0.00006332<br>WORDS IN TYPE: </p><p>US$&emsp;</p><p>LOGISTIC REGRESSION - KNOWN WORD ERRORS - MISCLASS TYPE (CORRECT/PREDICTION): ('WRB', 'NN')<br>OCCURENCES: 3 PERCENT OF ERRORS: 0.0010348395998620215 PERCENT OF ALL PREDICTIONS 0.00006332<br>WORDS IN TYPE: </p><p>Why&emsp;WHEN&emsp;</p><p>LOGISTIC REGRESSION - KNOWN WORD ERRORS - MISCLASS TYPE (CORRECT/PREDICTION): ('NNP', 'NNS')<br>OCCURENCES: 3 PERCENT OF ERRORS: 0.0010348395998620215 PERCENT OF ALL PREDICTIONS 0.00006332<br>WORDS IN TYPE: </p><p>Investors&emsp;</p><p>LOGISTIC REGRESSION - KNOWN WORD ERRORS - MISCLASS TYPE (CORRECT/PREDICTION): ('NN', 'IN')<br>OCCURENCES: 3 PERCENT OF ERRORS: 0.0010348395998620215 PERCENT OF ALL PREDICTIONS 0.00006332<br>WORDS IN TYPE: </p><p>that&emsp;while&emsp;</p><p>LOGISTIC REGRESSION - KNOWN WORD ERRORS - MISCLASS TYPE (CORRECT/PREDICTION): ('RBR', 'NN')<br>OCCURENCES: 3 PERCENT OF ERRORS: 0.0010348395998620215 PERCENT OF ALL PREDICTIONS 0.00006332<br>WORDS IN TYPE: </p><p>Earlier&emsp;faster&emsp;</p><p>LOGISTIC REGRESSION - KNOWN WORD ERRORS - MISCLASS TYPE (CORRECT/PREDICTION): ('FW', 'NN')<br>OCCURENCES: 2 PERCENT OF ERRORS: 0.0006898930665746809 PERCENT OF ALL PREDICTIONS 0.00004221<br>WORDS IN TYPE: </p><p>la&emsp;hoc&emsp;</p><p>LOGISTIC REGRESSION - KNOWN WORD ERRORS - MISCLASS TYPE (CORRECT/PREDICTION): ('IN', 'RB')<br>OCCURENCES: 2 PERCENT OF ERRORS: 0.0006898930665746809 PERCENT OF ALL PREDICTIONS 0.00004221<br>WORDS IN TYPE: </p><p>so&emsp;</p><p>LOGISTIC REGRESSION - KNOWN WORD ERRORS - MISCLASS TYPE (CORRECT/PREDICTION): ('JJS', 'NNP')<br>OCCURENCES: 2 PERCENT OF ERRORS: 0.0006898930665746809 PERCENT OF ALL PREDICTIONS 0.00004221<br>WORDS IN TYPE: </p><p>greatest&emsp;</p><p>LOGISTIC REGRESSION - KNOWN WORD ERRORS - MISCLASS TYPE (CORRECT/PREDICTION): ('NN', 'VBN')<br>OCCURENCES: 2 PERCENT OF ERRORS: 0.0006898930665746809 PERCENT OF ALL PREDICTIONS 0.00004221<br>WORDS IN TYPE: </p><p>set&emsp;</p><p>LOGISTIC REGRESSION - KNOWN WORD ERRORS - MISCLASS TYPE (CORRECT/PREDICTION): ('NN', 'VBP')<br>OCCURENCES: 2 PERCENT OF ERRORS: 0.0006898930665746809 PERCENT OF ALL PREDICTIONS 0.00004221<br>WORDS IN TYPE: </p><p>need&emsp;</p><p>LOGISTIC REGRESSION - KNOWN WORD ERRORS - MISCLASS TYPE (CORRECT/PREDICTION): ('NNS', 'NNPS')<br>OCCURENCES: 2 PERCENT OF ERRORS: 0.0006898930665746809 PERCENT OF ALL PREDICTIONS 0.00004221<br>WORDS IN TYPE: </p><p>Markets&emsp;</p><p>LOGISTIC REGRESSION - KNOWN WORD ERRORS - MISCLASS TYPE (CORRECT/PREDICTION): ('RB', 'EX')<br>OCCURENCES: 2 PERCENT OF ERRORS: 0.0006898930665746809 PERCENT OF ALL PREDICTIONS 0.00004221<br>WORDS IN TYPE: </p><p>there&emsp;</p><p>LOGISTIC REGRESSION - KNOWN WORD ERRORS - MISCLASS TYPE (CORRECT/PREDICTION): ('PRP', 'CD')<br>OCCURENCES: 1 PERCENT OF ERRORS: 0.00034494653328734045 PERCENT OF ALL PREDICTIONS 0.00002111<br>WORDS IN TYPE: </p><p>one&emsp;</p><p>LOGISTIC REGRESSION - KNOWN WORD ERRORS - MISCLASS TYPE (CORRECT/PREDICTION): ('PRP$', 'NN')<br>OCCURENCES: 1 PERCENT OF ERRORS: 0.00034494653328734045 PERCENT OF ALL PREDICTIONS 0.00002111<br>WORDS IN TYPE: </p><p>Your&emsp;</p><p>LOGISTIC REGRESSION - KNOWN WORD ERRORS - MISCLASS TYPE (CORRECT/PREDICTION): ('NN', 'MD')<br>OCCURENCES: 1 PERCENT OF ERRORS: 0.00034494653328734045 PERCENT OF ALL PREDICTIONS 0.00002111<br>WORDS IN TYPE: </p><p>will&emsp;</p><p>LOGISTIC REGRESSION - KNOWN WORD ERRORS - MISCLASS TYPE (CORRECT/PREDICTION): ('RB', 'NNP')<br>OCCURENCES: 1 PERCENT OF ERRORS: 0.00034494653328734045 PERCENT OF ALL PREDICTIONS 0.00002111<br>WORDS IN TYPE: </p><p>First&emsp;</p><p>LOGISTIC REGRESSION - KNOWN WORD ERRORS - MISCLASS TYPE (CORRECT/PREDICTION): ('RBR', 'JJ')<br>OCCURENCES: 1 PERCENT OF ERRORS: 0.00034494653328734045 PERCENT OF ALL PREDICTIONS 0.00002111<br>WORDS IN TYPE: </p><p>further&emsp;</p><p>LOGISTIC REGRESSION - KNOWN WORD ERRORS - MISCLASS TYPE (CORRECT/PREDICTION): ('IN', 'DT')<br>OCCURENCES: 1 PERCENT OF ERRORS: 0.00034494653328734045 PERCENT OF ALL PREDICTIONS 0.00002111<br>WORDS IN TYPE: </p><p>the&emsp;</p><p>LOGISTIC REGRESSION - KNOWN WORD ERRORS - MISCLASS TYPE (CORRECT/PREDICTION): ('WDT', 'NN')<br>OCCURENCES: 1 PERCENT OF ERRORS: 0.00034494653328734045 PERCENT OF ALL PREDICTIONS 0.00002111<br>WORDS IN TYPE: </p><p>whichever&emsp;</p><p>LOGISTIC REGRESSION - KNOWN WORD ERRORS - MISCLASS TYPE (CORRECT/PREDICTION): ('VB', 'VBD')<br>OCCURENCES: 1 PERCENT OF ERRORS: 0.00034494653328734045 PERCENT OF ALL PREDICTIONS 0.00002111<br>WORDS IN TYPE: </p><p>hit&emsp;</p><p>LOGISTIC REGRESSION - KNOWN WORD ERRORS - MISCLASS TYPE (CORRECT/PREDICTION): ('UH', 'NN')<br>OCCURENCES: 1 PERCENT OF ERRORS: 0.00034494653328734045 PERCENT OF ALL PREDICTIONS 0.00002111<br>WORDS IN TYPE: </p><p>Well&emsp;</p></div>
+        <div id="unknown_errors" class="tab-pane fade">
+        <a data-toggle="tab" href="#chart_unknown_errors">Bar Graph</a><br>
+    <p>UNKNOWN WORD ERRORS<br><table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th>(CORRECT/PREDICTION)</th>
+      <th>OCCURENCES</th>
+      <th>% OF ERRORS</th>
+      <th>% OF ALL PREDICTIONS</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>(NNP, NN)</td>
+      <td>1099</td>
+      <td>0.406135</td>
+      <td>0.023197</td>
+    </tr>
+    <tr>
+      <td>(JJ, NN)</td>
+      <td>430</td>
+      <td>0.158906</td>
+      <td>0.009076</td>
+    </tr>
+    <tr>
+      <td>(NNS, NN)</td>
+      <td>358</td>
+      <td>0.132299</td>
+      <td>0.007556</td>
+    </tr>
+    <tr>
+      <td>(CD, NN)</td>
+      <td>306</td>
+      <td>0.113082</td>
+      <td>0.006459</td>
+    </tr>
+    <tr>
+      <td>(VBN, NN)</td>
+      <td>115</td>
+      <td>0.042498</td>
+      <td>0.002427</td>
+    </tr>
+    <tr>
+      <td>(VBG, NN)</td>
+      <td>106</td>
+      <td>0.039172</td>
+      <td>0.002237</td>
+    </tr>
+    <tr>
+      <td>(VB, NN)</td>
+      <td>75</td>
+      <td>0.027716</td>
+      <td>0.001583</td>
+    </tr>
+    <tr>
+      <td>(RB, NN)</td>
+      <td>61</td>
+      <td>0.022542</td>
+      <td>0.001288</td>
+    </tr>
+    <tr>
+      <td>(VBD, NN)</td>
+      <td>46</td>
+      <td>0.016999</td>
+      <td>0.000971</td>
+    </tr>
+    <tr>
+      <td>(VBZ, NN)</td>
+      <td>42</td>
+      <td>0.015521</td>
+      <td>0.000887</td>
+    </tr>
+    <tr>
+      <td>(NNPS, NN)</td>
+      <td>42</td>
+      <td>0.015521</td>
+      <td>0.000887</td>
+    </tr>
+    <tr>
+      <td>(IN, NN)</td>
+      <td>5</td>
+      <td>0.001848</td>
+      <td>0.000106</td>
+    </tr>
+    <tr>
+      <td>(JJS, NN)</td>
+      <td>5</td>
+      <td>0.001848</td>
+      <td>0.000106</td>
+    </tr>
+    <tr>
+      <td>(JJR, NN)</td>
+      <td>5</td>
+      <td>0.001848</td>
+      <td>0.000106</td>
+    </tr>
+    <tr>
+      <td>(VBP, NN)</td>
+      <td>4</td>
+      <td>0.001478</td>
+      <td>0.000084</td>
+    </tr>
+    <tr>
+      <td>(MD, NN)</td>
+      <td>2</td>
+      <td>0.000739</td>
+      <td>0.000042</td>
+    </tr>
+    <tr>
+      <td>(RBS, NN)</td>
+      <td>1</td>
+      <td>0.000370</td>
+      <td>0.000021</td>
+    </tr>
+    <tr>
+      <td>(UH, NN)</td>
+      <td>1</td>
+      <td>0.000370</td>
+      <td>0.000021</td>
+    </tr>
+    <tr>
+      <td>(DT, NN)</td>
+      <td>1</td>
+      <td>0.000370</td>
+      <td>0.000021</td>
+    </tr>
+    <tr>
+      <td>(FW, NN)</td>
+      <td>1</td>
+      <td>0.000370</td>
+      <td>0.000021</td>
+    </tr>
+    <tr>
+      <td>(WRB, NN)</td>
+      <td>1</td>
+      <td>0.000370</td>
+      <td>0.000021</td>
+    </tr>
+  </tbody>
+</table></p><p>LOGISTIC REGRESSION - UNKNOWN WORD ERRORS - MISCLASS TYPE (CORRECT/PREDICTION): ('NNP', 'NN')<br>OCCURENCES: 1099 PERCENT OF ERRORS: 0.40613451589061345 PERCENT OF ALL PREDICTIONS 0.02319691<br>WORDS IN TYPE: </p><p>Zimbabwe&emsp;Facilities&emsp;Honiss&emsp;Guide&emsp;Audit&emsp;Reduced&emsp;Cyber&emsp;Border&emsp;Carbide&emsp;Singh&emsp;Hyde&emsp;Cardiac&emsp;Golar&emsp;Vanderbilt&emsp;Corning&emsp;CIT&emsp;Redfield&emsp;Wilson&emsp;Amado&emsp;Moertel&emsp;CRAF-Cassini&emsp;Hurtado&emsp;Carlson&emsp;Waxman&emsp;Yanes&emsp;Dada&emsp;Brigade&emsp;Symbolist&emsp;MetWest&emsp;Conlon&emsp;Blot&emsp;Sigoloff&emsp;Chaos&emsp;Revisited&emsp;Confederation&emsp;Kyoto&emsp;Sloan&emsp;Globe&emsp;Rene&emsp;SBA&emsp;B.F.&emsp;Nova&emsp;Haas&emsp;LIBERTY&emsp;Manpower&emsp;G-7&emsp;RISC&emsp;Province&emsp;SHEARSON&emsp;Willard&emsp;M.B.A.&emsp;Clark&emsp;Internet&emsp;Dannemiller&emsp;Hawkins&emsp;A&P&emsp;Commoner&emsp;SCUD&emsp;Delphi&emsp;Boehringer&emsp;Barret&emsp;Bhabani&emsp;Tickell&emsp;Opositora&emsp;Shultz&emsp;Peninsula&emsp;Carlyle&emsp;Byron&emsp;Automotive&emsp;Ayala&emsp;PX&emsp;Omnibank&emsp;Shearon&emsp;U.N.&emsp;Ellmann&emsp;Moises&emsp;Leisure&emsp;Alpha&emsp;Manson&emsp;Floyd&emsp;N.D&emsp;JAGRY&emsp;McDermott&emsp;Arnott&emsp;Fraumeni&emsp;Zipper&emsp;Jewelery&emsp;HUGO&emsp;Gramm&emsp;Liberty&emsp;Ryzhkov&emsp;Certs&emsp;Lance&emsp;Houghton&emsp;Lopid&emsp;Ga&emsp;Yuli&emsp;R.H.&emsp;Permanente&emsp;Key&emsp;Butte&emsp;Harlow&emsp;Pee&emsp;Abrams&emsp;NESB&emsp;Hathcock&emsp;Elizabeth&emsp;Federated&emsp;Edelman&emsp;Innovation&emsp;Jelenic&emsp;Delhi&emsp;Duvalier&emsp;Irian&emsp;Campo&emsp;Butter-Nut&emsp;Bonita&emsp;Goodrich&emsp;Scotia&emsp;Constance&emsp;Nichols&emsp;MacMillan&emsp;Dilzem&emsp;Ventes&emsp;Madden&emsp;BLOEDEL&emsp;SKF&emsp;Chestman&emsp;McCain&emsp;Banxquote&emsp;Norma&emsp;Vivien&emsp;Vicky&emsp;Wildlife&emsp;DeConcini&emsp;Fitzwilliams&emsp;Reuter&emsp;Aswara&emsp;C-S&emsp;MACMILLAN&emsp;McCollum&emsp;Indianapolis&emsp;Zone&emsp;Activities&emsp;Hybritech&emsp;Jath&emsp;Analysis&emsp;Pina&emsp;Mevacor&emsp;CACI&emsp;5th&emsp;Dravo&emsp;DFC&emsp;Shared&emsp;Genetics&emsp;Loeb&emsp;Gaskin&emsp;Wald&emsp;Weyerhaeuser&emsp;Matra&emsp;Newt&emsp;Ali&emsp;Capt.&emsp;Meador&emsp;Networks&emsp;Tele-Communications&emsp;Tupperware&emsp;Spadafora&emsp;MicroGeneSys&emsp;Pet&emsp;Astronomy&emsp;Prab&emsp;Cooperation&emsp;OWNER&emsp;Sherman&emsp;HBO&emsp;TVA&emsp;Capra&emsp;BroadBeach&emsp;A.C.&emsp;Attridge&emsp;Chorrillos&emsp;Zamya&emsp;Leninskoye&emsp;Sundarji&emsp;Jaya&emsp;Kristiansen&emsp;Ackerman&emsp;Firearms&emsp;B\/T&emsp;Winston&emsp;Indira&emsp;Barnicle&emsp;Langton&emsp;Blumenthal&emsp;Smale&emsp;Provident&emsp;Revolution&emsp;Diagnostic&emsp;Canoga&emsp;Geary&emsp;Stoll&emsp;Afghanistan\/Southwest&emsp;Cranston&emsp;LIVESTOCK&emsp;Jocelyn&emsp;Roseanne&emsp;Rev.&emsp;Mehta&emsp;Skoal&emsp;Amstrad&emsp;Cicero&emsp;Smetek&emsp;Pell&emsp;UPJOHN&emsp;Computerworld&emsp;Shipping&emsp;Helms&emsp;Departmentstore&emsp;Samsung-Corning&emsp;Ryder&emsp;Lok&emsp;Doug&emsp;Prentice&emsp;Smoking&emsp;Braitman&emsp;Media&emsp;Gene&emsp;Ittleson&emsp;Arrow&emsp;Gupta&emsp;Highlander&emsp;Physics&emsp;Skokie&emsp;Carr&emsp;Maria&emsp;Colucci&emsp;Swasey&emsp;Deaths&emsp;Ajax&emsp;McDonough&emsp;Coan&emsp;Spaced&emsp;Cities\/ABC&emsp;Averae&emsp;Goloven&emsp;Prozac&emsp;Keating&emsp;Electoral&emsp;Alaska&emsp;Warner-Lambert&emsp;Applebaum&emsp;SDI&emsp;Bangladesh&emsp;Waldbaum&emsp;Grisebach&emsp;Cinemax&emsp;Universal-Rundle&emsp;Norberto&emsp;Rolaids&emsp;Kadonada&emsp;Crispin&emsp;Toros&emsp;Hachette&emsp;Lausanne&emsp;Rifle&emsp;Ardito&emsp;Tobacco&emsp;Leahy&emsp;Sukhoi&emsp;Rachel&emsp;Giroldi&emsp;Starr&emsp;RBS&emsp;Saved&emsp;Bloedel&emsp;Plains&emsp;Rockwell&emsp;Hearing&emsp;Robots&emsp;Elkhorn&emsp;O'Rourke&emsp;Nickelodeon&emsp;DWG&emsp;Brozman&emsp;Colon&emsp;Maj.&emsp;Scudder&emsp;McKinney&emsp;KGB&emsp;Dirks&emsp;Merksamer&emsp;Leuzzi&emsp;Carmel&emsp;Mission&emsp;Daniels&emsp;Berger&emsp;Curtin&emsp;Briggs&emsp;Indonesia&emsp;Stansfield&emsp;DEA&emsp;Calderwood&emsp;L.P.&emsp;Carlucci&emsp;Quadrant&emsp;Bocas&emsp;Smithsonian&emsp;Clinic&emsp;KCRA&emsp;Kandahar&emsp;Christine&emsp;Trace&emsp;Bella&emsp;Devesa&emsp;Archer-Daniels-Midland&emsp;Tanner&emsp;Wallop&emsp;Cara&emsp;Rodrigo&emsp;Daisy&emsp;Everett&emsp;Steptoe&emsp;Oncor&emsp;HIV-1&emsp;Olof&emsp;Mandle&emsp;Hindu&emsp;Jalalabad&emsp;Cunin&emsp;Zimbabwean&emsp;UAL'S&emsp;Antwerp&emsp;Carson&emsp;Antonio&emsp;Bofors&emsp;Neck&emsp;Halls&emsp;Omar&emsp;Enviropact&emsp;Stahl&emsp;Intelogic&emsp;TCI&emsp;Windsor&emsp;Crested&emsp;Institution&emsp;Zia&emsp;Merryman&emsp;Tina&emsp;Wittgreen&emsp;Stefan&emsp;Dubois&emsp;Stjernsward&emsp;Elliot&emsp;Biking&emsp;Mulvoy&emsp;Akron&emsp;Howie&emsp;Percival&emsp;Siegel&emsp;Sobey&emsp;ISI&emsp;SPAN&emsp;Gandhi&emsp;Rajiv&emsp;Endowment&emsp;Barletta&emsp;Arden&emsp;Trinity&emsp;Kafaroff&emsp;Sooraji&emsp;Gaithersburg&emsp;RobertsCorp&emsp;Masaaki&emsp;Chimanbhai&emsp;Nogales&emsp;Ambler&emsp;Melvyn&emsp;Hasenauer&emsp;Murata&emsp;Homeowner&emsp;Interior&emsp;Dinsa&emsp;Bearings&emsp;Clifton&emsp;Friendly&emsp;Abe&emsp;Motorized&emsp;Asher&emsp;Sole&emsp;Cablevision&emsp;Ind&emsp;External&emsp;Tockman&emsp;Regional&emsp;Jesse&emsp;Tartikoff&emsp;Mr&emsp;Laux&emsp;Sonja&emsp;Birinyi&emsp;Clean&emsp;Henderson&emsp;Shi'ite&emsp;Weisel&emsp;Bangkok&emsp;Ziebarth&emsp;DeVon&emsp;Trail&emsp;Commissioner&emsp;Surgeon&emsp;Boskin&emsp;Wallace&emsp;Hygiene&emsp;Gaffney&emsp;Balcor&emsp;Jewelers&emsp;Minn&emsp;Thurmond&emsp;Venezuela&emsp;Fat&emsp;CoreStates&emsp;Coffee&emsp;Linear&emsp;Integrated&emsp;Malone&emsp;Lasker&emsp;Keshtmand&emsp;VaxSyn&emsp;Sandoz&emsp;Bike&emsp;Reinforced&emsp;Wyndham&emsp;Monica&emsp;Lorenzo&emsp;Dade&emsp;Sierra&emsp;Womack&emsp;Wee&emsp;Sabha&emsp;Bragg&emsp;Oakes&emsp;Biondi&emsp;Parsow&emsp;Ludcke&emsp;Vishwanath&emsp;Yaohan&emsp;Lovejoy&emsp;Aldomet&emsp;Channel&emsp;Dederick&emsp;Kueneke&emsp;Hekhmatyar&emsp;Coors&emsp;Beatrice&emsp;Karate&emsp;Ward&emsp;Rothe&emsp;Kid&emsp;Shields&emsp;Bee&emsp;Tarzana&emsp;Population&emsp;Armuelles&emsp;Malpass&emsp;Somoza&emsp;Sale&emsp;470th&emsp;McCoy&emsp;Meyers&emsp;Mead&emsp;Diaz&emsp;Ratners&emsp;GUN&emsp;Norcross&emsp;Guardia&emsp;Clorets&emsp;Gotaas-Larsen&emsp;Manville&emsp;Nicholas&emsp;Doc&emsp;Shidler&emsp;Louvre&emsp;Carlton&emsp;SMALL&emsp;PVC&emsp;Coatedboard&emsp;Dorgan&emsp;Eskenazi&emsp;Motley&emsp;Off-Road&emsp;Wars&emsp;Honolulu&emsp;Ingersoll&emsp;Environment&emsp;Villa&emsp;AIDS&emsp;Trecker&emsp;Nacional&emsp;Culture&emsp;Osborn&emsp;Boyd&emsp;U.S.-U.S.S.R.&emsp;McHenry&emsp;Miranda&emsp;Obey&emsp;Weekes&emsp;Horn&emsp;Movie&emsp;LEHMAN&emsp;McFall&emsp;Burry&emsp;APMS&emsp;PRISON-SHOP&emsp;Ely&emsp;Darien&emsp;Roberto&emsp;Milpitas&emsp;55-year-old&emsp;Broadway&emsp;FH-77B&emsp;UBS-Phillips&emsp;Daze&emsp;Anastasio&emsp;single-B-3&emsp;Klass&emsp;Col.&emsp;ABC-TV&emsp;Arpanet&emsp;Torrijos&emsp;Boudreau&emsp;Alf&emsp;Belgium&emsp;Beantown&emsp;Castro&emsp;Pepper&emsp;MIPs&emsp;Dominant&emsp;Carole&emsp;Bakes&emsp;Military&emsp;Leaseway&emsp;Mannheim&emsp;Oregon&emsp;LaMore&emsp;Wilpers&emsp;Rockefeller&emsp;Kagan&emsp;Edzard&emsp;Sultan&emsp;Frankenstein&emsp;Duty&emsp;Silent&emsp;Datapoint&emsp;HUGO'S&emsp;Staley&emsp;Box&emsp;Indocin&emsp;Hollander&emsp;Strom&emsp;Ehrlich&emsp;Riegle&emsp;Scientific&emsp;Chiriqui&emsp;Brooks&emsp;Hamilton&emsp;Lindsey&emsp;Bloomfield&emsp;Minority&emsp;Keynes&emsp;Valparaiso&emsp;Intermec&emsp;PNC&emsp;Macy&emsp;Gulick&emsp;Mehl&emsp;Nature&emsp;Daikin&emsp;Bickwit&emsp;Ramirez&emsp;Morristown&emsp;Seaboard&emsp;Brandon&emsp;Rohm&emsp;EPO&emsp;Arlington&emsp;McGill&emsp;Rosenbach&emsp;Gingrich&emsp;Cox&emsp;TALK&emsp;Freeman&emsp;Leonard&emsp;Lubriderm&emsp;Vorontsov&emsp;Lt.&emsp;Nations&emsp;A&W&emsp;Regal&emsp;Kendall&emsp;Week&emsp;Jan&emsp;Blandon&emsp;Herrera&emsp;NCI&emsp;Lima&emsp;Palme&emsp;Pratap&emsp;CFTC&emsp;CNBC&emsp;Planet&emsp;Intertan&emsp;Gromov&emsp;Pulp&emsp;Lees&emsp;Luis&emsp;Bicycling&emsp;Shaughnessy&emsp;Machinery&emsp;Unilab&emsp;Waldorf&emsp;Handy&emsp;Game&emsp;Morelli&emsp;Stoddard&emsp;Yoneyama&emsp;VAX\/VMS&emsp;Mayo&emsp;Fiala&emsp;Tomkin&emsp;Laszlo&emsp;Krishnaswami&emsp;Gulbuddin&emsp;Wertheimer&emsp;JUMPING&emsp;Rahway&emsp;Environmentalism&emsp;Mich&emsp;Bunny&emsp;McKay&emsp;Wiedemann&emsp;Horta&emsp;Vermont&emsp;Muzak&emsp;Alpharetta&emsp;Managing&emsp;HUTTON&emsp;M.D&emsp;Mudd&emsp;Nikolai&emsp;Damonne&emsp;</p><p>LOGISTIC REGRESSION - UNKNOWN WORD ERRORS - MISCLASS TYPE (CORRECT/PREDICTION): ('JJ', 'NN')<br>OCCURENCES: 430 PERCENT OF ERRORS: 0.1589061345158906 PERCENT OF ALL PREDICTIONS 0.00907613<br>WORDS IN TYPE: </p><p>investment-bank&emsp;big-selling&emsp;remorseful&emsp;clean-air&emsp;abortive&emsp;Excise-tax&emsp;noncumulative&emsp;axiomatic&emsp;motorized&emsp;30-minute&emsp;auction-fee&emsp;elementary&emsp;lenient&emsp;skillful&emsp;anti-communist&emsp;dealer-led&emsp;unpaid&emsp;intimate&emsp;multilateral&emsp;on-again&emsp;aft&emsp;rocky&emsp;mysterious&emsp;prescriptive&emsp;tortuous&emsp;high-performance&emsp;scandal-ridden&emsp;well-paid&emsp;national-priority&emsp;Animated&emsp;line-drawing&emsp;discernible&emsp;six-year-old&emsp;anti-Noriega&emsp;hardworking&emsp;disparate&emsp;ONE-DAY&emsp;musical&emsp;prominent&emsp;uninfected&emsp;IMF-approved&emsp;bloody-minded&emsp;RISC-based&emsp;wider-than-expected&emsp;imperial&emsp;first-nine-month&emsp;aborted&emsp;employment-tax&emsp;5-fluorouracil&emsp;high-speed&emsp;petty&emsp;72-a-share&emsp;high-altitude&emsp;instrumental&emsp;jumbo&emsp;pockmarked&emsp;generalpurpose&emsp;prosecutorial&emsp;space-based&emsp;Tentative&emsp;Keynesian&emsp;anti-bike&emsp;62-a-share&emsp;unmarked&emsp;leveraged-buy-out&emsp;anti-smoking&emsp;lawmaking&emsp;counter-intelligence&emsp;immense&emsp;tax-collecting&emsp;state-of-the-art&emsp;employerpaid&emsp;ominous&emsp;60.25-point&emsp;well-intentioned&emsp;terrestrial&emsp;public-land&emsp;terrain-marring&emsp;inseparable&emsp;wayward&emsp;crippling&emsp;civilian&emsp;Soviet-controlled&emsp;incoherent&emsp;unguided&emsp;workable&emsp;grateful&emsp;much-publicized&emsp;apocalyptic&emsp;notebook-sized&emsp;seedy&emsp;heavy-handed&emsp;Enormous&emsp;compelling&emsp;unsettled&emsp;fat-tired&emsp;azure&emsp;contractual&emsp;carcinogenic&emsp;specialty-material&emsp;19-month&emsp;substantive&emsp;Strong&emsp;tree-farming&emsp;futures-trading&emsp;quarter-to-quarter&emsp;prisoner-made&emsp;foggy&emsp;exceptional&emsp;French-modeled&emsp;120-a-share&emsp;commendable&emsp;off-base&emsp;resentful&emsp;vague&emsp;worst-performing&emsp;estate-tax&emsp;disruptive&emsp;non-Indian&emsp;unhappy&emsp;conditional&emsp;tidy&emsp;coffee-roasting&emsp;highest-rated&emsp;11-a-share&emsp;anti-homosexual&emsp;foremost&emsp;bloody&emsp;business-as-usual&emsp;50-point&emsp;Legitimate&emsp;broker-sold&emsp;Computer-guided&emsp;animated&emsp;byzantine&emsp;alternative-fueled&emsp;Texas-based&emsp;thirdquarter&emsp;diagnostic&emsp;addictive&emsp;age-specific&emsp;64-35&emsp;infelicitous&emsp;hard-bitten&emsp;well-off&emsp;reschedulable&emsp;25-million-share&emsp;all-out&emsp;26-week&emsp;cleaner-burning&emsp;Confectionery&emsp;blue-ribbon&emsp;well-born&emsp;10-month&emsp;judicial&emsp;Taiwanese&emsp;medical-leave&emsp;ingrained&emsp;anti-aircraft&emsp;unsuspecting&emsp;cross-border&emsp;voracious&emsp;now-shaky&emsp;reclusive&emsp;strategic-arms&emsp;de-facto&emsp;developing-country&emsp;previous-year&emsp;gun-running&emsp;cholesterol-lowering&emsp;facial&emsp;disinflationary&emsp;power-transmission&emsp;genetic&emsp;100-stock&emsp;chinless&emsp;60%-held&emsp;knowledgeable&emsp;one-sentence&emsp;underprivileged&emsp;banana-exporting&emsp;indistinguishable&emsp;uninhabitable&emsp;Ordinary&emsp;news-oriented&emsp;shadowy&emsp;bipartisan&emsp;misguided&emsp;stripped-down&emsp;business-to-business&emsp;multi-gear&emsp;whipsaw&emsp;fitness-promoting&emsp;scaled-down&emsp;humanitarian&emsp;88.12-point&emsp;antisocial&emsp;mortgage-backed&emsp;quantitative&emsp;11-2&emsp;statutory&emsp;eighth&emsp;13-point&emsp;ambiguous&emsp;155-mm&emsp;off-road&emsp;washable&emsp;gargantuan&emsp;Soviet-trained&emsp;inconclusive&emsp;After-the-fact&emsp;inter-American&emsp;vain&emsp;N.Y.-based&emsp;multiple-use&emsp;nonfinancial&emsp;resourceful&emsp;overdue&emsp;Ohio-based&emsp;Seattle-based&emsp;public-health&emsp;businesslike&emsp;high-visibility&emsp;sizzling&emsp;corrupt&emsp;electronic-measuring&emsp;high-level&emsp;medical-instrument&emsp;fabulous&emsp;finanicial&emsp;undeniable&emsp;California-based&emsp;irrevocable&emsp;acrimonious&emsp;off-again&emsp;Francisco-area&emsp;48-year&emsp;18th&emsp;non-interest&emsp;two-month&emsp;disgusting&emsp;episodic&emsp;brutal&emsp;antagonistic&emsp;truthful&emsp;unread&emsp;49%-owned&emsp;separatist&emsp;inaccessible&emsp;hand-sized&emsp;inadequate&emsp;record-breaking&emsp;murky&emsp;impenetrable&emsp;unidentified&emsp;investigative&emsp;drunk&emsp;trading-oriented&emsp;pre-sale&emsp;day-long&emsp;Fiscal-year&emsp;inverse&emsp;ideological&emsp;improbable&emsp;dire&emsp;Prime-1&emsp;lesser-developed-country&emsp;pre-refunded&emsp;staunch&emsp;first-ever&emsp;capitalist-exploiters-greedy-American-consumers-global&emsp;91-day&emsp;populist&emsp;auto-repair&emsp;intangible&emsp;minuscule&emsp;we're-all-in-this-together&emsp;native&emsp;successive&emsp;Pre-refunded&emsp;Indian-summer&emsp;quasi-governmental&emsp;single-B-1&emsp;knock-out&emsp;120,000-employee&emsp;moralistic&emsp;fourth-level&emsp;aspiring&emsp;currency-exchange&emsp;intoxicated&emsp;ever-faster&emsp;market-opening&emsp;incumbent&emsp;family-oriented&emsp;40-year&emsp;Positive&emsp;resilient&emsp;IMF-guided&emsp;unconfirmed&emsp;19th&emsp;Intense&emsp;most-active&emsp;Previous&emsp;Non-interest&emsp;Nervous&emsp;thoughtless&emsp;hilly&emsp;all-terrain&emsp;unilateral&emsp;clinical&emsp;top-notch&emsp;spiffy&emsp;Six-month&emsp;Afghan&emsp;superb&emsp;sleazy&emsp;adept&emsp;aftertax&emsp;13-week&emsp;non-objective&emsp;cost-effective&emsp;missile-guidance&emsp;hysterical&emsp;182-day&emsp;voluntary&emsp;hair-trigger&emsp;Ba-3&emsp;nonpublic&emsp;A-1&emsp;invidious&emsp;external&emsp;68-week&emsp;culpable&emsp;government-insured&emsp;unclassified&emsp;predictable&emsp;hurricane-wracked&emsp;factual&emsp;trail-blazing&emsp;lightweight&emsp;laboratory-services&emsp;monied&emsp;corresponding&emsp;French-made&emsp;Cuban&emsp;spaceborn&emsp;defenseless&emsp;leaded&emsp;anti-ballistic-missile&emsp;rigorous&emsp;fact-bound&emsp;35-44&emsp;383-30&emsp;Recent&emsp;value-oriented&emsp;mere&emsp;eventual&emsp;paltry&emsp;Complete&emsp;paramilitary&emsp;ineffective&emsp;employer-paid&emsp;scaled-back&emsp;moderate-income&emsp;malignant&emsp;thin-tired&emsp;front-running&emsp;machine-tool&emsp;cease-and-desist&emsp;nonlethal&emsp;bond-equivalent&emsp;</p><p>LOGISTIC REGRESSION - UNKNOWN WORD ERRORS - MISCLASS TYPE (CORRECT/PREDICTION): ('NNS', 'NN')<br>OCCURENCES: 358 PERCENT OF ERRORS: 0.13229859571322986 PERCENT OF ALL PREDICTIONS 0.00755641<br>WORDS IN TYPE: </p><p>Prosecutors&emsp;Animals&emsp;law-making&emsp;conspirators&emsp;habits&emsp;temps&emsp;misadventures&emsp;sails&emsp;notions&emsp;uniforms&emsp;speeds&emsp;predictions&emsp;CPAs&emsp;payrolls&emsp;excuses&emsp;remittances&emsp;Decisions&emsp;health-products&emsp;drug-sales&emsp;essentials&emsp;Cattle&emsp;desks&emsp;renderings&emsp;extensions&emsp;consumer-products&emsp;Bids&emsp;populations&emsp;sabers&emsp;RAVAGES&emsp;belts&emsp;handbills&emsp;scribes&emsp;liberalizations&emsp;Euronotes&emsp;indictments&emsp;protests&emsp;soft-drinks&emsp;cadets&emsp;tabloids&emsp;depositors&emsp;Machinists&emsp;probabilities&emsp;ages&emsp;Bikers&emsp;statues&emsp;Homosexuals&emsp;GRAINS&emsp;traps&emsp;privileges&emsp;fighter-bombers&emsp;protectors&emsp;judges&emsp;appropriators&emsp;dwellers&emsp;republics&emsp;shifts&emsp;ministries&emsp;landfills&emsp;societies&emsp;caves&emsp;goats&emsp;SOYBEANS&emsp;petitions&emsp;T-bills&emsp;NEWSPAPERS&emsp;auto-emissions&emsp;buyouts&emsp;exhibitors&emsp;government-relations&emsp;possibilities&emsp;lemmings&emsp;Environmentalists&emsp;breaches&emsp;plantations&emsp;ribs&emsp;puppies&emsp;stretches&emsp;batches&emsp;aspens&emsp;forests&emsp;Journalists&emsp;shipsets&emsp;legs&emsp;hacks&emsp;JAUNTS&emsp;Factories&emsp;distinctions&emsp;weightings&emsp;volunteers&emsp;protocols&emsp;trails&emsp;guides&emsp;adolescents&emsp;maxims&emsp;expirations&emsp;F16s&emsp;mints&emsp;groceries&emsp;minefields&emsp;proteins&emsp;pistols&emsp;tribes&emsp;balance-of-payments&emsp;bikers&emsp;Arbitragers&emsp;recordings&emsp;caches&emsp;bats&emsp;jewels&emsp;recoveries&emsp;servants&emsp;Poachers&emsp;rangers&emsp;legions&emsp;backpackers&emsp;conferees&emsp;guns&emsp;commanders&emsp;IOUs&emsp;logs&emsp;Exports&emsp;wings&emsp;contributors&emsp;bulkheads&emsp;bouts&emsp;pirates&emsp;wounds&emsp;Measures&emsp;Asians&emsp;rats&emsp;tides&emsp;Charges&emsp;mysteries&emsp;lapses&emsp;specialty-chemicals&emsp;malls&emsp;rollovers&emsp;tumors&emsp;installments&emsp;Proponents&emsp;soybeans&emsp;lands&emsp;Elections&emsp;hogs&emsp;attributes&emsp;sanitationists&emsp;jumps&emsp;contacts&emsp;cyclists&emsp;meals&emsp;ADRs&emsp;prisoners&emsp;fades&emsp;MiG-29s&emsp;zigzags&emsp;masks&emsp;sergeants&emsp;lubricants&emsp;indulgences&emsp;disbursements&emsp;Decliners&emsp;visages&emsp;wiretaps&emsp;precincts&emsp;champions&emsp;mounts&emsp;Forest-products&emsp;blends&emsp;files&emsp;worms&emsp;supermarkets&emsp;disciples&emsp;stalwarts&emsp;synergies&emsp;conscripts&emsp;crematoriums&emsp;drugstores&emsp;BENEFITS&emsp;drawings&emsp;accords&emsp;niches&emsp;mammoths&emsp;microeconomics&emsp;variables&emsp;hackers&emsp;blue-chips&emsp;Millions&emsp;males&emsp;clean-fuels&emsp;prognosticators&emsp;Activists&emsp;tendencies&emsp;hosts&emsp;columnists&emsp;mixtures&emsp;helicopters&emsp;assemblies&emsp;dangers&emsp;displays&emsp;trials&emsp;landscapes&emsp;hikers&emsp;hunter-gatherers&emsp;innovations&emsp;Groups&emsp;repayments&emsp;motorcycles&emsp;mistresses&emsp;suppliers&emsp;condoms&emsp;biopsies&emsp;introductions&emsp;crimes&emsp;antibodies&emsp;HOPES&emsp;Shops&emsp;Courts&emsp;mornings&emsp;superiors&emsp;Panamanians&emsp;Commentators&emsp;bikes&emsp;edges&emsp;homosexuals&emsp;Liberals&emsp;luminaries&emsp;franchises&emsp;fanatics&emsp;Reaganauts&emsp;international-operations&emsp;Payments&emsp;Consumers&emsp;analyses&emsp;vinyl-products&emsp;transfers&emsp;gringos&emsp;equestrians&emsp;conservationists&emsp;videocassettes&emsp;Returns&emsp;Blacks&emsp;authorizations&emsp;stewards&emsp;Extensions&emsp;jetliners&emsp;characters&emsp;sexes&emsp;parlors&emsp;passwords&emsp;cartoons&emsp;Fears&emsp;coup-makers&emsp;BUYERS&emsp;corporate-earnings&emsp;SHOPS&emsp;extremists&emsp;public-relations&emsp;facsimiles&emsp;</p><p>LOGISTIC REGRESSION - UNKNOWN WORD ERRORS - MISCLASS TYPE (CORRECT/PREDICTION): ('CD', 'NN')<br>OCCURENCES: 306 PERCENT OF ERRORS: 0.1130820399113082 PERCENT OF ALL PREDICTIONS 0.00645883<br>WORDS IN TYPE: </p><p>260&emsp;163&emsp;2.21&emsp;54.1&emsp;9.482&emsp;176.4&emsp;4,345&emsp;904,000&emsp;18.65&emsp;453.57&emsp;269.3&emsp;1.63&emsp;1,050&emsp;885,800&emsp;175,000&emsp;8.09&emsp;84.1&emsp;14.24&emsp;7.93&emsp;141.85&emsp;501,200&emsp;626.3&emsp;155&emsp;9.39&emsp;224,070,000&emsp;5.36&emsp;931&emsp;36.3&emsp;109.50&emsp;16.375&emsp;375,000&emsp;87.25&emsp;806.8&emsp;9.06&emsp;370&emsp;140.95&emsp;112,000&emsp;1974-81&emsp;711&emsp;448.49&emsp;8.125&emsp;7.986&emsp;1.8685&emsp;21.2&emsp;37.7&emsp;2.3125&emsp;410.3&emsp;829.9&emsp;241.6&emsp;47,000&emsp;360&emsp;135&emsp;7.97&emsp;1967&emsp;2.36&emsp;30.1&emsp;415&emsp;658&emsp;29,000&emsp;180,000&emsp;99.95&emsp;793&emsp;2.97&emsp;235.2&emsp;378&emsp;124.5&emsp;24.3&emsp;437.7&emsp;14.11&emsp;188.89&emsp;141&emsp;6.10&emsp;166.8&emsp;26,350&emsp;133.8&emsp;48,100&emsp;331,400&emsp;537&emsp;393.4&emsp;78.625&emsp;2.57&emsp;38.50&emsp;49.5&emsp;144.9&emsp;2.4375&emsp;14.1&emsp;46,892&emsp;317.7&emsp;98.5&emsp;51.1&emsp;9.&emsp;16.2&emsp;89.6&emsp;2.82&emsp;0.19&emsp;1982-84&emsp;29.5&emsp;52,012&emsp;5.56&emsp;142.25&emsp;101,000&emsp;49.4&emsp;profit-driven&emsp;49.125&emsp;127&emsp;1.045&emsp;436.3&emsp;58.50&emsp;89-52&emsp;2.32&emsp;23\/32&emsp;38.4&emsp;16,800,000&emsp;199&emsp;10.16&emsp;129.72&emsp;49.8&emsp;618.1&emsp;277&emsp;144.4&emsp;3.625&emsp;280,000&emsp;47.1&emsp;7.227&emsp;124,732&emsp;5.80&emsp;7.54&emsp;789&emsp;8.1255&emsp;0.14&emsp;1.8435&emsp;712&emsp;623&emsp;44.9&emsp;120.6&emsp;105,000&emsp;502.1&emsp;20.75&emsp;1955&emsp;63.1&emsp;1964&emsp;340&emsp;3.39&emsp;449.89&emsp;60.25&emsp;880.9&emsp;Eight&emsp;65,000&emsp;182.9&emsp;8.24&emsp;6.50&emsp;89-136&emsp;8.483&emsp;625.4&emsp;105.4&emsp;316&emsp;123.9&emsp;90,000&emsp;366.55&emsp;76.6&emsp;2.27&emsp;459.93&emsp;1,040&emsp;83.3125&emsp;59.4&emsp;177.3&emsp;75.25&emsp;83.8&emsp;601.3&emsp;5.27&emsp;1.55&emsp;49.6&emsp;2638.73&emsp;983&emsp;309,500&emsp;940.6&emsp;129.97&emsp;5\/32&emsp;45,000&emsp;454,100&emsp;8.10&emsp;142.55&emsp;1962-63&emsp;7.567&emsp;7.3&emsp;362&emsp;10.77&emsp;23,000&emsp;341.16&emsp;1.5753&emsp;21.1&emsp;7.9&emsp;0.0018&emsp;371.20&emsp;1,600&emsp;575,000&emsp;Twelve&emsp;880,500&emsp;24.4&emsp;1254.27&emsp;375.16&emsp;130.1&emsp;1.94&emsp;7.92&emsp;852&emsp;3.90&emsp;86,500&emsp;1936&emsp;16.50&emsp;13.9&emsp;20.7&emsp;191.9&emsp;29.9&emsp;49.96&emsp;1,174&emsp;5498&emsp;469.8&emsp;142.3&emsp;2.875&emsp;0.15&emsp;124,875&emsp;73.50&emsp;7.31&emsp;11:13&emsp;8.685&emsp;97.85&emsp;60.7&emsp;24,000&emsp;187.8&emsp;367.40&emsp;280&emsp;654.5&emsp;93.8&emsp;1.57&emsp;59.9&emsp;715&emsp;246.6&emsp;12.60&emsp;214.54&emsp;664&emsp;62.25&emsp;107,100&emsp;141.80&emsp;28.7&emsp;8.85&emsp;775&emsp;79.4&emsp;64.1&emsp;342,122&emsp;100.4&emsp;161.5&emsp;83.6&emsp;2.48&emsp;24.875&emsp;542&emsp;365&emsp;23.8&emsp;3377.43&emsp;58.3&emsp;8.33&emsp;322.7&emsp;8.292&emsp;619.8&emsp;324.9&emsp;7\/100ths&emsp;3\/32&emsp;650&emsp;69.5&emsp;6.95&emsp;9.43&emsp;39.9&emsp;</p><p>LOGISTIC REGRESSION - UNKNOWN WORD ERRORS - MISCLASS TYPE (CORRECT/PREDICTION): ('VBN', 'NN')<br>OCCURENCES: 115 PERCENT OF ERRORS: 0.04249815225424981 PERCENT OF ALL PREDICTIONS 0.00242734<br>WORDS IN TYPE: </p><p>cherished&emsp;championed&emsp;clobbered&emsp;Spurred&emsp;chalked&emsp;overdosed&emsp;modified&emsp;reformulated&emsp;muddied&emsp;disbanded&emsp;numbered&emsp;Experienced&emsp;relaxed&emsp;elevated&emsp;alarmed&emsp;motorized&emsp;bewildered&emsp;substituted&emsp;foreshadowed&emsp;demonstrated&emsp;subdued&emsp;falsified&emsp;rebuffed&emsp;drawn&emsp;interrelated&emsp;waived&emsp;detained&emsp;postmarked&emsp;flared&emsp;maneuvered&emsp;automated&emsp;justified&emsp;concentrated&emsp;harried&emsp;forgiven&emsp;injected&emsp;intervened&emsp;revamped&emsp;disturbed&emsp;breached&emsp;dressed&emsp;drowned&emsp;leaked&emsp;assisted&emsp;labeled&emsp;Spooked&emsp;befriended&emsp;handcuffed&emsp;symbolized&emsp;entwined&emsp;engraved&emsp;oversimplified&emsp;Flanked&emsp;overrun&emsp;deemed&emsp;rung&emsp;confined&emsp;hatched&emsp;mounted&emsp;cultivated&emsp;dismayed&emsp;overreacted&emsp;outraged&emsp;penalized&emsp;inserted&emsp;disputed&emsp;re-supplied&emsp;shortchanged&emsp;rewarded&emsp;overtaken&emsp;cracked&emsp;termed&emsp;disciplined&emsp;monitored&emsp;buried&emsp;abused&emsp;enforced&emsp;corrected&emsp;shortened&emsp;funneled&emsp;openended&emsp;Stung&emsp;assassinated&emsp;escrowed&emsp;tempered&emsp;geared&emsp;respected&emsp;understated&emsp;Measured&emsp;guarded&emsp;summoned&emsp;bumped&emsp;confused&emsp;Valued&emsp;dealt&emsp;indoctrinated&emsp;bottomed&emsp;prearranged&emsp;</p><p>LOGISTIC REGRESSION - UNKNOWN WORD ERRORS - MISCLASS TYPE (CORRECT/PREDICTION): ('VBG', 'NN')<br>OCCURENCES: 106 PERCENT OF ERRORS: 0.03917220990391722 PERCENT OF ALL PREDICTIONS 0.00223737<br>WORDS IN TYPE: </p><p>Linking&emsp;propping&emsp;occurring&emsp;hiking&emsp;extending&emsp;flirting&emsp;messing&emsp;softening&emsp;calculating&emsp;delousing&emsp;protecting&emsp;bribing&emsp;dumping&emsp;burgeoning&emsp;unwavering&emsp;jarring&emsp;affiliating&emsp;fulfilling&emsp;compromising&emsp;granting&emsp;overlooking&emsp;Overreacting&emsp;touring&emsp;abandoning&emsp;hedging&emsp;diagnosing&emsp;Writing&emsp;staring&emsp;luring&emsp;requesting&emsp;embracing&emsp;securing&emsp;depositing&emsp;diminishing&emsp;educating&emsp;prepaying&emsp;bewildering&emsp;resuming&emsp;minimizing&emsp;renewing&emsp;deleting&emsp;choking&emsp;destabilizing&emsp;waning&emsp;pinching&emsp;solving&emsp;surpassing&emsp;SIMPLIFYING&emsp;substituting&emsp;receding&emsp;herding&emsp;pedaling&emsp;Leaping&emsp;Estimating&emsp;differentiating&emsp;buckling&emsp;understating&emsp;asserting&emsp;bending&emsp;Amending&emsp;clutching&emsp;comparing&emsp;withering&emsp;Upping&emsp;reiterating&emsp;blackmailing&emsp;employing&emsp;underreacting&emsp;careening&emsp;Kissing&emsp;angering&emsp;questioning&emsp;tending&emsp;attacking&emsp;toiling&emsp;gleaming&emsp;Ending&emsp;enhancing&emsp;reincorporating&emsp;swelling&emsp;beating&emsp;Saving&emsp;Satisfying&emsp;Starting&emsp;echoing&emsp;Advancing&emsp;amending&emsp;raping&emsp;veering&emsp;decentralizing&emsp;practicing&emsp;whipping&emsp;addressing&emsp;grabbing&emsp;innoculating&emsp;combating&emsp;blowing&emsp;revamping&emsp;reindicting&emsp;overreacting&emsp;unfolding&emsp;shying&emsp;</p><p>LOGISTIC REGRESSION - UNKNOWN WORD ERRORS - MISCLASS TYPE (CORRECT/PREDICTION): ('VB', 'NN')<br>OCCURENCES: 75 PERCENT OF ERRORS: 0.02771618625277162 PERCENT OF ALL PREDICTIONS 0.00158305<br>WORDS IN TYPE: </p><p>destroy&emsp;assimilate&emsp;counterprogram&emsp;scold&emsp;outstrip&emsp;counteract&emsp;regenerate&emsp;unite&emsp;congratulate&emsp;accomplish&emsp;pedal&emsp;commit&emsp;earmark&emsp;pre-empt&emsp;stash&emsp;explode&emsp;abate&emsp;analyze&emsp;proclaim&emsp;monopolize&emsp;wrest&emsp;modify&emsp;balk&emsp;streamline&emsp;defect&emsp;indict&emsp;blur&emsp;assassinate&emsp;emote&emsp;curry&emsp;invoke&emsp;adorn&emsp;injure&emsp;juggle&emsp;extort&emsp;chill&emsp;parcel&emsp;overthrow&emsp;crest&emsp;expunge&emsp;reassure&emsp;dictate&emsp;relieve&emsp;zoom&emsp;organize&emsp;galvanize&emsp;soften&emsp;whack&emsp;invade&emsp;implement&emsp;motivate&emsp;deteriorate&emsp;drum&emsp;spill&emsp;criminalize&emsp;reap&emsp;remind&emsp;oversee&emsp;deprive&emsp;insure&emsp;Be&emsp;seize&emsp;jeopardize&emsp;bless&emsp;abandon&emsp;bounce&emsp;revise&emsp;outfly&emsp;</p><p>LOGISTIC REGRESSION - UNKNOWN WORD ERRORS - MISCLASS TYPE (CORRECT/PREDICTION): ('RB', 'NN')<br>OCCURENCES: 61 PERCENT OF ERRORS: 0.02254249815225425 PERCENT OF ALL PREDICTIONS 0.00128754<br>WORDS IN TYPE: </p><p>Customarily&emsp;Shortly&emsp;hysterically&emsp;recklessly&emsp;inversely&emsp;technically&emsp;intellectually&emsp;neatly&emsp;verbatim&emsp;ethnically&emsp;frankly&emsp;zestfully&emsp;statutorily&emsp;Predictably&emsp;unnecessarily&emsp;regardless&emsp;Presumably&emsp;thoroughly&emsp;responsibly&emsp;fetchingly&emsp;savagely&emsp;Gradually&emsp;sexually&emsp;awfully&emsp;exceptionally&emsp;inextricably&emsp;Conceivably&emsp;wryly&emsp;ostentatiously&emsp;lawfully&emsp;unlawfully&emsp;rigorously&emsp;inasmuch&emsp;apologetically&emsp;sweepingly&emsp;vigorously&emsp;vaguely&emsp;Previously&emsp;hesitantly&emsp;heretofore&emsp;loosely&emsp;plaintively&emsp;tacitly&emsp;nominally&emsp;independently&emsp;nervously&emsp;jealously&emsp;inherently&emsp;Basically&emsp;Deeply&emsp;fro&emsp;provocatively&emsp;systematically&emsp;comprehensively&emsp;curtly&emsp;Arguably&emsp;ostensibly&emsp;Incrementally&emsp;Essentially&emsp;</p><p>LOGISTIC REGRESSION - UNKNOWN WORD ERRORS - MISCLASS TYPE (CORRECT/PREDICTION): ('VBD', 'NN')<br>OCCURENCES: 46 PERCENT OF ERRORS: 0.016999260901699925 PERCENT OF ALL PREDICTIONS 0.00097094<br>WORDS IN TYPE: </p><p>averred&emsp;breathed&emsp;blew&emsp;invaded&emsp;foiled&emsp;competed&emsp;inherited&emsp;deposited&emsp;objected&emsp;dared&emsp;bore&emsp;scotched&emsp;hated&emsp;telephoned&emsp;nurtured&emsp;underestimated&emsp;intervened&emsp;disregarded&emsp;skidded&emsp;boasted&emsp;co-founded&emsp;manufactured&emsp;disintegrated&emsp;behaved&emsp;shrugged&emsp;SKIDDED&emsp;demonstrated&emsp;dashed&emsp;hooked&emsp;summarized&emsp;auctioned&emsp;volunteered&emsp;dragged&emsp;clinched&emsp;halogenated&emsp;conveyed&emsp;dived&emsp;promulgated&emsp;splashed&emsp;thundered&emsp;bucked&emsp;brushed&emsp;relayed&emsp;</p><p>LOGISTIC REGRESSION - UNKNOWN WORD ERRORS - MISCLASS TYPE (CORRECT/PREDICTION): ('VBZ', 'NN')<br>OCCURENCES: 42 PERCENT OF ERRORS: 0.015521064301552107 PERCENT OF ALL PREDICTIONS 0.00088651<br>WORDS IN TYPE: </p><p>attributes&emsp;spells&emsp;injects&emsp;crashes&emsp;flies&emsp;stretches&emsp;reacts&emsp;perceives&emsp;considers&emsp;depletes&emsp;lets&emsp;grinds&emsp;mentions&emsp;discloses&emsp;meets&emsp;unites&emsp;exacerbates&emsp;omits&emsp;approves&emsp;Takes&emsp;commits&emsp;extends&emsp;comprises&emsp;DELAYS&emsp;incorporates&emsp;locks&emsp;brings&emsp;consigns&emsp;resides&emsp;dies&emsp;drags&emsp;lumps&emsp;sleeps&emsp;portends&emsp;screams&emsp;hosts&emsp;announces&emsp;rages&emsp;muses&emsp;</p><p>LOGISTIC REGRESSION - UNKNOWN WORD ERRORS - MISCLASS TYPE (CORRECT/PREDICTION): ('NNPS', 'NN')<br>OCCURENCES: 42 PERCENT OF ERRORS: 0.015521064301552107 PERCENT OF ALL PREDICTIONS 0.00088651<br>WORDS IN TYPE: </p><p>Stingers&emsp;Facilities&emsp;BLUES&emsp;Chipmunks&emsp;Jewelers&emsp;Bicyclists&emsp;Wars&emsp;Females&emsp;Israelis&emsp;Productions&emsp;Patriots&emsp;Sikhs&emsp;Sierras&emsp;Worms&emsp;Afghans&emsp;MEATS&emsp;Skies&emsp;Pacemakers&emsp;Killers&emsp;Males&emsp;Greens&emsp;Cubans&emsp;Guards&emsp;Indians&emsp;</p><p>LOGISTIC REGRESSION - UNKNOWN WORD ERRORS - MISCLASS TYPE (CORRECT/PREDICTION): ('IN', 'NN')<br>OCCURENCES: 5 PERCENT OF ERRORS: 0.0018477457501847746 PERCENT OF ALL PREDICTIONS 0.00010554<br>WORDS IN TYPE: </p><p>Out&emsp;Above&emsp;beside&emsp;THAN&emsp;</p><p>LOGISTIC REGRESSION - UNKNOWN WORD ERRORS - MISCLASS TYPE (CORRECT/PREDICTION): ('JJS', 'NN')<br>OCCURENCES: 5 PERCENT OF ERRORS: 0.0018477457501847746 PERCENT OF ALL PREDICTIONS 0.00010554<br>WORDS IN TYPE: </p><p>closest&emsp;poorest&emsp;shortest&emsp;longest&emsp;broadest&emsp;</p><p>LOGISTIC REGRESSION - UNKNOWN WORD ERRORS - MISCLASS TYPE (CORRECT/PREDICTION): ('JJR', 'NN')<br>OCCURENCES: 5 PERCENT OF ERRORS: 0.0018477457501847746 PERCENT OF ALL PREDICTIONS 0.00010554<br>WORDS IN TYPE: </p><p>simpler&emsp;calmer&emsp;richer&emsp;BIGGER&emsp;</p><p>LOGISTIC REGRESSION - UNKNOWN WORD ERRORS - MISCLASS TYPE (CORRECT/PREDICTION): ('VBP', 'NN')<br>OCCURENCES: 4 PERCENT OF ERRORS: 0.0014781966001478197 PERCENT OF ALL PREDICTIONS 0.00008443<br>WORDS IN TYPE: </p><p>SCRAP&emsp;comprise&emsp;inhabit&emsp;scour&emsp;</p><p>LOGISTIC REGRESSION - UNKNOWN WORD ERRORS - MISCLASS TYPE (CORRECT/PREDICTION): ('MD', 'NN')<br>OCCURENCES: 2 PERCENT OF ERRORS: 0.0007390983000739098 PERCENT OF ALL PREDICTIONS 0.00004221<br>WORDS IN TYPE: </p><p>Can&emsp;</p><p>LOGISTIC REGRESSION - UNKNOWN WORD ERRORS - MISCLASS TYPE (CORRECT/PREDICTION): ('RBS', 'NN')<br>OCCURENCES: 1 PERCENT OF ERRORS: 0.0003695491500369549 PERCENT OF ALL PREDICTIONS 0.00002111<br>WORDS IN TYPE: </p><p>Hardest&emsp;</p><p>LOGISTIC REGRESSION - UNKNOWN WORD ERRORS - MISCLASS TYPE (CORRECT/PREDICTION): ('UH', 'NN')<br>OCCURENCES: 1 PERCENT OF ERRORS: 0.0003695491500369549 PERCENT OF ALL PREDICTIONS 0.00002111<br>WORDS IN TYPE: </p><p>Good-bye&emsp;</p><p>LOGISTIC REGRESSION - UNKNOWN WORD ERRORS - MISCLASS TYPE (CORRECT/PREDICTION): ('DT', 'NN')<br>OCCURENCES: 1 PERCENT OF ERRORS: 0.0003695491500369549 PERCENT OF ALL PREDICTIONS 0.00002111<br>WORDS IN TYPE: </p><p>AN&emsp;</p><p>LOGISTIC REGRESSION - UNKNOWN WORD ERRORS - MISCLASS TYPE (CORRECT/PREDICTION): ('FW', 'NN')<br>OCCURENCES: 1 PERCENT OF ERRORS: 0.0003695491500369549 PERCENT OF ALL PREDICTIONS 0.00002111<br>WORDS IN TYPE: </p><p>Il&emsp;</p><p>LOGISTIC REGRESSION - UNKNOWN WORD ERRORS - MISCLASS TYPE (CORRECT/PREDICTION): ('WRB', 'NN')<br>OCCURENCES: 1 PERCENT OF ERRORS: 0.0003695491500369549 PERCENT OF ALL PREDICTIONS 0.00002111<br>WORDS IN TYPE: </p><p>Whenever&emsp;</p></div>
+        <div id="all_types" class="tab-pane fade in"><h2>Percent Error by POS Type</h2>
+    <table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th>word</th>
+      <th>incorrect pred</th>
+      <th>all</th>
+      <th>percent</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>PDT</td>
+      <td>10</td>
+      <td>10</td>
+      <td>1.000000</td>
+    </tr>
+    <tr>
+      <td>RP</td>
+      <td>12</td>
+      <td>12</td>
+      <td>1.000000</td>
+    </tr>
+    <tr>
+      <td>UH</td>
+      <td>2</td>
+      <td>2</td>
+      <td>1.000000</td>
+    </tr>
+    <tr>
+      <td>FW</td>
+      <td>3</td>
+      <td>4</td>
+      <td>0.750000</td>
+    </tr>
+    <tr>
+      <td>NNPS</td>
+      <td>94</td>
+      <td>130</td>
+      <td>0.723077</td>
+    </tr>
+    <tr>
+      <td>RBR</td>
+      <td>42</td>
+      <td>71</td>
+      <td>0.591549</td>
+    </tr>
+    <tr>
+      <td>WDT</td>
+      <td>96</td>
+      <td>202</td>
+      <td>0.475248</td>
+    </tr>
+    <tr>
+      <td>VB</td>
+      <td>534</td>
+      <td>1269</td>
+      <td>0.420804</td>
+    </tr>
+    <tr>
+      <td>VBP</td>
+      <td>210</td>
+      <td>539</td>
+      <td>0.389610</td>
+    </tr>
+    <tr>
+      <td>VBN</td>
+      <td>422</td>
+      <td>1104</td>
+      <td>0.382246</td>
+    </tr>
+    <tr>
+      <td>VBG</td>
+      <td>242</td>
+      <td>728</td>
+      <td>0.332418</td>
+    </tr>
+    <tr>
+      <td>NNP</td>
+      <td>1131</td>
+      <td>4806</td>
+      <td>0.235331</td>
+    </tr>
+    <tr>
+      <td>JJ</td>
+      <td>676</td>
+      <td>2964</td>
+      <td>0.228070</td>
+    </tr>
+    <tr>
+      <td>CD</td>
+      <td>411</td>
+      <td>1918</td>
+      <td>0.214286</td>
+    </tr>
+    <tr>
+      <td>VBZ</td>
+      <td>186</td>
+      <td>913</td>
+      <td>0.203724</td>
+    </tr>
+    <tr>
+      <td>RB</td>
+      <td>271</td>
+      <td>1354</td>
+      <td>0.200148</td>
+    </tr>
+    <tr>
+      <td>VBD</td>
+      <td>321</td>
+      <td>1679</td>
+      <td>0.191185</td>
+    </tr>
+    <tr>
+      <td>NNS</td>
+      <td>561</td>
+      <td>3034</td>
+      <td>0.184904</td>
+    </tr>
+    <tr>
+      <td>JJS</td>
+      <td>13</td>
+      <td>77</td>
+      <td>0.168831</td>
+    </tr>
+    <tr>
+      <td>JJR</td>
+      <td>30</td>
+      <td>202</td>
+      <td>0.148515</td>
+    </tr>
+    <tr>
+      <td>WP</td>
+      <td>8</td>
+      <td>110</td>
+      <td>0.072727</td>
+    </tr>
+    <tr>
+      <td>WRB</td>
+      <td>4</td>
+      <td>93</td>
+      <td>0.043011</td>
+    </tr>
+    <tr>
+      <td>NN</td>
+      <td>226</td>
+      <td>6642</td>
+      <td>0.034026</td>
+    </tr>
+    <tr>
+      <td>RBS</td>
+      <td>1</td>
+      <td>49</td>
+      <td>0.020408</td>
+    </tr>
+    <tr>
+      <td>''</td>
+      <td>5</td>
+      <td>316</td>
+      <td>0.015823</td>
+    </tr>
+    <tr>
+      <td>MD</td>
+      <td>6</td>
+      <td>470</td>
+      <td>0.012766</td>
+    </tr>
+    <tr>
+      <td>DT</td>
+      <td>49</td>
+      <td>4020</td>
+      <td>0.012189</td>
+    </tr>
+    <tr>
+      <td>CC</td>
+      <td>13</td>
+      <td>1214</td>
+      <td>0.010708</td>
+    </tr>
+    <tr>
+      <td>PRP</td>
+      <td>8</td>
+      <td>814</td>
+      <td>0.009828</td>
+    </tr>
+    <tr>
+      <td>$</td>
+      <td>3</td>
+      <td>384</td>
+      <td>0.007812</td>
+    </tr>
+    <tr>
+      <td>IN</td>
+      <td>14</td>
+      <td>5071</td>
+      <td>0.002761</td>
+    </tr>
+    <tr>
+      <td>PRP$</td>
+      <td>1</td>
+      <td>421</td>
+      <td>0.002375</td>
+    </tr>
+  </tbody>
+</table> </div>
+        <div id="chart_unknown_errors" class="tab-pane fade">
+        <a data-toggle="tab" href="#unknown_errors">UNKNOWN ERRORS</a><br>
+        <img src="
+    UNKNOWNWORDERRORS20180321114752661059.jpg" alt="Unknown Errors Bar Graph" >
+        </div>
+        <div id="chart_all_errors" class="tab-pane fade">
+        <a data-toggle="tab" href="#all_errors">ALL ERRORS</a><br>
+        <img src="
+    ALLWORDERRORS20180321114752661059.jpg" alt="All Errors Bar Graph" >
+        </div>
+        <div id="chart_known_errors" class="tab-pane fade">
+        <a data-toggle="tab" href="#known_errors">KNOWN ERRORS</a><br>
+        <img src="
+    KNOWNWORDERRORS20180321114752661059.jpg" alt="Known Errors Bar Graph" >
+        </div>
+
+    </div>
+    </div>
+    </body></html>
+    
