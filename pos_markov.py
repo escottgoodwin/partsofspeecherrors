@@ -7,7 +7,7 @@ from hmmd_scaled import HMM ## import hidden markov model
 import numpy as np
 from sklearn.utils import shuffle
 from datetime import datetime
-from predict_errors1 import predicterrors
+from predict_errors2 import predicterrors
 from get_data import get_data_error
 
 
@@ -138,7 +138,7 @@ def main(smoothing=10e-2): ## main function
 
     train_time = str(datetime.now() - t0)
     print(train_time)
-    predicterrors(markov_preds,Xtest,Ytest,fit_params,testwordlist,testtaglist,idx2tag,word2idx,heading,train_time,console_output=False,web_rpt=True)
+    predicterrors(markov_preds,Xtest,Ytest,fit_params,testwordlist,testtaglist,idx2tag,word2idx,heading,train_time,browser=True)
 
 if __name__ == '__main__':
     main()

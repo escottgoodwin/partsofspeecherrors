@@ -47,7 +47,7 @@ def predicterrors(p,X, Y,fit_params,wordlist,taglist,idx2tag,word2idx,heading,tr
 
     timedate = str(datetime.now())
     timedate = re.sub('[^0-9]','', timedate)
-    dir_name = "prediction_errors-"+timedate
+    dir_name = heading.replace(" ", "_") + "_prediction_errors_"+timedate
     os.makedirs(dir_name)
 
     def errors(errorsdf,errgrp):
@@ -191,15 +191,22 @@ def predicterrors(p,X, Y,fit_params,wordlist,taglist,idx2tag,word2idx,heading,tr
     </body></html>
     '''
 
-    file_name = dir_name + "/" + "prediction_errors-"+timedate+".html"
-    f= open(file_name,"w+")
+    file_name =  dir_name + ".html"
+    path = dir_name + "/" + file_name
+    f= open(path,"w+")
     f.write(html)
     f.close()
 
     if browser:
         import webbrowser
-        chrome_path = 'open -a /Applications/Google\ Chrome.app %s'
-        webbrowser.get(chrome_path).open(file_name,new=1)
+        from urllib.request import pathname2url
+        #chrome_path = 'open -a /Applications/Google\ Chrome.app %s'
+        #webbrowser.get(chrome_path).open(file_name,new=1)
+        #webbrowser.open_new(file_name)
+         # Python 3.x
+        url = 'file:{}'.format(pathname2url(os.path.abspath(path)))
+        webbrowser.open_new(url)
+
 
 def main():
     train_file = "train.txt"

@@ -9,7 +9,7 @@ from gru import GRU
 from sklearn.utils import shuffle
 
 from datetime import datetime
-from predict_errors1 import predicterrors
+from predict_errors2 import predicterrors
 from get_data import get_data_error
 from datetime import datetime
 
@@ -146,7 +146,7 @@ def main():
     fit_params = "MU: " + str(mu) + " LEARNING RATE: " + str(learning_rate) + " EPOCHS: " + str(epochs) + " Recurrent Unit: " + str(RecurrentUnit)
 
     ## create report of misclassifications of POS by the model
-    predicterrors(rnn_preds,Xtest,Ytest,fit_params,testwordlist,testtaglist,idx2tag,word2idx,heading,train_time,console_output=False,web_rpt=True)
+    predicterrors(rnn_preds,Xtest,Ytest,fit_params,testwordlist,testtaglist,idx2tag,word2idx,heading,train_time,browser=True)
 
 if __name__ == '__main__':
     main()
