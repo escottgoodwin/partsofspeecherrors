@@ -14,4 +14,4 @@ pos_markov.py
 
 You can run each python classifier file, it should run and then it will produce an html file and immediately bring up a new tab/window with the report. You can shut off brining up the tab by setting browser to False in each classifier file and just find the report directory in the directory of the classification scripts. 
 
-![alt text](https://raw.githubusercontent.com/escottgoodwin/partsofspeecherrors/branch/path/to/img.png)
+![alt text](partsofspeecherrors/poschart.png)
